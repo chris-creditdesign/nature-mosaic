@@ -54,6 +54,9 @@ article header p.lead {
 article header .attributions {
   color: #888;
 }
+article header img {
+  padding: 0;
+}
 article p {
   font-size: 1.1em;
   line-height: 1.6em;
