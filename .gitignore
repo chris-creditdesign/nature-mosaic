@@ -4,3 +4,5 @@ dist
 .sass-cache
 bower_components
 .DS_Store
+site/css/main.css.map
+ref/
