@@ -1,0 +1,115 @@
+// Nav
+
+.navbar {
+	background-color: $breadcrumbs;
+	border: none;
+	min-height: 30px;
+	border-radius: 0;
+	margin: 0;
+	width: 100%;
+	z-index: 999;
+
+}
+
+.fixed-header {
+	top: 0;
+	z-index: 999;
+	margin-bottom: 30px;
+}
+
+
+.header-logo {
+	background-color: $nature-red;
+	min-height: 40px;
+}
+
+.header-buttons {
+	background-color: $volume-arrow;
+	min-height: 40px;
+}
+
+.affix {
+	.header-logo, .header-buttons {
+		min-height: 39px;
+	}
+
+	&:before {
+		width: 0px;
+		height: 0px;
+		top: 0px;
+		left: 0px;
+		background-color: $nature-red;
+		position: fixed;
+	}
+
+	&:after {
+		width: 0px;
+		height: 0px;
+		top: 0px;
+		right: 0px;
+		background-color: $volume-arrow;
+		position: fixed;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	.fixed-header {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.affix {
+		&:before {
+			width: 150px;
+			height: 39px;
+		}
+
+		&:after {
+			width: 150px;
+			height: 39px;
+		}
+
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+	.header-logo {
+		background-color: $nature-red;
+		min-height: 81px;
+	}
+
+	.header-buttons {
+		background-color: $volume-arrow;
+		min-height: 68px;
+	}
+
+	.affix {
+		&:before {
+			width: 200px;
+			height: 39px;
+		}
+
+		&:after {
+			width: 200px;
+			height: 39px;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.affix {
+		&:before {
+			width: 300px;
+			height: 39px;
+		}
+
+		&:after {
+			width: 300px;
+			height: 39px;
+		}
+
+	}
+}

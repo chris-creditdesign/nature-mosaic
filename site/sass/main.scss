@@ -1,48 +1,11 @@
-@font-face {
-	font-family: headMain;
-	src: url("../fonts/GlosaMath-Roman.otf") format("opentype");
-}
-
-@font-face {
-	font-family: headBold;
-	src: url("../fonts/GlosaMath-Black.otf") format("opentype");
-}
-
-@font-face {
-	font-family: prose;
-	src: url("../fonts/GlosaMath-RomanItalic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: proseBold;
-	src: url("../fonts/GlosaMath-BlackItalic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: body;
-	src: url("../fonts/NewsGothicMTOT-Regular.otf") format("opentype");
-}
-
-@font-face {
-	font-family: bodyBold;
-	src: url("../fonts/NewsGothicMTOT-Bold.otf") format("opentype");
-}
+@import 'colors';
+@import 'typography';
 
 body {
-	padding-top: 70px;
 	font-family: body;
 }
 
-.navbar-brand {
-	font-size:2.2em;
-	font-family: head;
-	line-height: 1em;
-}
-
-.navbar-inverse .navbar-toggle {
-	border-color: #ccc;
-	color: #ccc;
-}
+@import 'nav';
 
 article {
 	header {
@@ -107,14 +70,6 @@ img {
 /* Responsize: Portrait tablets and up */
 /* Anything with columns */
 @media screen and (min-width: 992px) {
-	body {
-		padding-top: 100px;
-	}
-	.navbar-brand {
-		font-size: 3.2em;
-		float: none;
-		line-height: 1.8em;
-	}
 
 	.block {
 		padding: 12px 12px 2px;
@@ -124,3 +79,12 @@ img {
 		}
 	}
 }
+
+/* Small devices (tablets, 768px and up) */
+// @media screen and (min-width: 768px) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+// @media screen and (min-width: 992px) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+// @media screen and (min-width: 112px) { ... }

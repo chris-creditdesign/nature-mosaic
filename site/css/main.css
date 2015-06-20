@@ -23,21 +23,101 @@
   src: url("../fonts/NewsGothicMTOT-Bold.otf") format("opentype");
 }
 body {
-  padding-top: 70px;
   font-family: body;
 }
 
-.navbar-brand {
-  font-size: 2.2em;
-  font-family: head;
-  line-height: 1em;
+.navbar {
+  background-color: #5a5a62;
+  border: none;
+  min-height: 30px;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 999;
 }
 
-.navbar-inverse .navbar-toggle {
-  border-color: #ccc;
-  color: #ccc;
+.fixed-header {
+  top: 0;
+  z-index: 999;
+  margin-bottom: 30px;
 }
 
+.header-logo {
+  background-color: #bf0222;
+  min-height: 40px;
+}
+
+.header-buttons {
+  background-color: #999999;
+  min-height: 40px;
+}
+
+.affix .header-logo, .affix .header-buttons {
+  min-height: 39px;
+}
+.affix:before {
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  background-color: #bf0222;
+  position: fixed;
+}
+.affix:after {
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  right: 0px;
+  background-color: #999999;
+  position: fixed;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed-header {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .affix:before {
+    width: 150px;
+    height: 39px;
+  }
+  .affix:after {
+    width: 150px;
+    height: 39px;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .header-logo {
+    background-color: #bf0222;
+    min-height: 81px;
+  }
+
+  .header-buttons {
+    background-color: #999999;
+    min-height: 68px;
+  }
+
+  .affix:before {
+    width: 200px;
+    height: 39px;
+  }
+  .affix:after {
+    width: 200px;
+    height: 39px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .affix:before {
+    width: 300px;
+    height: 39px;
+  }
+  .affix:after {
+    width: 300px;
+    height: 39px;
+  }
+}
 article header h1 {
   font-family: headMain;
   font-size: 5em;
@@ -87,16 +167,6 @@ img {
 /* Responsize: Portrait tablets and up */
 /* Anything with columns */
 @media screen and (min-width: 992px) {
-  body {
-    padding-top: 100px;
-  }
-
-  .navbar-brand {
-    font-size: 3.2em;
-    float: none;
-    line-height: 1.8em;
-  }
-
   .block {
     padding: 12px 12px 2px;
     margin: 0;
@@ -105,3 +175,6 @@ img {
     padding-left: 16px;
   }
 }
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
