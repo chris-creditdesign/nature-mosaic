@@ -1,5 +1,5 @@
 {
-  "name": "nature-2-0",
+  "name": "nature-mosaic",
   "devDependencies": {
     "autoprefixer-core": "~4.0.1",
     "csswring": "~2.0.0",
@@ -10,7 +10,6 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-watch": "*",
     "grunt-postcss": "~0.2.0",
-    "grunt-wiredep": "^2.0.0",
     "matchdep": "*"
   },
   "engines": {

@@ -33,17 +33,7 @@ module.exports = function(grunt){
 	  },
 	},
 
-	wiredep: {
-		task: {
-			src: ['site/*.html']
-		}
-	},
-
 	watch: {
-		wiredep: {
-			files: ['bower_components/*'],
-			tasks: ['wiredep']
-		},
 		css: {
 			files: ['site/sass/**/*.scss'],
 			tasks: ['buildcss']
