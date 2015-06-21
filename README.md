@@ -6,8 +6,6 @@ Uses [Grunt](http://gruntjs.com/) for file concatenation, to compile [Sass](http
 
 Install dependencies with `npm install`
 
-Instal bower componets with `bower install`
-
 Type `grunt` to launch [browsersync](http://www.browsersync.io/docs/grunt/) and automatically watch for changes.
 
 Visit **http://localhost:3000/site/** to view the pages.
