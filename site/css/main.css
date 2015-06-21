@@ -22,6 +22,84 @@
   font-family: bodyBold;
   src: url("../fonts/NewsGothicMTOT-Bold.otf") format("opentype");
 }
+@font-face {
+  font-family: knockSixtyNine;
+  src: url("../fonts/Knockout-69FullLiteweight.otf") format("opentype");
+}
+@font-face {
+  font-family: knockFourtyNine;
+  src: url("../fonts/Knockout-49Liteweight.otf") format("opentype");
+}
+article header {
+  margin-bottom: 20px;
+}
+article header h1 {
+  font-family: headMain;
+  font-size: 3em;
+}
+article header h4 {
+  color: #999999;
+  font-family: bodyBold;
+  letter-spacing: 0.05em;
+}
+article header p.lead {
+  font-family: proseBold;
+  font-size: 1.6em;
+}
+article header .attributions {
+  color: #666666;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+  padding: 12px 0 10px;
+  margin-left: 0px;
+}
+article header .attributions li {
+  padding-left: 0px;
+}
+article p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+article .dropcap:first-letter {
+  float: left;
+  font-size: 5.4em;
+  line-height: 48px;
+  padding-top: 20px;
+  padding-right: 4px;
+  padding-left: 0px;
+  font-family: headMain;
+}
+article h2 {
+  font-family: headBold;
+  font-size: 1.8em;
+  letter-spacing: 0.03em;
+}
+article blockquote {
+  font-family: proseBold;
+  font-size: 1.6em;
+  color: #333;
+  border: none;
+  padding: 15px 0px 0px;
+}
+article figcaption {
+  color: #999999;
+}
+article .attributions {
+  color: #666666;
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+  padding: 12px 0 10px;
+  margin-left: 0px;
+}
+article .attributions li {
+  padding-left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  article header h1 {
+    font-size: 5em;
+  }
+}
 body {
   font-family: body;
 }
@@ -39,7 +117,6 @@ body {
 .fixed-header {
   top: 0;
   z-index: 999;
-  margin-bottom: 30px;
 }
 
 .header-logo {
@@ -118,63 +195,125 @@ body {
     height: 39px;
   }
 }
-article header h1 {
-  font-family: headMain;
-  font-size: 5em;
-}
-article header h4 {
-  color: #888;
-  font-family: bodyBold;
-  letter-spacing: 0.05em;
-}
-article header p.lead {
-  font-family: prose;
-  font-size: 1.6em;
-}
-article header .attributions {
-  color: #888;
-}
-article header img {
-  padding: 0;
-}
-article p {
-  font-size: 1.1em;
-  line-height: 1.6em;
-}
-article h2 {
-  font-family: headBold;
-  font-size: 1.8em;
-  letter-spacing: 0.03em;
-}
-article blockquote {
-  font-family: prose;
-  font-size: 1.6em;
-  color: #333;
-  border: none;
-}
-
-img {
+figure {
   padding: 20px 0;
 }
 
-.block {
-  background: #ddd;
-  margin: 10px 15px;
-  padding: 12px 12px 2px;
-  border-radius: 4px;
+.advert-row {
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
 }
 
-/* Responsize: Portrait tablets and up */
-/* Anything with columns */
-@media screen and (min-width: 992px) {
-  .block {
-    padding: 12px 12px 2px;
-    margin: 0;
-  }
-  .block ul {
-    padding-left: 16px;
+.advert-banner {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.advert-banner img {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.references {
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  background-color: #dadada;
+}
+.references span {
+  display: inline-block;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.references:hover span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.obsessions {
+  font-family: knockFourtyNine;
+  padding: 25px 25px 20px;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: #dadada;
+  text-align: center;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.obsessions a {
+  color: #666666;
+}
+
+@media screen and (min-width: 420px) {
+  .obsessions {
+    font-size: 2em;
   }
 }
+@media screen and (min-width: 768px) {
+  .obsessions {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    font-size: 2.3em;
+    letter-spacing: 0.2em;
+  }
+}
+@media screen and (min-width: 420px) {
+  .left {
+    width: 40%;
+    float: left;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .right {
+    width: 50%;
+    float: right;
+    margin-left: 20px;
+  }
+
+  .horizontal {
+    width: 100%;
+  }
+
+  .left {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .right {
+    width: 60%;
+    float: right;
+    margin-left: -35%;
+    position: relative;
+    left: 40%;
+  }
+
+  .horizontal {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .align-left {
+    padding-left: 0px;
+  }
+
+  .align-right {
+    padding-right: 0px;
+  }
+}
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */

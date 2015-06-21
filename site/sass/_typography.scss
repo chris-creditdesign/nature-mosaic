@@ -1,31 +1,86 @@
 // Typography
+article {
 
-@font-face {
-	font-family: headMain;
-	src: url("../fonts/GlosaMath-Roman.otf") format("opentype");
+	header {
+		margin-bottom: 20px;
+
+		h1 {
+			font-family: headMain;
+			font-size: 3em;
+		}
+
+		h4 {
+			color: $volume-arrow;
+			font-family: bodyBold;
+			letter-spacing: 0.05em;
+		}
+
+		p.lead {
+			font-family: proseBold;
+			font-size: 1.6em;
+		}
+
+		.attributions {
+			color: $font-colour-2;
+			border-top: 1px solid $font-colour-2;
+			border-bottom: 1px solid $font-colour-2;
+			padding: 12px 0 10px;
+			margin-left: 0px;
+
+			li {
+				padding-left: 0px;
+			}
+		}
+	}
+
+	p {
+		font-size: 1.1em;
+		line-height: 1.6em;
+	}
+	
+	.dropcap:first-letter {
+		float: left;
+		font-size: 5.4em;
+		line-height: 48px;
+		padding-top: 20px;
+		padding-right: 4px;
+		padding-left: 0px;
+		font-family: headMain;
+	}
+
+	h2 {
+		font-family: headBold;
+		font-size: 1.8em;
+		letter-spacing: 0.03em;
+	}
+
+	blockquote {
+		font-family: proseBold;
+		font-size: 1.6em;
+		color: #333;
+		border: none;
+		padding: 15px 0px 0px;
+	}
+
+	figcaption {
+		color: $volume-arrow;
+	}
+
+	.attributions {
+		color: $font-colour-2;
+		border-top: 1px solid $font-colour-2;
+		border-bottom: 1px solid $font-colour-2;
+		padding: 12px 0 10px;
+		margin-left: 0px;
+
+		li {
+			padding-left: 0px;
+		}
+	}
 }
 
-@font-face {
-	font-family: headBold;
-	src: url("../fonts/GlosaMath-Black.otf") format("opentype");
-}
-
-@font-face {
-	font-family: prose;
-	src: url("../fonts/GlosaMath-RomanItalic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: proseBold;
-	src: url("../fonts/GlosaMath-BlackItalic.otf") format("opentype");
-}
-
-@font-face {
-	font-family: body;
-	src: url("../fonts/NewsGothicMTOT-Regular.otf") format("opentype");
-}
-
-@font-face {
-	font-family: bodyBold;
-	src: url("../fonts/NewsGothicMTOT-Bold.otf") format("opentype");
+@media screen and (min-width: 768px) {
+	article header h1 {
+		font-size: 5em;
+	}
 }

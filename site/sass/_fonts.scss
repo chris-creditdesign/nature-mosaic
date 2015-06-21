@@ -1,0 +1,41 @@
+// fonts 
+
+@font-face {
+	font-family: headMain;
+	src: url("../fonts/GlosaMath-Roman.otf") format("opentype");
+}
+
+@font-face {
+	font-family: headBold;
+	src: url("../fonts/GlosaMath-Black.otf") format("opentype");
+}
+
+@font-face {
+	font-family: prose;
+	src: url("../fonts/GlosaMath-RomanItalic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: proseBold;
+	src: url("../fonts/GlosaMath-BlackItalic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: body;
+	src: url("../fonts/NewsGothicMTOT-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: bodyBold;
+	src: url("../fonts/NewsGothicMTOT-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: knockSixtyNine;
+	src: url("../fonts/Knockout-69FullLiteweight.otf") format("opentype");
+}
+
+@font-face {
+	font-family: knockFourtyNine;
+	src: url("../fonts/Knockout-49Liteweight.otf") format("opentype");
+}

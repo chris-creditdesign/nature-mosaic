@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'fonts';
 @import 'typography';
 
 body {
@@ -7,84 +8,148 @@ body {
 
 @import 'nav';
 
-article {
-	header {
-		h1 {
-			font-family: headMain;
-			font-size: 5em;
-		}
 
-		h4 {
-			color: #888;
-			font-family: bodyBold;
-			letter-spacing: 0.05em;
-		}
-
-		p.lead {
-			font-family: prose;
-			font-size: 1.6em;
-		}	
-
-		.attributions {
-			color: #888;
-		}
-
-		img {
-			padding: 0;
-		}
-	}
-
-	p {
-		font-size: 1.1em;
-		line-height: 1.6em;
-	}
-
-	h2 {
-		font-family: headBold;
-		font-size: 1.8em;
-		letter-spacing: 0.03em;
-	}
-
-	blockquote {
-		font-family: prose;
-		font-size: 1.6em;
-		color: #333;
-		border: none;
-
-	}
-
-
-}
-
-img {
+figure {
 	padding: 20px 0;
 }
 
-.block {
-	background: #ddd;
-	margin: 10px 15px;
-	padding: 12px 12px 2px;	
-	border-radius: 4px;
+.advert-row {
+	border-top: 1px solid $font-colour-2;
+	border-bottom: 1px solid $font-colour-2;
 }
 
-/* Responsize: Portrait tablets and up */
-/* Anything with columns */
-@media screen and (min-width: 992px) {
+.advert-banner {
 
-	.block {
-		padding: 12px 12px 2px;
-		margin: 0;
-		ul {
-			padding-left: 16px;
-		}
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+	img {
+		max-width: 100%;
+		padding: 0 15px;
 	}
 }
 
+.references {
+	width: 100%;
+	text-align: left;
+	border: none;
+	border-radius: 0;
+	background-color: $search-background;
+
+	span {
+		display: inline-block;
+		transition: transform 0.3s ease;
+		transform: rotate(0deg);
+	}
+	
+	&:hover span {
+		transform: rotate(180deg);
+	}
+}
+
+.obsessions {
+	font-family: knockFourtyNine;
+	padding: 25px 25px 20px;
+    column-count: 2;
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background-color: $search-background;;
+    text-align: center;
+	list-style: none;
+	margin-top: 20px;
+	// Delete this!
+	margin-bottom: 100px;
+
+    a {
+    	color: $font-colour-2;
+    }
+}
+
+@media screen and (min-width: 420px) {
+	.obsessions {
+		font-size: 2em;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.obsessions {
+		column-count: 3;
+	    font-size: 2.3em;
+	    letter-spacing: 0.2em;
+	}
+}
+
+@media screen and (min-width: 420px) {
+	.left {
+		width: 40%;
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+// Use to arrange inline blockquotes or figures
+@media screen and (min-width: 768px) {
+	.right {
+		width: 50%;
+		float: right;
+		margin-left: 20px;
+	}
+
+	.horizontal {
+		width: 100%;
+	}
+
+	.left {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.right {
+		width: 60%;
+		float: right;
+		margin-left: -35%;
+		position: relative;
+		left: 40%;
+	}
+
+	.horizontal {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.align-left {
+		padding-left: 0px;
+	}
+
+	.align-right {
+		padding-right: 0px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+// @media only screen and (min-width : 320px) {
+// 
+// }
+
+/* Extra Small Devices, Phones */ 
+// @media screen and (min-width : 480px) {
+// 
+// }
+
 /* Small devices (tablets, 768px and up) */
-// @media screen and (min-width: 768px) { ... }
+// @media screen and (min-width: 768px) {
+// 
+// }
 
 /* Medium devices (desktops, 992px and up) */
-// @media screen and (min-width: 992px) { ... }
+// @media screen and (min-width: 992px) {
+// 
+// }
 
 /* Large devices (large desktops, 1200px and up) */
-// @media screen and (min-width: 112px) { ... }
+// @media screen and (min-width: 112px) {
+// 
+// }
