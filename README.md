@@ -21,7 +21,7 @@ Immediate to dos:
 - [ ] Make credit line smaller / lighter
 - [ ] Move eyebrow + add content type
 - [ ] Icon list, smaller, news gothic 
-- [ ] Standfirst smaller when in mobile view
+- [x] Standfirst smaller when in mobile view
 - [X] Columns 2, 6, 4
 - [ ] Author module for the top and bottom of the page
 - [ ] Style for read next boxes vert, horiz + list

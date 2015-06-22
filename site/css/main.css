@@ -292,6 +292,40 @@ figure:hover .img-facebook {
   opacity: 1;
 }
 
+.read-next h2 {
+  font-family: proseBold;
+  color: #666666;
+  margin-bottom: 0px;
+}
+.read-next .teaser a {
+  font-family: headBold;
+  color: #222222;
+  line-height: 1em;
+}
+.read-next .list-inline {
+  margin-left: 0;
+}
+.read-next .read-next-stack > li {
+  border-bottom: 1px solid #999999;
+  padding: 10px 0 10px 0;
+}
+.read-next time {
+  color: #999999;
+}
+
+.read-next-inline h2 {
+  padding-bottom: 10px;
+}
+.read-next-inline ul {
+  margin-top: 5px;
+}
+.read-next-inline li {
+  padding: 0;
+}
+.read-next-inline .border {
+  border-left: 1px solid #999999;
+}
+
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;

@@ -1,0 +1,44 @@
+.read-next {
+	h2 {
+		font-family: proseBold;
+		color: $font-colour-2;
+		margin-bottom: 0px;
+	}
+
+	.teaser a {
+		font-family: headBold;
+		color: $font-colour-1;
+		line-height: 1em;
+	}
+
+	.list-inline {
+		margin-left: 0;
+	}
+
+	.read-next-stack > li {
+		border-bottom: 1px solid $volume-arrow;
+		padding: 10px 0 10px 0;
+	}
+
+	time {
+		color: $volume-arrow;
+	}
+}
+
+.read-next-inline {
+	h2 {
+		padding-bottom: 10px;
+	}
+
+	ul {
+		margin-top: 5px;
+	}
+
+	li {
+		padding: 0;
+	}
+
+	.border {
+		border-left: 1px solid $volume-arrow;
+	}
+}
