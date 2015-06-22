@@ -134,7 +134,7 @@ body {
 }
 .affix:before {
   width: 0px;
-  height: 0px;
+  height: 39px;
   top: 0px;
   left: 0px;
   background-color: #bf0222;
@@ -142,7 +142,7 @@ body {
 }
 .affix:after {
   width: 0px;
-  height: 0px;
+  height: 39px;
   top: 0px;
   right: 0px;
   background-color: #999999;
@@ -157,11 +157,9 @@ body {
 @media screen and (min-width: 768px) {
   .affix:before {
     width: 150px;
-    height: 39px;
   }
   .affix:after {
     width: 150px;
-    height: 39px;
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -178,21 +176,25 @@ body {
 
   .affix:before {
     width: 200px;
-    height: 39px;
   }
   .affix:after {
     width: 200px;
-    height: 39px;
   }
 }
 @media screen and (min-width: 1200px) {
   .affix:before {
     width: 300px;
-    height: 39px;
   }
   .affix:after {
     width: 300px;
-    height: 39px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .affix:before {
+    width: 0px;
+  }
+  .affix:after {
+    width: 0px;
   }
 }
 figure {
@@ -312,8 +314,3 @@ figure {
     padding-right: 0px;
   }
 }
-/* Custom, iPhone Retina */
-/* Extra Small Devices, Phones */
-/* Small devices (tablets, 768px and up) */
-/* Medium devices (desktops, 992px and up) */
-/* Large devices (large desktops, 1200px and up) */
