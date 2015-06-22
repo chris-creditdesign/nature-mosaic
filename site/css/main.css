@@ -82,7 +82,12 @@ article blockquote {
   padding: 15px 0px 0px;
 }
 article figcaption {
+  color: #666666;
+}
+article figcaption small {
   color: #999999;
+  display: block;
+  text-align: right;
 }
 article .attributions {
   color: #666666;
@@ -211,6 +216,9 @@ body {
 figure {
   padding: 20px 0;
   position: relative;
+}
+figure img {
+  margin-bottom: 3px;
 }
 figure .img-tools {
   position: absolute;

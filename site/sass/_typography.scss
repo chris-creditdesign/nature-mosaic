@@ -63,7 +63,12 @@ article {
 	}
 
 	figcaption {
-		color: $volume-arrow;
+		color: $font-colour-2;
+		small {
+			color: $volume-arrow;
+			display: block;
+			text-align: right;
+		}
 	}
 
 	.attributions {
