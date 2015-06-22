@@ -33,7 +33,22 @@ module.exports = function(grunt){
 	  },
 	},
 
+	concat: {
+		index: {
+			src: [
+				'site/includes/header.html',
+				'site/pages/index.html',
+				'site/includes/footer.html'
+			],
+			dest: 'site/index.html'
+		}
+	},
+
 	watch: {
+		html: {
+			files: ['site/pages/*.html'],
+			tasks: ['concat']
+		},
 		css: {
 			files: ['site/sass/**/*.scss'],
 			tasks: ['buildcss']
