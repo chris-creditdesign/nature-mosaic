@@ -9,3 +9,20 @@ Install dependencies with `npm install`
 Type `grunt` to launch [browsersync](http://www.browsersync.io/docs/grunt/) and automatically watch for changes.
 
 Visit **http://localhost:3000/site/** to view the pages.
+
+Immediate to dos:
+- Fixed aspect ratios for thumbnail images 
+- Head above / below main image
+- Alternative Headlines / Standfirst styles 
+	- Knockout
+	- centered
+	- full width
+- Make credit line smaller / lighter
+- Move eyebrow + add content type
+- Icon list, smaller, news gothic 
+- Standfirst smaller when in mobile view
+- Columns 2, 6, 4
+- Author module for the top and bottom of the page
+
+Killer feature:
+- Drop down menu to dynamically change the page on the fly see DATGUI

@@ -86,36 +86,48 @@ figure {
 		float: left;
 		margin-right: 20px;
 	}
+
+	.right {
+		width: 40%;
+		float: right;
+		margin-left: 20px;
+	}
 }
 
 // Use to arrange inline blockquotes or figures
 @media screen and (min-width: 768px) {
-	.right {
-		width: 50%;
-		float: right;
-		margin-left: 20px;
-	}
-
 	.horizontal {
 		width: 100%;
 	}
 
-	.left {
+	.left, .right {
 		width: 50%;
+	}
+
+	.push {
+		float: right;
+		margin-left: 20px;
 	}
 }
 
 @media screen and (min-width: 992px) {
-	.right {
-		width: 60%;
+	.push {
+		width: 65%;
 		float: right;
-		margin-left: -35%;
+		margin-left: -44%;
 		position: relative;
-		left: 40%;
+		left: 53%;
+	}
+
+	.pull {
+		float: left;
+		position: relative;
+		right: 38%;
+		margin-right: -32%;
 	}
 
 	.horizontal {
-		width: 80%;
+		width: 83%;
 	}
 }
 

@@ -122,15 +122,20 @@ body {
 .header-logo {
   background-color: #bf0222;
   min-height: 40px;
+  border-left: 15px solid white;
+  border-right: 15px solid #bf0222;
 }
 
 .header-buttons {
   background-color: #999999;
   min-height: 40px;
+  border-left: 15px #999999;
+  border-right: 15px solid solid white;
 }
 
 .affix .header-logo, .affix .header-buttons {
   min-height: 39px;
+  border: none;
 }
 .affix:before {
   width: 0px;
@@ -167,11 +172,15 @@ body {
   .header-logo {
     background-color: #bf0222;
     min-height: 81px;
+    border-left: 15px solid white;
+    border-right: 15px solid white;
   }
 
   .header-buttons {
     background-color: #999999;
     min-height: 68px;
+    border-left: 15px solid white;
+    border-right: 15px solid white;
   }
 
   .affix:before {
@@ -192,9 +201,11 @@ body {
 @media screen and (min-width: 1700px) {
   .affix:before {
     width: 0px;
+    height: 0px;
   }
   .affix:after {
     width: 0px;
+    height: 0px;
   }
 }
 figure {
@@ -276,33 +287,45 @@ figure {
     float: left;
     margin-right: 20px;
   }
-}
-@media screen and (min-width: 768px) {
+
   .right {
-    width: 50%;
+    width: 40%;
     float: right;
     margin-left: 20px;
   }
-
+}
+@media screen and (min-width: 768px) {
   .horizontal {
     width: 100%;
   }
 
-  .left {
+  .left, .right {
     width: 50%;
+  }
+
+  .push {
+    float: right;
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 992px) {
-  .right {
-    width: 60%;
+  .push {
+    width: 65%;
     float: right;
-    margin-left: -35%;
+    margin-left: -44%;
     position: relative;
-    left: 40%;
+    left: 53%;
+  }
+
+  .pull {
+    float: left;
+    position: relative;
+    right: 38%;
+    margin-right: -32%;
   }
 
   .horizontal {
-    width: 80%;
+    width: 83%;
   }
 }
 @media screen and (min-width: 992px) {

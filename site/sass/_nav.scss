@@ -20,16 +20,21 @@
 .header-logo {
 	background-color: $nature-red;
 	min-height: 40px;
+	border-left: 15px solid white;
+	border-right: 15px solid $nature-red;
 }
 
 .header-buttons {
 	background-color: $volume-arrow;
 	min-height: 40px;
+	border-left: 15px $volume-arrow;
+	border-right: 15px solid solid white;
 }
 
 .affix {
 	.header-logo, .header-buttons {
 		min-height: 39px;
+		border: none;
 	}
 
 	// Add pseudo elements to the header to fill the screen width
@@ -79,11 +84,15 @@
 	.header-logo {
 		background-color: $nature-red;
 		min-height: 81px;
+		border-left: 15px solid white;
+		border-right: 15px solid white;
 	}
 
 	.header-buttons {
 		background-color: $volume-arrow;
 		min-height: 68px;
+		border-left: 15px solid white;
+		border-right: 15px solid white;
 	}
 
 	// Increase the width of the pseudo elements
@@ -117,10 +126,12 @@
 	.affix {
 		&:before {
 			width: 0px;
+			height: 0px;
 		}
 
 		&:after {
 			width: 0px;
+			height: 0px;
 		}
 
 	}

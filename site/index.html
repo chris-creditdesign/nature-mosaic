@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="css/main.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
 </head>
-<body>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-gutterwidth="30px" data-grid-nbcols="12">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
 	<nav class="navbar">
 
 	</nav>
@@ -21,21 +22,21 @@
 
 	<article class="container">
 			<div class="row">
-				<div class="col-md-8 align-left align-right">
+				<div class="col-md-8">
 					<figure>
 						<img src="images/feature-a/feature-a-1.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
 					</figure>
 				</div>
 
-				<div class="col-md-4 hidden-sm hidden-xs align-right">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img src="images/adverts/advert-390x305.jpg" style="padding: 20px 0 0 0" alt="" class="img-responsive">
 				</div>
 			</div>
 
 			<header class="row">
 
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<h4>Microbiology</h4>
 					<h1>Mining the microbial dark matter</h1>
 					<p class="lead">Microbiologists are finding new ways to explore the vast universe of unknown microbes in the hunt for antibiotics.</p>
@@ -50,7 +51,7 @@
 			</header>
 
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<p class="dropcap">The first time Robert Heinzen tried to get <i>Coxiella burnetii</i> to grow by itself, he failed miserably. The bacterium, which causes an influenza-like illness called Q fever, normally divides only inside the cells it infects — forcing researchers to grow it in mammalian tissue and hampering their efforts to investigate the microbe. When Heinzen tried to find a different way to culture it during his time as a postdoc in the early 1990s, he emerged with only half a book of scribbled notes.</p>
 
 					<p>But the problem kept nagging at him until 2003, when the <i>C. burnetii</i> genome was sequenced<sup><a href="#b1" id="ref-link-1" title="Seshadri, R. et al. Proc. Natl Acad. Sci. USA 100, 5455–5460 (2003)." class="ref-link">1</a></sup> and he was starting a lab at the US National Institutes of Health's Rocky Mountain Laboratories in Hamilton, Montana. Heinzen thought that the genome could offer important clues to the bacterium's metabolism and growth. Even so, it took his postdoc Anders Omsland almost four years of systematically testing hundreds of combinations of culture conditions to come up with the perfect recipe for cultivating the microbe outside cells<sup><a href="#b2" id="ref-link-2" title="Omsland, A. et al. Proc. Natl Acad. Sci. USA 106, 4430–4434 (2009)." class="ref-link">2</a></sup>. “When he showed me the cultures, I thought, it's got to be a contaminant,” Heinzen recalls. But several more months of work confirmed their success.</p>
@@ -62,7 +63,7 @@
 					<p>“There is, for sure, high potential for more biodiversity to be discovered,” says Ute Hentschel, a marine microbiologist at the University of Würzburg in Germany. “If you look for more, you'll find more.”</p>
 				</div>
 
-				<div class="col-md-4 hidden-sm hidden-xs align-right">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img src="images/article-tools.jpg" alt="">
 				</div>
 			</div>
@@ -70,8 +71,8 @@
 			<div class="row">
 
 
-				<div class="col-md-8 align-left">
-					<figure class="right">
+				<div class="col-md-6 col-md-offset-2">
+					<figure class="push right">
 						<img src="images/feature-a/feature-a-2.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
 					</figure>
@@ -87,7 +88,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<figure>
 						<img src="images/feature-a/feature-a-3.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
@@ -95,7 +96,7 @@
 					<h2>Miniaturized cultures</h2>
 					<p>One way to speed up the process of finding a culture recipe is to use microfluidic chips — devices with thousands of tiny wells connected by channels that make it possible to run many experiments in parallel. After using this method to cultivate a new microbe<sup><a href="#b4" id="ref-link-5" title="Ma, L. et al. Proc. Natl Acad. Sci. USA 111, 9768–9773 (2014)." class="ref-link">4</a></sup>, Rustem Ismagilov at the California Institute of Technology in Pasadena and his collaborators even named the bacterium isolate microfluidicus 1.</p>
 					<p>Ismagilov was already working on microfluidics when, in 2012, a group of microbiologists issued a list of 'most wanted' taxa — a call to the research community to grow and sequence microbes that were relatively common in the human body, were distantly related to already-sequenced organisms and had eluded all attempts at cultivation<sup><a href="#b5" id="ref-link-6" title="Fodor, A. A. et al. PLoS ONE 7, e41294 (2012)." class="ref-link">5</a></sup>.</p>
-					<blockquote class="right">
+					<blockquote class="push right">
 						<p>“That was the critical finding. it wasn't a nutrient, it was an environmental factor.”</p>
 					</blockquote>
 					<p>Ismagilov and his team answered the call with a device that holds 3,200 nanolitre-sized wells and that can fit in the palm of a hand. They scraped samples from the gut lining of a healthy volunteer, and then diluted them so that no more than one cell would end up in each well. By filling so many wells, the researchers increased the chances that their target organism — a human-gut microbe in the <i>Oscillibacter</i> genus — would find its way into at least a few of them. The team used about ten chips to test various conditions, and looked for growth of the microbe by checking its DNA for a key marker gene.</p>
@@ -119,10 +120,10 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<h2>Nature’s incubator</h2>
 					<p>When Slava Epstein and Kim Lewis started to collaborate 15 years ago, they realized that they might not need to coax recalcitrant microbes into growing in the lab. If a bacterium already grows happily in its natural environment, they reasoned, then why not just cultivate it there? So the two microbiologists, from Northeastern University in Boston, Massachusetts, started working on a simple device that they could stick in the ground. They called it the iChip.</p>
-					<figure class="left">
+					<figure class="pull left">
 						<img src="images/feature-a/feature-a-4.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
 					</figure>
@@ -137,11 +138,11 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<h2>Don’t culture, sequence</h2>
 					<p>Despite these successes, culturing microbes is still a complicated, hit-and-miss affair, so many researchers are bypassing it altogether and instead learning what they can from DNA. Advances in sequencing methods mean that scientists can now analyse genomes from individual uncultured microbial cells — rather than, as before, typically sequencing a community of many different types of microbe en masse and then trying to piece the sequences back together.</p>
 
-					<figure class="right horizontal">
+					<figure class="push right horizontal">
 						<img src="images/feature-a/feature-a-5.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
 					</figure>
@@ -159,12 +160,12 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 					<h2>Gene prospecting</h2>
 					<p>Michael Fischbach, a biochemist at the University of California, San Francisco, has developed a different way to analyse microbial sequences: rather than isolating single cells, he sifts through the growing banks of bacterial genomic data.</p>
 					<p>Fischbach and his group developed a machine-learning algorithm that is trained to recognize key patterns associated with bacterial genes that synthesize interesting molecules such as antibiotics. Then they let it loose on a large set of bacterial genomes to look for new gene clusters with similar features.</p>
 					<p>Their targets included bacteria from soils and oceans, which are known to harbour an incredible diversity of microbes. But the algorithm generated a surprising number of hits from microbes that live on or in the human body, known collectively as the human microbiota. Fischbach was both excited and intimidated when he got the first results. Excited, because the bioactive compounds made by the microbiota were largely uncharted territory, and could have important roles in human health and disease. Intimidated because Fischbach mostly worked on microorganisms in soil.</p>
-					<figure>
+					<figure class="push right horizontal">
 						<img src="images/feature-a/feature-a-6.jpg" alt="" class="img-responsive">
 						<figcaption>Illustration by Thomas Porostocky</figcaption>
 					</figure>				
@@ -193,13 +194,13 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-8 align-left">
+				<div class="col-md-6 col-md-offset-2">
 
 					<ul class="list-inline attributions">
 						<li>Corie Lok is Nature’s Research Highlights editor.</li>
 					</ul>
 				</div>
-				<div class="col-md-4 align-left">
+				<div class="col-md-4">
 					<button class="btn btn-default btn-lg references">
 						<span>
 							<svg x="0px" y="0px" width="15px" height="10px">
@@ -213,16 +214,16 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 align-left hidden-xs">
+				<div class="col-md-12 hidden-xs">
 					<img src="images/read-next-horiz-large.jpg" style="padding-top: 20px;" alt="" class="img-responsive">
 				</div>
-				<div class="col-md-12 align-left hidden-lg hidden-md hidden-sm">
+				<div class="col-md-12 hidden-lg hidden-md hidden-sm">
 					<img src="images/read-next-horiz-med.jpg" style="padding-top: 20px;" alt="" class="img-responsive">
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-left align-right">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<ul class="obsessions">
 						<li><a href="#">Space</a></li>
 						<li><a href="#">Evolution</a></li>
