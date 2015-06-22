@@ -1,11 +1,11 @@
 $(function() {
-	// data-spy="affix" data-offset-top="30"
 
 	var header = $(".fixed-header");
 	var nav = $("nav");
 	var headerLogo = $(".header-logo");
 	var headerButtons = $(".header-buttons");
 	var pushLeft, pushDown;
+	var figures = $("figure");
 
 	function adjustValues () {
 		pushLeft = $("article.container").offset().left + "px";
@@ -13,7 +13,8 @@ $(function() {
 		header.css({"left": pushLeft });
 	}
 
-
+	/*	Apply the affix pluggin to the header and adjust the widths
+		of the logo and buttons contained within */
 	header.affix({
 		offset: {	top: 30,
 					bottom: 65 }
@@ -25,6 +26,16 @@ $(function() {
 		nav.css({"margin-bottom": "0"});
 		headerLogo.removeClass("col-md-9").addClass("col-md-8");
 		headerButtons.addClass("col-md-offset-1");
+	});
+
+	/*	Adjust the positions of the social icons within fifures
+		so that they sit at the bottom right of the image */
+	figures.each(function (index) {
+		var captionHeight = $(this).children("figcaption").height();
+		var nudge = (captionHeight + 60 ) + "px";
+		var icon = $(this).children(".img-tools");
+		
+		icon.css({"bottom": nudge});
 	});
 
 

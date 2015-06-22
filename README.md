@@ -21,8 +21,9 @@ Immediate to dos:
 - Move eyebrow + add content type
 - Icon list, smaller, news gothic 
 - Standfirst smaller when in mobile view
-- Columns 2, 6, 4
+X Columns 2, 6, 4
 - Author module for the top and bottom of the page
+- Style for read next boxes vert, horiz + list
 
 Killer feature:
 - Drop down menu to dynamically change the page on the fly see DATGUI

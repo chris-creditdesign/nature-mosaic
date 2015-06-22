@@ -111,12 +111,12 @@ body {
   border-radius: 0;
   margin: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 9;
 }
 
 .fixed-header {
   top: 0;
-  z-index: 999;
+  z-index: 9;
 }
 
 .header-logo {
@@ -210,6 +210,73 @@ body {
 }
 figure {
   padding: 20px 0;
+  position: relative;
+}
+figure .img-tools {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+figure .img-expand, figure .img-email, figure .img-pintrest, figure .img-plus, figure .img-twitter, figure .img-facebook {
+  position: absolute;
+  transition: -webkit-transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+  right: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  opacity: 0;
+  cursor: pointer;
+}
+figure .img-expand circle, figure .img-email circle, figure .img-pintrest circle, figure .img-plus circle, figure .img-twitter circle, figure .img-facebook circle {
+  transition: fill 0.2s ease;
+}
+figure .img-expand {
+  opacity: 1;
+}
+figure .img-expand:hover circle {
+  fill: #222;
+}
+figure .img-email:hover circle {
+  fill: #656565;
+}
+figure .img-pintrest:hover circle {
+  fill: #C91517;
+}
+figure .img-plus:hover circle {
+  fill: #DA4A37;
+}
+figure .img-twitter:hover circle {
+  fill: #39A9E0;
+}
+figure .img-facebook:hover circle {
+  fill: #37589A;
+}
+figure:hover .img-expand {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+figure:hover .img-email {
+  right: 38px;
+  opacity: 1;
+}
+figure:hover .img-pintrest {
+  right: 76px;
+  opacity: 1;
+}
+figure:hover .img-plus {
+  right: 114px;
+  opacity: 1;
+}
+figure:hover .img-twitter {
+  right: 152px;
+  opacity: 1;
+}
+figure:hover .img-facebook {
+  right: 190px;
+  opacity: 1;
 }
 
 .advert-row {

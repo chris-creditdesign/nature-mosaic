@@ -1,0 +1,95 @@
+// Figures, captions and icons
+
+figure {
+	padding: 20px 0;
+	position: relative;
+
+	.img-tools {
+		position: absolute;
+		right: 10px;
+		bottom: 0px;
+	}
+	
+	.img-expand, .img-email, .img-pintrest, .img-plus, .img-twitter, .img-facebook {
+		position: absolute;
+		transition: transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+		right: 0px;
+		top: 0px;
+		transform: rotate(0deg);
+		opacity: 0;
+		cursor: pointer;
+		
+		circle {
+			transition: fill 0.2s ease;
+		}
+	}
+	
+	.img-expand {
+		opacity: 1;
+			
+		&:hover circle {
+				fill: #222;
+		}
+	}
+	
+	.img-email {
+		&:hover circle {
+				fill: #656565;
+		}
+	}
+	
+	.img-pintrest {
+		&:hover circle {
+				fill: #C91517;
+		}
+	}
+	
+	.img-plus {
+		&:hover circle {
+				fill: #DA4A37;
+		}
+	}
+	
+	.img-twitter {
+		&:hover circle {
+				fill: #39A9E0;
+		}
+	}
+	
+	.img-facebook {
+		&:hover circle {
+				fill: #37589A;
+		}
+	}
+	
+	&:hover {
+		.img-expand {
+			transform: rotate(90deg);
+		}
+		
+		.img-email {
+			right: 38px;
+			opacity: 1;
+		}
+		
+		.img-pintrest {
+			right: 76px;
+			opacity: 1;
+		}
+		
+		.img-plus {
+			right: 114px;
+			opacity: 1;
+		}
+		
+		.img-twitter {
+			right: 152px;
+			opacity: 1;
+		}
+		
+		.img-facebook {
+			right: 190px;
+			opacity: 1;
+		}
+	}
+}

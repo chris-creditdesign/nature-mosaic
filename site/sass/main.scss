@@ -7,11 +7,7 @@ body {
 }
 
 @import 'nav';
-
-
-figure {
-	padding: 20px 0;
-}
+@import 'figure';
 
 .advert-row {
 	border-top: 1px solid $font-colour-2;
