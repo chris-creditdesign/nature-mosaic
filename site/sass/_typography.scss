@@ -15,9 +15,9 @@ article {
 			letter-spacing: 0.05em;
 		}
 
-		p.lead {
-			font-family: proseBold;
-			font-size: 1.6em;
+		p.standfirst {
+			font-family: bodyBold;
+			font-size: 1.2em;
 		}
 
 		.attributions {
@@ -87,5 +87,10 @@ article {
 @media screen and (min-width: 768px) {
 	article header h1 {
 		font-size: 5em;
+	}
+
+	article header	p.standfirst {
+		font-family: proseBold;
+		font-size: 1.6em;
 	}
 }
