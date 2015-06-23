@@ -1,0 +1,17 @@
+header .article-tools {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.article-tools {
+	li {
+		color: $volume-arrow;
+		font-family: prose;
+		font-size: 1.6em;
+		margin-bottom: 3px;
+	}
+
+	span {
+		margin-right: 3px;
+	}
+}

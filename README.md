@@ -18,7 +18,7 @@ Immediate to dos:
 	- [ ] Knockout
 	- [ ] centered
 	- [ ] full width
-- [ ] Make credit line smaller / lighter
+- [x] Make credit line smaller / lighter
 - [ ] Move eyebrow + add content type
 - [ ] Icon list, smaller, news gothic 
 - [x] Standfirst smaller when in mobile view
@@ -26,6 +26,7 @@ Immediate to dos:
 - [ ] Author module for the top and bottom of the page
 - [ ] Style for read next boxes vert, horiz + list
 - [X] Interactive social icons for figures
+	- [ ] Add state for touch screens
 - [ ] Download, save for later icons for top of page
 
 Killer feature:

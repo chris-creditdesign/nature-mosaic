@@ -218,6 +218,21 @@ body {
     height: 0px;
   }
 }
+header .article-tools {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.article-tools li {
+  color: #999999;
+  font-family: prose;
+  font-size: 1.6em;
+  margin-bottom: 3px;
+}
+.article-tools span {
+  margin-right: 3px;
+}
+
 figure {
   padding: 20px 0;
   position: relative;
