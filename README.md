@@ -18,10 +18,10 @@ Immediate to dos:
 	- [ ] Knockout
 	- [ ] centered
 	- [ ] full width
-- [x] Make credit line smaller / lighter
+- [X] Make credit line smaller / lighter
 - [ ] Move eyebrow + add content type
-- [ ] Icon list, smaller, news gothic 
-- [x] Standfirst smaller when in mobile view
+- [X] Icon list, smaller, news gothic 
+- [X] Standfirst smaller when in mobile view
 - [X] Columns 2, 6, 4
 - [ ] Author module for the top and bottom of the page
 - [ ] Style for read next boxes vert, horiz + list
