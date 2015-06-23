@@ -1,5 +1,5 @@
 .article-tools {
-	padding-top: 17px;
+	// padding-top: 17px;
 
 
 	li {
@@ -13,5 +13,44 @@
 		position: relative;
 		top: 4px;
 		margin-right: 3px;
+	}
+}
+
+.svg-icons {
+	margin-top: 20px;
+	border: 1px solid #999;
+	
+	.article-facebook-icon, 
+	.article-twitter-icon, 
+	.article-download-icon,
+	.article-print-icon,
+	.article-email-icon,
+	.article-like-icon {
+		cursor: pointer;
+		
+		path {
+			transition: fill 0.1s ease;
+		}
+		
+		&:hover path {
+			fill: #666666;
+		}
+		
+	}
+	
+	.article-like-icon {
+		&:hover path {
+			fill: orange;
+		}
+	}
+	
+	.liked  {
+		path {
+			fill: gold;
+		}
+		
+		&:hover path {
+			fill: gold;
+		}
 	}
 }

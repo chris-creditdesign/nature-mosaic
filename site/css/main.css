@@ -39,7 +39,7 @@ article header h1 {
 }
 article header h4 {
   color: #999999;
-  font-family: bodyBold;
+  font-family: body;
   letter-spacing: 0.05em;
 }
 article header p.standfirst {
@@ -95,8 +95,8 @@ article figcaption small {
 }
 article .attributions {
   color: #666666;
-  border-top: 1px solid #666666;
-  border-bottom: 1px solid #666666;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
   padding: 12px 0 10px;
   margin-left: 0px;
 }
@@ -119,8 +119,8 @@ article .attributions li {
   }
 
   article header p.standfirst {
-    font-family: proseBold;
-    font-size: 1.6em;
+    font-family: prose;
+    font-size: 1.8em;
   }
 }
 body {
@@ -231,9 +231,6 @@ body {
     height: 0px;
   }
 }
-.article-tools {
-  padding-top: 17px;
-}
 .article-tools li {
   color: #999999;
   font-family: body;
@@ -244,6 +241,44 @@ body {
   position: relative;
   top: 4px;
   margin-right: 3px;
+}
+
+.svg-icons {
+  margin-top: 20px;
+  border: 1px solid #999;
+}
+.svg-icons .article-facebook-icon,
+.svg-icons .article-twitter-icon,
+.svg-icons .article-download-icon,
+.svg-icons .article-print-icon,
+.svg-icons .article-email-icon,
+.svg-icons .article-like-icon {
+  cursor: pointer;
+}
+.svg-icons .article-facebook-icon path,
+.svg-icons .article-twitter-icon path,
+.svg-icons .article-download-icon path,
+.svg-icons .article-print-icon path,
+.svg-icons .article-email-icon path,
+.svg-icons .article-like-icon path {
+  transition: fill 0.1s ease;
+}
+.svg-icons .article-facebook-icon:hover path,
+.svg-icons .article-twitter-icon:hover path,
+.svg-icons .article-download-icon:hover path,
+.svg-icons .article-print-icon:hover path,
+.svg-icons .article-email-icon:hover path,
+.svg-icons .article-like-icon:hover path {
+  fill: #666666;
+}
+.svg-icons .article-like-icon:hover path {
+  fill: orange;
+}
+.svg-icons .liked path {
+  fill: gold;
+}
+.svg-icons .liked:hover path {
+  fill: gold;
 }
 
 figure {
@@ -321,8 +356,8 @@ figure:hover .img-facebook {
 }
 
 .read-next h2 {
-  font-family: proseBold;
-  color: #666666;
+  font-family: prose;
+  color: #999999;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -342,8 +377,8 @@ figure:hover .img-facebook {
   margin-left: 0;
 }
 .read-next .read-next-stack > li {
-  border-bottom: 1px solid #999999;
-  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 17px 0 10px 0;
 }
 .read-next time {
   color: #999999;
@@ -365,7 +400,7 @@ figure:hover .img-facebook {
     min-height: 250px;
   }
   .read-next-inline article {
-    border-left: 1px solid #999999;
+    border-left: 1px solid #e2e2e2;
   }
   .read-next-inline article:first-of-type {
     border-left: none;

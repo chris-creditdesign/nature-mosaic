@@ -38,6 +38,15 @@ $(function() {
 		icon.css({"bottom": nudge});
 	});
 
+	/*	Toggle the like button on and off */
+	$(".article-like-icon").click(function() {
+		if ($(this).attr("class") === "article-like-icon") {
+			$(this).attr("class", "article-like-icon liked");
+		} else {
+			$(this).attr("class", "article-like-icon");
+		}
+	});
+
 
 	window.addEventListener('resize', adjustValues);
 	adjustValues();

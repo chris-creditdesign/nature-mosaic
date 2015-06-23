@@ -12,7 +12,7 @@ article {
 
 		h4 {
 			color: $volume-arrow;
-			font-family: bodyBold;
+			font-family: body;
 			letter-spacing: 0.05em;
 		}
 
@@ -80,8 +80,8 @@ article {
 
 	.attributions {
 		color: $font-colour-2;
-		border-top: 1px solid $font-colour-2;
-		border-bottom: 1px solid $font-colour-2;
+		border-top: 1px solid $rules;
+		border-bottom: 1px solid $rules;
 		padding: 12px 0 10px;
 		margin-left: 0px;
 
@@ -109,7 +109,7 @@ article {
 	}
 
 	article header	p.standfirst {
-		font-family: proseBold;
-		font-size: 1.6em;
+		font-family: prose;
+		font-size: 1.8em;
 	}
 }

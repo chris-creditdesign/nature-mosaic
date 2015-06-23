@@ -1,7 +1,7 @@
 .read-next {
 	h2 {
-		font-family: proseBold;
-		color: $font-colour-2;
+		font-family: prose;
+		color: $volume-arrow;
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
@@ -30,8 +30,8 @@
 	}
 
 	.read-next-stack > li {
-		border-bottom: 1px solid $volume-arrow;
-		padding: 10px 0 10px 0;
+		border-bottom: 1px solid $rules;
+		padding: 17px 0 10px 0;
 	}
 
 	time {
@@ -62,7 +62,7 @@
 		}
 
 		article {
-			border-left: 1px solid $volume-arrow;
+			border-left: 1px solid $rules;
 		}
 
 		article:first-of-type {
