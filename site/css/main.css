@@ -297,10 +297,17 @@ figure:hover .img-facebook {
   color: #666666;
   margin-bottom: 0px;
 }
-.read-next .teaser a {
+.read-next a {
+  display: inline-block;
+}
+.read-next a .teaser {
   font-family: headBold;
   color: #222222;
-  line-height: 1em;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+.read-next a:hover .teaser {
+  text-decoration: underline;
 }
 .read-next .list-inline {
   margin-left: 0;
