@@ -31,7 +31,7 @@
   src: url("../fonts/Knockout-49Liteweight.otf") format("opentype");
 }
 article header {
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 article header h1 {
   font-family: headMain;
@@ -48,13 +48,17 @@ article header p.standfirst {
 }
 article header .attributions {
   color: #666666;
-  border-top: 1px solid #666666;
-  border-bottom: 1px solid #666666;
+  border: none;
   padding: 12px 0 10px;
   margin-left: 0px;
 }
 article header .attributions li {
   padding-left: 0px;
+}
+article header .attributions span {
+  position: relative;
+  top: 4px;
+  padding-left: 3px;
 }
 article p {
   font-size: 1.1em;
@@ -100,6 +104,15 @@ article .attributions li {
   padding-left: 0px;
 }
 
+@media screen and (min-width: 480px) {
+  article header {
+    text-align: center;
+  }
+
+  article header h1 {
+    font-size: 4em;
+  }
+}
 @media screen and (min-width: 768px) {
   article header h1 {
     font-size: 5em;
@@ -218,18 +231,18 @@ body {
     height: 0px;
   }
 }
-header .article-tools {
-  margin-top: 20px;
-  margin-bottom: 0px;
+.article-tools {
+  padding-top: 17px;
 }
-
 .article-tools li {
   color: #999999;
-  font-family: prose;
-  font-size: 1.6em;
+  font-family: body;
+  font-size: 1em;
   margin-bottom: 3px;
 }
 .article-tools span {
+  position: relative;
+  top: 4px;
   margin-right: 3px;
 }
 
@@ -310,6 +323,7 @@ figure:hover .img-facebook {
 .read-next h2 {
   font-family: proseBold;
   color: #666666;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 .read-next a {
@@ -336,7 +350,8 @@ figure:hover .img-facebook {
 }
 
 .read-next-inline h2 {
-  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .read-next-inline ul {
   margin-top: 5px;

@@ -1,17 +1,17 @@
-header .article-tools {
-	margin-top: 20px;
-	margin-bottom: 0px;
-}
-
 .article-tools {
+	padding-top: 17px;
+
+
 	li {
 		color: $volume-arrow;
-		font-family: prose;
-		font-size: 1.6em;
+		font-family: body;
+		font-size: 1em;
 		margin-bottom: 3px;
 	}
 
 	span {
+		position: relative;
+		top: 4px;
 		margin-right: 3px;
 	}
 }
