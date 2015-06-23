@@ -329,8 +329,17 @@ figure:hover .img-facebook {
 .read-next-inline li {
   padding: 0;
 }
-.read-next-inline .border {
-  border-left: 1px solid #999999;
+@media screen and (min-width: 768px) {
+  .read-next-inline article {
+    margin-bottom: 0;
+    min-height: 250px;
+  }
+  .read-next-inline article {
+    border-left: 1px solid #999999;
+  }
+  .read-next-inline article:first-of-type {
+    border-left: none;
+  }
 }
 
 .advert-row {
