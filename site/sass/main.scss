@@ -27,24 +27,6 @@ body {
 	}
 }
 
-.references {
-	width: 100%;
-	text-align: left;
-	border: none;
-	border-radius: 0;
-	background-color: $search-background;
-
-	span {
-		display: inline-block;
-		transition: transform 0.3s ease;
-		transform: rotate(0deg);
-	}
-	
-	&:hover span {
-		transform: rotate(180deg);
-	}
-}
-
 .obsessions {
 	font-family: knockFourtyNine;
 	padding: 25px 25px 20px;

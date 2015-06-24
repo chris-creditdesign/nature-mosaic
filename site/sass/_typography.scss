@@ -89,6 +89,47 @@ article {
 			padding-left: 0px;
 		}
 	}
+
+	.subject {
+		border: 1px solid $rules;
+		border-radius: 50px;
+		padding-top: 8px;
+		margin-top: 5px;
+
+		&:hover, &:hover:active, &:focus, &:visited:hover {
+			background-color: $rules;
+			border: 1px solid $rules;
+			box-shadow: none;
+		}
+
+		 &:visited {
+			background-color: #ffffff;
+			border: 1px solid $rules;
+		}
+	}
+
+	.references {
+		width: 100%;
+		text-align: left;
+		border: none;
+		border-radius: 0;
+		background-color: $search-background;
+		margin-top: 15px;
+
+		span {
+			display: inline-block;
+			transition: transform 0.3s ease;
+			transform: rotate(0deg);
+		}
+
+		&:hover {
+			background-color: $rules;
+		}
+		
+		&:active span {
+			transform: rotate(180deg);
+		}
+	}
 }
 
 @media screen and (min-width: 480px) {

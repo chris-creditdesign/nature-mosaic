@@ -103,6 +103,45 @@ article .attributions {
 article .attributions li {
   padding-left: 0px;
 }
+article .subject {
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+  padding-top: 8px;
+  margin-top: 5px;
+}
+article .subject:hover, article .subject:hover:active, article .subject:focus, article .subject:visited:hover {
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  box-shadow: none;
+}
+article .subject:visited {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+}
+article .references {
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  background-color: #dadada;
+  margin-top: 15px;
+}
+article .references span {
+  display: inline-block;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+article .references:hover {
+  background-color: #e2e2e2;
+}
+article .references:active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
 
 @media screen and (min-width: 480px) {
   article header {
@@ -390,6 +429,11 @@ figure:hover .img-facebook {
   color: #999999;
 }
 
+.read-next-inline {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  /* Delete this */
+}
 .read-next-inline h2 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -426,27 +470,6 @@ figure:hover .img-facebook {
 .advert-banner img {
   max-width: 100%;
   padding: 0 15px;
-}
-
-.references {
-  width: 100%;
-  text-align: left;
-  border: none;
-  border-radius: 0;
-  background-color: #dadada;
-}
-.references span {
-  display: inline-block;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-.references:hover span {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .obsessions {
