@@ -270,6 +270,51 @@ body {
     height: 0px;
   }
 }
+article, .sign-off {
+  position: relative;
+}
+
+.main-social {
+  width: 64px;
+  height: 32px;
+  top: 32px;
+  right: 15px;
+  position: absolute;
+  z-index: 10;
+}
+
+.sign-off .main-social {
+  top: 6px;
+}
+
+.main-facebook-icon, .main-twitter-icon {
+  position: absolute;
+  transition: right 0.2s ease, opacity 0.2s ease;
+  right: 0px;
+  top: 0px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.main-facebook-icon {
+  right: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  header .main-facebook-icon, header .main-twitter-icon {
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+  }
+
+  header:hover .main-twitter-icon {
+    opacity: 1;
+  }
+  header:hover .main-facebook-icon {
+    right: 32px;
+    opacity: 1;
+  }
+}
 .article-tools li {
   color: #999999;
   font-family: body;
