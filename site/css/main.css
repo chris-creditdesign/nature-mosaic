@@ -165,6 +165,9 @@ article .references:active span {
     font-size: 1.8em;
     line-height: 1.4em;
   }
+  article header p.standfirst strong {
+    font-family: proseBold;
+  }
 }
 body {
   font-family: body;
@@ -512,6 +515,25 @@ figure:hover .img-facebook {
   .read-next-inline article:first-of-type {
     border-left: none;
   }
+}
+
+.comment-author {
+  margin: 10px 0 30px;
+  color: #666666;
+  min-height: 140px;
+  padding: 20px 0 10px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+.comment-author img {
+  min-width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.comment-author p strong {
+  font-family: bodyBold;
 }
 
 .advert-row {
