@@ -1,5 +1,9 @@
 // Typography
 article {
+	header.img-first {
+		margin-top: 0px;
+	}
+
 	header {
 		// margin-bottom: 20px;
 		margin-top: 30px;
@@ -132,7 +136,7 @@ article {
 }
 
 @media screen and (min-width: 480px) {
-	article header {
+	article header.center-text {
 		text-align: center;
 	}
 
@@ -151,5 +155,6 @@ article {
 	article header	p.standfirst {
 		font-family: prose;
 		font-size: 1.8em;
+		line-height: 1.4em;
 	}
 }

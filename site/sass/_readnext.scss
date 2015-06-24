@@ -27,6 +27,10 @@
 
 	.list-inline {
 		margin-left: 0;
+		li {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
 	}
 
 	.read-next-stack > li {

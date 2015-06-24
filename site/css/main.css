@@ -30,6 +30,9 @@
   font-family: knockFourtyNine;
   src: url("../fonts/Knockout-49Liteweight.otf") format("opentype");
 }
+article header.img-first {
+  margin-top: 0px;
+}
 article header {
   margin-top: 30px;
 }
@@ -144,7 +147,7 @@ article .references:active span {
 }
 
 @media screen and (min-width: 480px) {
-  article header {
+  article header.center-text {
     text-align: center;
   }
 
@@ -160,6 +163,7 @@ article .references:active span {
   article header p.standfirst {
     font-family: prose;
     font-size: 1.8em;
+    line-height: 1.4em;
   }
 }
 body {
@@ -270,7 +274,7 @@ body {
     height: 0px;
   }
 }
-article, .sign-off {
+article, .add-social {
   position: relative;
 }
 
@@ -283,7 +287,7 @@ article, .sign-off {
   z-index: 10;
 }
 
-.sign-off .main-social {
+.add-social .main-social {
   top: 6px;
 }
 
@@ -325,6 +329,10 @@ article, .sign-off {
   position: relative;
   top: 4px;
   margin-right: 3px;
+}
+
+.img-first .svg-icons {
+  margin-top: 10px;
 }
 
 .svg-icons {
@@ -465,6 +473,10 @@ figure:hover .img-facebook {
 }
 .read-next .list-inline {
   margin-left: 0;
+}
+.read-next .list-inline li {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .read-next .read-next-stack > li {
   border-bottom: 1px solid #e2e2e2;

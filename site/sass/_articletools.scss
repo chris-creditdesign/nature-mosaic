@@ -1,4 +1,4 @@
-article, .sign-off {
+article, .add-social {
 	position: relative;
 }
 
@@ -11,7 +11,7 @@ article, .sign-off {
 	z-index: 10;
 }
 
-.sign-off .main-social {
+.add-social .main-social {
 	top: 6px;
 }
 		
@@ -64,6 +64,10 @@ article, .sign-off {
 		top: 4px;
 		margin-right: 3px;
 	}
+}
+
+.img-first .svg-icons {
+	margin-top: 10px;
 }
 
 .svg-icons {

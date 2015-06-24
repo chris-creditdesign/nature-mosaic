@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+
+<!-- svg symbol definitions -->
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+		<symbol id="facebook-icon" viewBox="0 0 30 30">
+			<path fill="#FFFFFF" d="M19.5,15h-2.9c0,4.7,0,10.5,0,10.5h-4.4c0,0,0-5.7,0-10.5h-2.1v-3.7h2.1V8.9c0-1.7,0.8-4.4,4.4-4.4l3.2,0
+				v3.6c0,0-2,0-2.3,0c-0.4,0-0.9,0.2-0.9,1v2.2h3.3L19.5,15z"/>
+		</symbol>
+		<symbol id="twitter-icon" viewBox="0 0 30 30">
+			<path fill="#FFFFFF" d="M22.9,11.8c0,0.2,0,0.3,0,0.5c0,5.2-3.9,11.1-11.1,11.1c-2.2,0-4.3-0.6-6-1.8c0.3,0,0.6,0.1,0.9,0.1 c1.8,0,3.5-0.6,4.8-1.7c-1.7,0-3.1-1.2-3.6-2.7c0.2,0,0.5,0.1,0.7,0.1c0.4,0,0.7,0,1-0.1c-1.8-0.4-3.1-1.9-3.1-3.8c0,0,0,0,0,0 c0.5,0.3,1.1,0.5,1.8,0.5c-1-0.7-1.7-1.9-1.7-3.2c0-0.7,0.2-1.4,0.5-2c1.9,2.4,4.8,3.9,8,4.1c-0.1-0.3-0.1-0.6-0.1-0.9 c0-2.2,1.7-3.9,3.9-3.9c1.1,0,2.1,0.5,2.8,1.2c0.9-0.2,1.7-0.5,2.5-0.9c-0.3,0.9-0.9,1.7-1.7,2.2c0.8-0.1,1.5-0.3,2.2-0.6 C24.3,10.5,23.6,11.2,22.9,11.8z"/>
+		</symbol>
+		<symbol id="plus-icon" viewBox="0 0 30 30">
+			<path fill="#FFFFFF" d="M17.1,16.6c-0.5-0.4-1.6-1.2-1.6-1.7c0-0.6,0.2-0.9,1.1-1.6c0.9-0.7,1.6-1.9,1.6-3.1c0-1.3-0.5-2.2-1.5-3.2 H18l1.2-1c0,0-4,0-5.5,0C11,6,8.7,8,8.7,10.3c0,2.3,1.5,4.1,4.1,4.1c0.2,0,0.4,0,0.5,0c-0.2,0.3-0.3,0.7-0.3,1.1 c0,0.6,0.4,1,0.8,1.4c-0.3,0-0.6,0-1,0c-3.2,0-5.4,2.2-5.4,4.3c0,2.1,2.7,3.4,5.8,3.4c3.6,0,5.8-2.1,5.8-4.1 C19.2,18.8,18.8,17.9,17.1,16.6z M10.8,10.3c-0.3-1.9,0.7-3.4,2.2-3.4c1.5,0,2.7,1.6,3,3.6c0.3,1.9-0.6,3.2-2.1,3.1 C12.4,13.5,11,12.2,10.8,10.3z M13.3,23.6c-2.2,0-3.8-1.4-3.8-3.1c0-1.6,1.9-3,4.1-3c0.5,0,1,0.1,1.4,0.2c1.2,0.8,2.2,1.3,2.4,2.3 c0,0.2,0.1,0.4,0.1,0.6C17.5,22.3,16.4,23.6,13.3,23.6z"/>
+			<polygon fill="#FFFFFF" points="26,10 23.5,10 23.5,12.5 22.2,12.5 22.2,10 19.7,10 19.7,8.8 22.2,8.8 22.2,6.3 23.5,6.3 23.5,8.8 26,8.8 	"/>
+		</symbol>
+		<symbol id="pintrest-icon" viewBox="0 0 30 30">
+			<path fill="#FFFFFF" d="M17.2,19.7c-1.2,0-2.4-0.7-2.8-1.4c0,0-0.7,2.6-0.8,3.1c-0.5,1.8-1.9,3.6-2.1,3.7c-0.1,0.1-0.3,0.1-0.3-0.1 c0-0.2-0.4-2.5,0-4.3c0.2-0.9,1.5-6.2,1.5-6.2s-0.4-0.7-0.4-1.8c0-1.7,1-2.9,2.2-2.9c1,0,1.5,0.8,1.5,1.7c0,1-0.7,2.6-1,4 c-0.3,1.2,0.6,2.2,1.8,2.2c2.2,0,3.6-2.8,3.6-6.1c0-2.5-1.7-4.4-4.7-4.4c-3.5,0-5.6,2.6-5.6,5.5c0,1,0.3,1.7,0.8,2.2 c0.2,0.2,0.2,0.4,0.2,0.6c-0.1,0.2-0.2,0.7-0.2,0.9c-0.1,0.3-0.3,0.4-0.6,0.3C8.7,16.2,8,14.4,8,12.5c0-3.2,2.7-7.1,8.1-7.1 c4.3,0,7.2,3.1,7.2,6.5C23.4,16.3,20.9,19.7,17.2,19.7z"/>
+		</symbol>
+		<symbol id="email-icon" viewBox="0 0 30 30">
+			<path fill="#FFFFFF" d="M25,10.8C25,9.3,23.7,8,22.2,8H7.8C6.3,8,5,9.3,5,10.8v9.4C5,21.7,6.3,23,7.8,23h14.3 c1.6,0,2.8-1.3,2.8-2.8V10.8z M7.8,10h14.3c0.4,0,0.7,0.3,0.8,0.6l-7.9,5.3l-8-5.4C7.2,10.2,7.5,10,7.8,10z M22.2,21H7.8 C7.4,21,7,20.6,7,20.2v-7.9l8.1,5.4l7.9-5.3v7.8C23,20.6,22.6,21,22.2,21z"/>
+		</symbol>
+		<symbol id="expand-icon" viewBox="0 0 30 30">
+			<polygon fill="#FFFFFF" points="13.5,7.5 13.5,13.6 7.5,13.6 7.5,16.4 13.5,16.4 13.5,22.5 16.5,22.5 16.5,16.4 22.5,16.4 22.5,13.6 16.5,13.6 16.5,7.5 "/>
+		</symbol>
+		<symbol id="read-time-icon" viewBox="0 0 20 20">
+			<polygon fill="#999999" points="8.5,14.9 10.6,14.9 10.6,10 16.1,10 16.1,7.9 8.5,7.9 	"/>
+			<path fill="#999999" d="M10,20C4.5,20,0,15.5,0,10C0,4.5,4.5,0,10,0c5.5,0,10,4.5,10,10C20,15.5,15.5,20,10,20 M10,2.3 c-4.3,0-7.7,3.5-7.7,7.7c0,4.3,3.5,7.7,7.7,7.7c4.3,0,7.7-3.5,7.7-7.7C17.7,5.7,14.3,2.3,10,2.3"/>
+		</symbol>
+		<symbol id="podcast-icon" viewBox="0 0 20 20">
+			<path fill="#999999" d="M18.5,11V8.5C18.5,3.8,14.7,0,10,0S1.5,3.8,1.5,8.5V11C0.6,11.7,0,12.9,0,14.2C0,16.3,1.4,18,3.2,18 c0,0,0.1,0,0.1,0v0h2.5v-7.5l-1,0l-1.2,0H3.5c-0.1,0-0.1,0-0.2,0v-2c0-3.7,3-6.8,6.8-6.8s6.8,3,6.8,6.8v2c-0.1,0-0.2,0-0.2,0h0 l-1.2,0l-1.1,0V18h2.5v0c0,0,0.1,0,0.1,0c1.7,0,3.2-1.7,3.2-3.8C20,12.9,19.4,11.7,18.5,11z"/>
+		</symbol>
+		<symbol id="infographic-icon" viewBox="0 0 20 18">
+			<rect x="0" fill="#999999" width="4" height="20"/>
+			<rect x="6.6" y="4.9" fill="#999999" width="4" height="15.1"/>
+			<rect x="13.3" y="10" fill="#999999" width="4" height="10"/>
+		</symbol>
+		<symbol id="video-icon" viewBox="0 0 20 20">
+			<path fill="#999999" d="M0.8,9.2v8.1c0,1.2,1,2.2,2.2,2.2h14.9c1.2,0,2.2-1,2.2-2.2V9.2H0.8z M8.3,17.2v-4.8l5.3,2.4L8.3,17.2z"/>
+			<rect x="-0.1" y="3.3" transform="matrix(-0.9379 0.3469 -0.3469 -0.9379 19.937 5.5412)" fill="#999999" width="19.2" height="2.6"/>
+		</symbol>
+		<symbol id="slideshow-icon" viewBox="0 -2 20 20">
+			<path fill="#999999" d="M18.8,1.6V1.1c0-0.6-0.9-1.1-1.9-1.1c-1.1,0-1.9,0.5-1.9,1.1v0.1H2.7C1.2,1.2,0,2.4,0,3.9v8.5 c0,1.5,1.2,2.7,2.7,2.7h14.6c1.5,0,2.7-1.2,2.7-2.7V3.9C20,2.9,19.5,2.1,18.8,1.6z M9.3,13.4c-2.2,0-4.2-1.4-4.9-3.4 C3.7,9.8,3.3,9.2,3.3,8.5c0-0.6,0.3-1.2,0.8-1.5c0.5-2.4,2.6-4.2,5.2-4.2c2.9,0,5.3,2.4,5.3,5.3C14.6,11.1,12.2,13.4,9.3,13.4z M18.4,12.1c0,0.3-0.3,0.6-0.7,0.6c-0.4,0-0.7-0.3-0.7-0.6V6.2c0-0.3,0.3-0.6,0.7-0.6c0.4,0,0.7,0.3,0.7,0.6V12.1z M17.8,5.1 c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8C18.6,4.7,18.3,5.1,17.8,5.1z"/>
+			<circle fill="#999999" cx="9.4" cy="8.2" r="4"/>
+		</symbol>
+		<symbol id="comment-icon" viewBox="0 -2 20 20">
+			<path fill="#999999" d="M18.3,0H1.7C0.8,0,0,0.8,0,1.8v10.6c0,1,0.8,1.9,1.7,1.9h10.9l5.8,3.7l-1.4-3.7h1.2c0.9,0,1.7-0.8,1.7-1.9 V1.8C20,0.8,19.2,0,18.3,0z M10,9.6H2.5C2.3,9.6,2.2,9.3,2.2,9c0-0.3,0.1-0.6,0.2-0.6H10c0.1,0,0.2,0.3,0.2,0.6 C10.2,9.3,10.1,9.6,10,9.6z M12.7,6.6H2.5C2.3,6.6,2.2,6.3,2.2,6c0-0.3,0.1-0.6,0.3-0.6h10.3C12.9,5.4,13,5.6,13,6 C13,6.3,12.9,6.6,12.7,6.6z M17.3,3.7H2.5c-0.2,0-0.4-0.3-0.4-0.6c0-0.3,0.2-0.6,0.4-0.6h14.8c0.2,0,0.4,0.3,0.4,0.6 C17.7,3.4,17.5,3.7,17.3,3.7z"/>
+		</symbol>
+	</svg>
+
+	<nav class="navbar">
+
+	</nav>
+		
+	<header class="container fixed-header" data-spy="affix" data-offset-top="30">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+<article class="container">
+
+	<div class="row">		
+		<div class="col-md-12">
+			<figure>
+				<img src="images/comment-a/comment-a-1.jpg" alt="" class="img-responsive">
+				<span class="img-tools">
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-facebook">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="#facebook-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-twitter">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="#twitter-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-plus">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="#plus-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-pintrest">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="#pintrest-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-email">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="#email-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-expand">
+						<circle fill="#656565" cx="15" cy="15" r="15"/>
+						<use xlink:href="#expand-icon" />
+					</svg>
+				</span>
+				<figcaption><small>Illustration by David Parkins</small></figcaption>
+			</figure>
+		</div>
+
+	</div>
+
+	<header class="row add-social img-first">
+		<div class="main-social">
+			<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+				<rect fill="#ffffff" width="32" height="32"/>
+				<path fill="#37589A" d="M20.8,16h-3.2c0,5,0,11.3,0,11.3H13c0,0,0-6.2,0-11.3h-2.2v-4H13V9.5c0-1.8,0.9-4.7,4.7-4.7l3.5,0v3.9
+					c0,0-2.1,0-2.5,0c-0.4,0-1,0.2-1,1.1V12h3.6L20.8,16z"/>
+			</svg>
+
+
+			<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+				<rect fill="#ffffff" width="32" height="32"/>
+				<path fill="#38A8E0" d="M25.7,11c0,0.2,0,0.4,0,0.6c0,6.6-5,14.2-14.2,14.2c-2.8,0-5.5-0.8-7.7-2.2c0.4,0,0.8,0.1,1.2,0.1 c2.3,0,4.5-0.8,6.2-2.1c-2.2,0-4-1.5-4.7-3.5c0.3,0.1,0.6,0.1,0.9,0.1c0.5,0,0.9-0.1,1.3-0.2c-2.3-0.5-4-2.5-4-4.9c0,0,0,0,0-0.1 c0.7,0.4,1.4,0.6,2.3,0.6c-1.3-0.9-2.2-2.4-2.2-4.2c0-0.9,0.2-1.8,0.7-2.5c2.5,3,6.2,5,10.3,5.2c-0.1-0.4-0.1-0.7-0.1-1.1 c0-2.8,2.2-5,5-5c1.4,0,2.7,0.6,3.6,1.6c1.1-0.2,2.2-0.6,3.2-1.2c-0.4,1.2-1.2,2.1-2.2,2.8c1-0.1,2-0.4,2.9-0.8 C27.5,9.4,26.7,10.3,25.7,11z"/>
+			</svg>
+		</div>
+
+		<div class="col-md-2 hidden-sm hidden-xs">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 165 110" enable-background="new 0 0 165 110" xml:space="preserve" class="svg-icons">
+				<g class="article-facebook-icon">
+						<title>Post to facebook</title>
+						<rect y="55" fill="#fff" width="55" height="55"/>
+						<path fill="#999999" d="M33,82.5h-3.6c0,5.8,0,12.8,0,12.8h-5.3c0,0,0-7,0-12.8h-2.5V78h2.5V75c0-2.1,1-5.4,5.4-5.4l4,0v4.4
+						c0,0-2.4,0-2.9,0c-0.5,0-1.1,0.2-1.1,1.2V78h4.1L33,82.5z"/>
+				</g>
+				<g class="article-twitter-icon">
+					<title>Tweet</title>
+					<rect x="55" y="55" fill="#fff" width="55" height="55"/>
+					<path fill="#999999" d="M94.4,76.4c0,0.3,0,0.5,0,0.8c0,8.1-6.2,17.5-17.5,17.5c-3.5,0-6.7-1-9.4-2.8C68,92,68.5,92,69,92
+						c2.9,0,5.5-1,7.6-2.6c-2.7-0.1-5-1.8-5.7-4.3c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.1-0.1,1.6-0.2c-2.8-0.6-4.9-3.1-4.9-6
+						c0,0,0-0.1,0-0.1c0.8,0.5,1.8,0.7,2.8,0.8c-1.7-1.1-2.7-3-2.7-5.1c0-1.1,0.3-2.2,0.8-3.1c3,3.7,7.6,6.2,12.7,6.4
+						c-0.1-0.5-0.2-0.9-0.2-1.4c0-3.4,2.8-6.2,6.2-6.2c1.8,0,3.4,0.7,4.5,1.9c1.4-0.3,2.7-0.8,3.9-1.5c-0.5,1.4-1.4,2.6-2.7,3.4
+						c1.2-0.1,2.4-0.5,3.5-1C96.7,74.4,95.6,75.5,94.4,76.4z"/>
+				</g>
+				<g class="article-download-icon">
+					<title>Download pdf</title>
+					<rect fill="#fff" width="55" height="55"/>
+					<path fill="#999999" d="M17.6,25.1l7.7,7.5l1.9,1.9c0.4,0.4,0.7,0.4,1.1,0l1.9-1.9l7.7-7.7l1.7-1.7c0.2-0.2,0.4-0.6,0.4-0.8
+						s-0.2-0.6-0.4-0.6h-6.6c-0.2,0-0.4-0.2-0.4-0.4v-8.1c-0.4-0.6-0.8-0.9-1.3-0.9h-7.5c-0.6,0-0.9,0.4-0.9,0.9v8.1
+						c0,0.2-0.2,0.4-0.6,0.4h-6.6c-0.2,0-0.4,0.4-0.4,0.6s0.2,0.8,0.4,0.9S16.8,24.3,17.6,25.1z M41,35.6c-0.8-0.8-1.9-0.8-2.6,0
+						l-3.2,3.2H19.8l-3.2-3.2c-0.8-0.8-1.9-0.8-2.6,0s-0.8,1.9,0,2.6l3.8,3.8c0.4,0.4,0.8,0.6,1.3,0.6h16.9c0.6,0,0.9-0.2,1.3-0.6
+						l3.8-3.8C41.8,37.4,41.8,36.3,41,35.6z"/>
+				</g>
+				<g class="article-print-icon">
+					<title>Print</title>
+					<rect x="55" fill="#fff" width="55" height="55"/>
+					<path fill="#999999" d="M95.6,21.9c0-0.9-0.9-1.9-1.9-1.9h-1.9v-7.5H73.1V20h-1.9c-0.9,0-1.9,0.9-1.9,1.9h-1.9v16.9h5.6v3.8h18.8
+						v-3.8h5.6V21.9H95.6z M73.1,36.9h-2.8c-0.6,0-0.9-0.4-0.9-0.9v-1.9c0-0.6,0.4-0.9,0.9-0.9h2.8V36.9z M75,14.4h15v9.4H75V14.4z
+						 M90,40.6H75v-7.5h15V40.6z M90,27.5c0-0.9,0.9-1.9,1.9-1.9s1.9,0.9,1.9,1.9s-0.9,1.9-1.9,1.9S90,28.4,90,27.5z M95.6,35.9
+						c0,0.6-0.4,0.9-0.9,0.9h-2.8v-3.8h2.8c0.6,0,0.9,0.4,0.9,0.9V35.9z M77.8,38.8h9.4c0.6,0,0.9-0.4,0.9-0.9s-0.4-0.9-0.9-0.9h-9.4
+						c-0.6,0-0.9,0.4-0.9,0.9S77.2,38.8,77.8,38.8z"/>
+				</g>
+				<g class="article-email-icon">
+					<title>Email article</title>
+					<rect x="110" y="55" fill="#fff" width="55" height="55"/>
+					<path fill="#999999" d="M152.5,75.5c0-2.3-1.9-4.2-4.2-4.2h-21.5c-2.3,0-4.2,1.9-4.2,4.2v14c0,2.3,1.9,4.2,4.2,4.2h21.5
+						c2.3,0,4.2-1.9,4.2-4.2V75.5z M126.7,74.2h21.5c0.6,0,1,0.4,1.2,0.9l-11.8,7.9l-12-8.1C125.8,74.6,126.2,74.2,126.7,74.2z
+						 M148.3,90.8h-21.5c-0.7,0-1.2-0.6-1.2-1.2V77.6l12.1,8.2l11.9-8v11.7C149.5,90.2,148.9,90.8,148.3,90.8z"/>
+				</g>
+				<g class="article-like-icon">
+					<title>Bookmark article</title>
+					<rect x="110" fill="#fff" width="55" height="55"/>
+					<path fill="#999999" d="M147,42.9 l-9.5-5.9l-9.5,5.9V16.8c0-2.4,2-4.3,4.3-4.3h10.2c2.4,0,4.3,2,4.3,4.3V42.5z"/>
+					<path class="article-like-inner" fill="#FFFFFF" d="M137.5,34 l6.9,4.3v-21c0-1-0.8-1.8-1.8-1.8h-10.2c-1,0-1.8,0.8-1.8,1.8v21L137.5,33.6z"/>
+				</g>
+			</svg>
+		</div>
+
+		<div class="col-md-8 col-lg-8 ">
+			<h4>Comment | Biotechnology</h4>
+			<h1>CRISPR: Science can’t solve it</h1>
+			<p class="standfirst">Democratically weighing up the benefits and risks of gene editing and artificial intelligence is a political endeavour, not an academic one, says Daniel Sarewitz.</p>
+			<ul class="list-inline attributions">
+				<li>Daniel Sarewitz</li>
+				<li>
+					<time datetime="2013-10-23" pubdate="">| 23 June 2015 | 2:30pm</time>
+				</li>
+				<li class="hidden-md hidden-lg">
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="#read-time-icon" />
+						</svg>
+					</span>
+					5 minute read
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="row">
+		<aside class="col-md-2 hidden-sm hidden-xs">
+			<ul class="article-tools list-unstyled">
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="#read-time-icon" />
+						</svg>
+					</span>
+				5 minute read
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="#infographic-icon" />
+						</svg>
+					</span>
+					Infographic
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="#comment-icon" />
+						</svg>
+					</span>
+					3 Comments
+				</li>
+			</ul>
+		</aside>
+
+		<div class="col-md-6">
+			<p class="dropcap">This year, several leading researchers have sounded warnings about the risks of using the CRISPR gene-editing technique to modify human<sup><a href="#b1" id="ref-link-1" title="Liang, P. et al. Protein Cell 6, 363–372 (2015)." class="ref-link">1</a></sup> and other species' genomes in ways that could have “unpredictable effects on future generations”<sup><a href="#b2" id="ref-link-2" title="Lanphier, E. et al. Nature 519, 410–411 (2015)." class="ref-link">2</a></sup> and “profound implications for our relationship to nature” (see <a href="http://go.nature.com/jq5sik">go.nature.com/jq5sik</a>).</p>
+			<p>Concerns are coming from the silicon sector as well. Last year, the physicist Stephen Hawking proclaimed that rapidly advancing artificial intelligence (AI) could destroy the human race. And in 2013, former Royal Society president Martin Rees co-founded the Centre for the Study of Existential Risk at the University of Cambridge, UK, in part to study threats from advanced AI.</p>
+			<p>Leaders of the scientific community are ready to share the responsibility for these powerful technologies with the public. George Church, a geneticist at Harvard University in Cambridge, Massachusetts, and others wrote last year of CRISPR that “the decision of when and where to apply this technology, and for what purposes, will be in our collective hands”.</p>
+			<p>But scientists also want to control the terms of engagement. The US National Academies, for example, will “guide decision making” by convening researchers and other experts later this year “to explore the scientific, ethical and policy issues associated with human gene-editing research”. Scientists also emphasize the need for more research on risks and benefits to “better inform future public conversations”<sup><a href="#b3" id="ref-link-3" title="Baltimore, D. et al. Science 348, 36–38 (2015)." class="ref-link">3</a></sup>. For instance, in the past few months, hundreds of scientists and technologists have signed an online open letter arguing that research is necessary to learn how to accentuate the positive aspects of AI and avoid its potential perils (see <a href="http://go.nature.com/jcyjib">go.nature.com/jcyjib</a>).</p>
+		</div>
+
+		<aside class="col-md-4 hidden-sm hidden-xs read-next">
+			<h2>Related stories</h2>
+
+			<ul class="list-inline read-next-stack">
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-13.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">US science academies take on human-genome editing</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">18 May 2015</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-14.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">The art of science advice to government</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">12 March 2014</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-15.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Keep it complex</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">22 December 2010</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+			</ul>
+
+		</aside>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<h2>Who values what</h2>
+			<p>The idea that the risks, benefits and ethical challenges of these emerging technologies are something to be decided by experts is wrong-headed, futile and self-defeating. It misunderstands the role of science in public discussions about technological risk. It seriously underestimates the democratic sources of science's vitality and the capacities of democratic deliberation. And it will further delegitimize and politicize science in modern societies.</p>
+			<p>The idea that the risks, benefits and ethical challenges of these emerging technologies are something to be decided by experts is wrong-headed, futile and self-defeating. It misunderstands the role of science in public discussions about technological risk. It seriously underestimates the democratic sources of science's vitality and the capacities of democratic deliberation. And it will further delegitimize and politicize science in modern societies.</p>
+			<p>There is no way to capture the full complexity of these issues from a scientific perspective. When new technologies are introduced into complex socio-technical systems, everyone is ill-informed about the risks. Differing bodies of evidence provide ammunition for competing views. Legitimate experts are always available to support conflicting preferences.</p>
+			<p>For example, an agricultural economist (concerned about crop yield) and an ecologist (concerned about ecosystems), will bring different sets of evidence, and probably entirely different values, to bear on studying the impacts of GM organisms. Even among agricultural economists, some researchers prefer field trials that allow for the careful control of variables such as weather and soil type; others study actual farms to capture real-world variability. These two perspectives often yield contradictory results<sup><a href="#b4" id="ref-link-4" title="Hicks, D. J. Stud. Hist. Phil. Biol. Biomed. Sci. 50, 1–12 (2015)." class="ref-link">4</a></sup>.</p>
+			<p>To many European consumers, moreover, research on crop yields is irrelevant. They are concerned<sup><a href="#b5" id="ref-link-5" title="Marris, C. et al. Public Perceptions of Agricultural Biotechnologies in Europe (Lancaster Univ., 2001)." class="ref-link">5</a></sup> with the motives behind corporate decisions about crop varieties, aesthetic qualities of landscapes and food varieties, and principles of choice and transparency that would demand the labelling of GM foods even if there is no known health risk.</p>
+			<p>In other words, risk is more a political and cultural phenomenon than it is a technical one. Turning its framing over to scientists and other privileged experts, such as ethicists and social scientists, is to turn politics and culture over to them as well.</p>
+			<p>Scientists are not elected. They cannot represent the cultural values, politics and interests of citizens — not least because their values may differ significantly from those of people in other walks of life. A 2007 study<sup><a href="#b6" id="ref-link-6" title="Scheufele, D. et al. Nature Nanotechnol. 2, 732–734 (2007)." class="ref-link">6</a></sup> on the social implications of nanotechnology, for instance, showed that nanoscientists had little concern about such technologies eliminating jobs, whereas the public was greatly concerned (see '<a href="#graphic">A matter of perspective</a>'). Each group was being rational. Nanoscientists have good reason to be optimistic about the opportunities created by technological frontiers; citizens can be justifiably worried that such frontiers will wreak havoc on labour markets.<a name="graphic"></a></p>
+
+
+			<!-- Generated by ai2html v0.54 - 2015-06-24 - 19:37 -->
+			<!-- ai file: nature_graphic_CRISPR_25.06.15 -->
+			<figure id='g-nature_graphic_CRISPR_25_06_15-box'
+				class='ai2html'
+				style="background-color: #EEF0F1; padding: 20px 0 0; margin: 20px 0;">
+
+				<style type='text/css' media='screen,print'>
+					#g-nature_graphic_CRISPR_25_06_15-Artboard_1{
+						position:relative;
+						overflow:hidden;
+					}
+					.g-aiAbs{
+						position:absolute;
+					}
+					.g-aiImg{
+						display:block;
+						width:100% !important;
+						max-width: 100%;
+						height: 680px;
+					}
+					.g-stand {
+						color: #222222;
+						margin: 0;
+					}
+					.g-head {
+							font-family: knockFourtyNine;
+							font-size:33px;
+							line-height:30px;
+							padding-bottom:3px;
+							letter-spacing:0.02em;
+							color:#000000;
+							margin: 0;
+					}
+					#g-nature_graphic_CRISPR_25_06_15-Artboard_1 .g-label {
+						font-family: knockFourtyNine;
+						font-size:24px;
+						line-height:21px;
+						text-transform:uppercase;
+						letter-spacing:0.025em;
+						color:#000000;
+					}
+				</style>
+
+				<figcaption  style='padding-top:2%; padding-left:6.8%; width:90%;'>
+					<h4 class='g-head'>A MATTER OF PERSPECTIVE</h4>
+					<p class='g-stand'>Surveys conducted in 2007 suggested that nanoscientists had different ideas from the general public about the main risks of nanotechnology.</p>
+				</figcaption>
+
+				<!-- Artboard: Artboard_1 -->
+				<div id='g-nature_graphic_CRISPR_25_06_15-Artboard_1'
+					class='g-artboard'
+					style="background-color: #EEF0F1;">
+
+					<div id='g-nature_graphic_CRISPR_25_06_15-Artboard_1-graphic'>
+						<img id='g-ai0-0'
+							class='g-aiImg'
+							src='images/comment-a/comment-a-graphic-2.png'
+							/>
+						<div id='g-ai0-1' class='g-text g-aiAbs' 
+							style='top:2.6471%; left:16%;'>
+							<p class='g-key'>Scientists</p>
+						</div>
+						<div id='g-ai0-2' class='g-text g-aiAbs' 
+							style='top:5.8824%; left:16%;'>
+							<p class='g-key'>Public</p>
+						</div>
+						<div id='g-ai0-3' class='g-text g-aiAbs' 
+							style='top:13.3235%; left:6.8%; width:90%;'>
+							<p class='g-label'>New health problems</p>
+						</div>
+						<div id='g-ai0-4' class='g-text g-aiAbs' 
+							style='top:25.2353%; left:6.8%; width:90%;'>
+							<p class='g-label'>Loss of privacy</p>
+						</div>
+						<div id='g-ai0-5' class='g-text g-aiAbs' 
+							style='bottom:55%; left:6.8%; width:90%;'>
+							<p class='g-label'>Use of technology by terrorists</p>
+						</div>
+						<div id='g-ai0-6' class='g-text g-aiAbs' 
+							style='top:52.2941%; left:6.8%; width:90%;'>
+							<p class='g-label'>More pollution</p>
+						</div>
+						<div id='g-ai0-7' class='g-text g-aiAbs' 
+							style='top:64.2059%; left:6.8%; width:90%;'>
+							<p class='g-label'>An arms race</p>
+						</div>
+						<div id='g-ai0-8' class='g-text g-aiAbs' 
+							style='top:76.1176%; left:6.8%; width:90%;'>
+							<p class='g-label'>Loss of jobs</p>
+						</div>
+						<div id='g-ai0-9' class='g-text g-aiAbs' 
+							style='top:88.0294%; left:6.8%; width:90%;'>
+							<p class='g-label'>Self-replicating robots</p>
+						</div>
+					</div>
+				</div>
+			</figure>			
+			<!-- End ai2html - 2015-06-24 - 19:37 -->
+
+			<p>Opening up questions of risk to democratic debate is on the whole good for science and innovation. The physicist Alvin Weinberg, a strong advocate for nuclear power, recognized this in the 1970s. Weinberg noted that the public debate of “questions like the probability of a reactor accident runs the risk of introducing exaggeration and distortion”. Yet he also recognized that public pressure in the United States led to much greater attention to reactor safety than in the Soviet Union, where the public did not have a right “to participate in scientific and technological debate”<sup><a href="#b7" id="ref-link-7" title="Weinberg, A. Minerva 10, 209–222 (1972)." class="ref-link">7</a></sup>.</p>
+			<p>Different cultural and political approaches to choosing and managing risks invite different approaches to problem solving. Having rejected nuclear power, Germany is becoming a demonstration project for renewable-energy technologies, even as its neighbour France has shown how nuclear can provide an alternative low-carbon energy system. Opposition to GM was described as “a form of madness” by former European Commission science adviser Anne Glover, but it is part of a broader consumer movement that stokes demand for large-scale organic farming, integrated pest management, reduced use of antibiotics and reduced consumption of beef. Such preferences open up alternative innovation pathways that can add diversity and resilience to the global food system.</p>
+			<p>These ongoing debates show that the scientific community's efforts to wrest control over the specification of technological risk have not worked. Instead they have undermined the legitimacy of science.</p>
+			<p>As new areas of contentious technology emerge, the way out of this situation is to let democratic deliberation lead the way in determining which values and world views ought to be protected and which sacrificed.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<h2>Worldwide views</h2>
+			<p>If an informed public discussion is needed, then let's have one. The capacity of people to learn about and deliberate wisely on the technical aspects of complex dilemmas has been documented by social scientists for decades<sup><a href="#b8" id="ref-link-8" title="Peterson, J. C. (ed.) Citizen Participation in Science Policy (Univ. Massachusetts Press, 1984)." class="ref-link">8</a></sup>.</p>
+			<p>One model for how such discussions can be organized on an international scale has been developed by the World Wide Views (WWV) alliance, coordinated by the Danish Board of Technology. Since 2009, WWV has convened deliberations among diverse groups of about 100 citizens at numerous sites around the world — on global warming, biodiversity, and, earlier this month, climate and energy. Thousands of people have participated from all corners of society. (In Washington DC, a WWV group discussing biodiversity included a homeless person, a roofer and a physicist.)</p>
+			<p>Each WWV deliberation is held across the world during a single day. Participants are provided with the same written and video background material (vetted by expert panels) on the issue being discussed. The day is divided into four or five thematic sessions; participants, in moderated groups of five to eight people, discuss a set of questions for each theme, then vote on relevant policy choices. It is too early to assess its actual impact on policy, but WWV demonstrates the viability of large-scale, representative deliberation on complex matters of global import.</p>
+			<p>Institutional models are also emerging that involve the public directly in choices about research that could influence the very nature of human existence — what might be termed the sciences of the existential. In the United States, for example, NASA last year commissioned the Expert and Citizen Assessment of Science and Technology (ECAST) network, to convene public deliberations on options for asteroid detection, mitigation and recovery. The results are informing agency decisions.</p>
+			<p>If the sciences of the existential are at hand, then let's make decisions about them collectively. WWV-type deliberations could address questions about what is acceptable and what isn't, about appropriate governance frameworks for research, and about the relative priority of different lines of study given ongoing and inevitable uncertainties and disagreements about risks and benefits.</p>
+			<p>This sort of discussion should continually feed into and set the boundary conditions for expert panels. A truly deliberative process that is geographically distributed and demographically inclusive can reveal the variations in how risks are selected and prioritized in different places and cultures. Values, governance regimes and research agendas can co-evolve in response to such knowledge. Democracy and science will both be better off.</p>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6 col-md-offset-2 add-social">
+			<div class="main-social">
+				<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+					<rect fill="#ffffff" width="32" height="32"/>
+					<path fill="#37589A" d="M20.8,16h-3.2c0,5,0,11.3,0,11.3H13c0,0,0-6.2,0-11.3h-2.2v-4H13V9.5c0-1.8,0.9-4.7,4.7-4.7l3.5,0v3.9
+						c0,0-2.1,0-2.5,0c-0.4,0-1,0.2-1,1.1V12h3.6L20.8,16z"/>
+				</svg>
+
+
+				<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+					<rect fill="#ffffff" width="32" height="32"/>
+					<path fill="#38A8E0" d="M25.7,11c0,0.2,0,0.4,0,0.6c0,6.6-5,14.2-14.2,14.2c-2.8,0-5.5-0.8-7.7-2.2c0.4,0,0.8,0.1,1.2,0.1 c2.3,0,4.5-0.8,6.2-2.1c-2.2,0-4-1.5-4.7-3.5c0.3,0.1,0.6,0.1,0.9,0.1c0.5,0,0.9-0.1,1.3-0.2c-2.3-0.5-4-2.5-4-4.9c0,0,0,0,0-0.1 c0.7,0.4,1.4,0.6,2.3,0.6c-1.3-0.9-2.2-2.4-2.2-4.2c0-0.9,0.2-1.8,0.7-2.5c2.5,3,6.2,5,10.3,5.2c-0.1-0.4-0.1-0.7-0.1-1.1 c0-2.8,2.2-5,5-5c1.4,0,2.7,0.6,3.6,1.6c1.1-0.2,2.2-0.6,3.2-1.2c-0.4,1.2-1.2,2.1-2.2,2.8c1-0.1,2-0.4,2.9-0.8 C27.5,9.4,26.7,10.3,25.7,11z"/>
+				</svg>
+			</div>
+
+			<ul class="list-inline attributions">
+				<li>Daniel Sarewitz</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<button class="btn btn-default subject">Biotechnology</button>
+			<button class="btn btn-default subject">Genetics</button>
+			<button class="btn btn-default subject">Communication</button>
+			<button class="btn btn-default subject">Ethics</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-2 col-md-6">
+			<button class="btn btn-default btn-lg references">
+				<span>
+					<svg x="0px" y="0px" width="15px" height="10px">
+						<path d="M0,0 L15,0 7.5,10 Z" fill="#666"></path>
+					</svg>
+				</span>
+				References
+			</button>
+		</div>
+	</div>
+
+	<aside class="row read-next read-next-inline">
+		<div class="col-md-12">
+			<h2>What to read next</h2>
+		</div>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="">
+			<img src="images/read-next-7.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Urban microbes come out of the shadows</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">22 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-8.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Private asteroid hunt lacks cash to spy threats in orbit</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">19 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-9.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Europe’s superlab: Sir Paul’s cathedral</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">24 July 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-10.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">astewater disposal causes sharp rise in central US earthquakes</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="#">
+				<img src="images/read-next-11.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Astronomers claim first glimpse of primordial stars</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2015</time>
+					</li>
+				</ul>
+			</a>	
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="">
+				<img src="images/read-next-12.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Why the Pope's letter on climate change matters</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2012</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+	</aside>
+
+
+</article>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

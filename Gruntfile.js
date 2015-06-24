@@ -41,6 +41,14 @@ module.exports = function(grunt){
 				'site/includes/footer.html'
 			],
 			dest: 'site/index.html'
+		},
+		commentA: {
+			src: [
+				'site/includes/header.html',
+				'site/pages/comment-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/comment-a.html'
 		}
 	},
 
