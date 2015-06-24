@@ -25,8 +25,6 @@ $(function() {
 		headerButtons.addClass("col-md-offset-1");
 	});
 
-	header.affix('checkPosition');
-
 	/*	Adjust the positions of the social icons within fifures
 		so that they sit at the bottom right of the image */
 	figures.each(function (index) {
