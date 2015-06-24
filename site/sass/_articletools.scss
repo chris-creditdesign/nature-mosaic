@@ -29,7 +29,7 @@
 		cursor: pointer;
 		
 		path {
-			transition: fill 0.1s ease;
+			transition: fill 0.2s ease;
 		}
 		
 		&:hover path {
@@ -42,14 +42,22 @@
 		&:hover path {
 			fill: orange;
 		}
+		
+		&:hover path.article-like-inner {
+			fill: #ffffff;
+		}
 	}
 	
 	.liked  {
 		path {
+			fill: orange;
+		}
+		
+		path.article-like-inner {
 			fill: gold;
 		}
 		
-		&:hover path {
+		&:hover path.article-like-inner {
 			fill: gold;
 		}
 	}

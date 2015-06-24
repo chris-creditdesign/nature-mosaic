@@ -261,7 +261,7 @@ body {
 .svg-icons .article-print-icon path,
 .svg-icons .article-email-icon path,
 .svg-icons .article-like-icon path {
-  transition: fill 0.1s ease;
+  transition: fill 0.2s ease;
 }
 .svg-icons .article-facebook-icon:hover path,
 .svg-icons .article-twitter-icon:hover path,
@@ -274,10 +274,16 @@ body {
 .svg-icons .article-like-icon:hover path {
   fill: orange;
 }
+.svg-icons .article-like-icon:hover path.article-like-inner {
+  fill: #ffffff;
+}
 .svg-icons .liked path {
+  fill: orange;
+}
+.svg-icons .liked path.article-like-inner {
   fill: gold;
 }
-.svg-icons .liked:hover path {
+.svg-icons .liked:hover path.article-like-inner {
   fill: gold;
 }
 
