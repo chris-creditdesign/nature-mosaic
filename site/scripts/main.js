@@ -15,10 +15,7 @@ $(function() {
 
 	/*	Apply the affix pluggin to the header and adjust the widths
 		of the logo and buttons contained within */
-	header.affix({
-		offset: {	top: 30,
-					bottom: 65 }
-	}).on("affix.bs.affix", function () {
+	header.on("affix.bs.affix", function () {
 		nav.css({"margin-bottom": pushDown});
 		headerLogo.removeClass("col-md-8").addClass("col-md-9");
 		headerButtons.removeClass("col-md-offset-1");
@@ -27,6 +24,8 @@ $(function() {
 		headerLogo.removeClass("col-md-9").addClass("col-md-8");
 		headerButtons.addClass("col-md-offset-1");
 	});
+
+	header.affix('checkPosition');
 
 	/*	Adjust the positions of the social icons within fifures
 		so that they sit at the bottom right of the image */
