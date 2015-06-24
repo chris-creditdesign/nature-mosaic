@@ -601,8 +601,9 @@ figure:hover .img-facebook {
   .pull {
     float: left;
     position: relative;
-    right: 38%;
-    margin-right: -32%;
+    right: 35%;
+    margin-right: -29%;
+    width: 47%;
   }
 
   .horizontal {
