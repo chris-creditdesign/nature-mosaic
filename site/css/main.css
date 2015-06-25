@@ -507,10 +507,10 @@ figure:hover .img-facebook {
 .read-next a:hover .teaser {
   text-decoration: underline;
 }
-.read-next .list-inline {
+.read-next .list-inline, .read-next .list-unstyled {
   margin-left: 0;
 }
-.read-next .list-inline li {
+.read-next .list-inline li, .read-next .list-unstyled li {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -548,6 +548,38 @@ figure:hover .img-facebook {
   .read-next-inline article:first-of-type {
     border-left: none;
   }
+}
+
+.read-next-stack.news > li {
+  padding: 0 0 15px 0;
+  border: none;
+}
+
+.mini-stack-text {
+  position: absolute;
+  top: 85px;
+  background-color: #222222;
+  padding: 10px;
+  height: 165px;
+  transition: top 0.2s ease;
+}
+
+@media screen and (min-width: 1200px) {
+  .mini-stack-text {
+    top: 110px;
+  }
+}
+.read-next a .mini-stack-text .teaser {
+  color: #fff;
+  font-family: bodyBold;
+}
+
+.mini-stack-article {
+  overflow: hidden;
+  height: 165px;
+}
+.mini-stack-article:hover .mini-stack-text {
+  top: 0px;
 }
 
 .comment-author {

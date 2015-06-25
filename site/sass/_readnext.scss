@@ -25,7 +25,7 @@
 	}
 
 
-	.list-inline {
+	.list-inline, .list-unstyled {
 		margin-left: 0;
 		li {
 			padding-left: 0px;
@@ -79,4 +79,67 @@
 	}
 
 }
+
+.read-next-stack.news > li {
+		padding: 0 0 15px 0;
+		border: none;
+}
+
+.mini-stack-text {
+    position: absolute;
+    top: 85px;
+    background-color: $font-colour-1;
+    padding: 10px;
+    height: 165px;
+
+	transition: top 0.2s ease;
+
+}
+
+@media screen and (min-width: 1200px) {
+	.mini-stack-text {
+        top: 110px;
+    }
+}
+
+.read-next a .mini-stack-text .teaser {
+	color: #fff;
+	font-family: bodyBold;
+}
+
+.mini-stack-article {
+	overflow: hidden;
+	height: 165px;
+
+	&:hover .mini-stack-text {
+		top: 0px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
