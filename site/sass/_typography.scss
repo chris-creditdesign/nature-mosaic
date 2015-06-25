@@ -13,6 +13,10 @@ article {
 			font-size: 3em;
 		}
 
+		h1.small-headline {
+			font-size: 2.5em;
+		}
+
 		h4 {
 			color: $volume-arrow;
 			font-family: body;
@@ -64,6 +68,13 @@ article {
 		letter-spacing: 0.03em;
 	}
 
+	h2.news {
+		font-family: knockFourtyNine;
+		text-transform: uppercase;
+		font-size: 1.8em;
+		letter-spacing: 0.03em;
+	}
+
 	blockquote {
 		font-family: proseBold;
 		font-size: 1.6em;
@@ -73,8 +84,9 @@ article {
 	}
 
 	figcaption {
-		color: $font-colour-2;
+		color: $font-colour-1;
 		small {
+			color: $font-colour-2;
 			color: $volume-arrow;
 			display: block;
 			text-align: right;
@@ -92,46 +104,13 @@ article {
 			padding-left: 0px;
 		}
 	}
+}
 
-	.subject {
-		border: 1px solid $rules;
-		border-radius: 50px;
-		padding-top: 8px;
-		margin-top: 5px;
+.breaking-news {
+	color: $nature-red;
 
-		&:hover, &:hover:active, &:focus, &:visited:hover {
-			background-color: $rules;
-			border: 1px solid $rules;
-			box-shadow: none;
-		}
-
-		 &:visited {
-			background-color: #ffffff;
-			border: 1px solid $rules;
-		}
-	}
-
-	.references {
-		width: 100%;
-		text-align: left;
-		border: none;
-		border-radius: 0;
-		background-color: $search-background;
-		margin-top: 15px;
-
-		span {
-			display: inline-block;
-			transition: transform 0.3s ease;
-			transform: rotate(0deg);
-		}
-
-		&:hover {
-			background-color: $rules;
-		}
-		
-		&:active span {
-			transform: rotate(180deg);
-		}
+	&:hover, &:hover:active, &:focus, &:visited, &:visited:hover {
+		color: $nature-red;
 	}
 }
 
@@ -144,12 +123,20 @@ article {
 		font-size: 4em;
 	}
 
+	article header h1.small-headline {
+		font-size: 3em;
+	}
+
 }
 
 @media screen and (min-width: 768px) {
 
 	article header h1 {
 		font-size: 5em;
+	}
+
+	article header h1.small-headline {
+		font-size: 3em;
 	}
 
 	article header	p.standfirst {

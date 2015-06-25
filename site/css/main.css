@@ -40,6 +40,9 @@ article header h1 {
   font-family: headMain;
   font-size: 3em;
 }
+article header h1.small-headline {
+  font-size: 2.5em;
+}
 article header h4 {
   color: #999999;
   font-family: body;
@@ -81,6 +84,12 @@ article h2 {
   font-size: 1.8em;
   letter-spacing: 0.03em;
 }
+article h2.news {
+  font-family: knockFourtyNine;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  letter-spacing: 0.03em;
+}
 article blockquote {
   font-family: proseBold;
   font-size: 1.6em;
@@ -89,9 +98,10 @@ article blockquote {
   padding: 15px 0px 0px;
 }
 article figcaption {
-  color: #666666;
+  color: #222222;
 }
 article figcaption small {
+  color: #666666;
   color: #999999;
   display: block;
   text-align: right;
@@ -106,44 +116,12 @@ article .attributions {
 article .attributions li {
   padding-left: 0px;
 }
-article .subject {
-  border: 1px solid #e2e2e2;
-  border-radius: 50px;
-  padding-top: 8px;
-  margin-top: 5px;
+
+.breaking-news {
+  color: #bf0222;
 }
-article .subject:hover, article .subject:hover:active, article .subject:focus, article .subject:visited:hover {
-  background-color: #e2e2e2;
-  border: 1px solid #e2e2e2;
-  box-shadow: none;
-}
-article .subject:visited {
-  background-color: #ffffff;
-  border: 1px solid #e2e2e2;
-}
-article .references {
-  width: 100%;
-  text-align: left;
-  border: none;
-  border-radius: 0;
-  background-color: #dadada;
-  margin-top: 15px;
-}
-article .references span {
-  display: inline-block;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-article .references:hover {
-  background-color: #e2e2e2;
-}
-article .references:active span {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+.breaking-news:hover, .breaking-news:hover:active, .breaking-news:focus, .breaking-news:visited, .breaking-news:visited:hover {
+  color: #bf0222;
 }
 
 @media screen and (min-width: 480px) {
@@ -154,10 +132,18 @@ article .references:active span {
   article header h1 {
     font-size: 4em;
   }
+
+  article header h1.small-headline {
+    font-size: 3em;
+  }
 }
 @media screen and (min-width: 768px) {
   article header h1 {
     font-size: 5em;
+  }
+
+  article header h1.small-headline {
+    font-size: 3em;
   }
 
   article header p.standfirst {
@@ -386,6 +372,47 @@ article, .add-social {
 }
 .svg-icons .liked:hover path.article-like-inner {
   fill: gold;
+}
+
+.subject {
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+  padding-top: 8px;
+  margin-top: 5px;
+}
+.subject:hover, .subject:hover:active, .subject:focus, .subject:visited:hover {
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  box-shadow: none;
+}
+.subject:visited {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+}
+
+.references {
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  background-color: #dadada;
+  margin-top: 15px;
+}
+.references span {
+  display: inline-block;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.references:hover {
+  background-color: #e2e2e2;
+}
+.references:active span {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 figure {
