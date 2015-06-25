@@ -1,6 +1,9 @@
 $(function() {
 
+	// data-spy="affix" data-offset-top="30"
+
 	var header = $(".fixed-header");
+	var offset = header.offset().top;
 	var nav = $("nav");
 	var headerLogo = $(".header-logo");
 	var headerButtons = $(".header-buttons");
@@ -11,7 +14,12 @@ $(function() {
 		pushLeft = $("article.container").offset().left + "px";
 		pushDown = parseInt(headerLogo.css("height"), 10) + parseInt(header.css("margin-bottom"), 10);
 		header.css({"left": pushLeft });
+		offset = header.offset().top;
 	}
+
+	header.affix({
+		offset: offset
+	});
 
 	/*	Apply the affix pluggin to the header and adjust the widths
 		of the logo and buttons contained within */

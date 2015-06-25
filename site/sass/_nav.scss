@@ -11,6 +11,22 @@
 
 }
 
+.header-banner-advert {
+	background-color: $font-colour-1;
+	display: none;
+
+	img {
+		margin: 0 auto;
+		padding: 10px 15px;
+	}
+}
+
+@media screen and (min-width: 420px) {
+	.header-banner-advert {
+		display: block;
+	}
+}
+
 .fixed-header {
 	top: 0;
 	z-index: 999;
