@@ -9,6 +9,7 @@ article, .add-social {
 	right: 15px;
 	position: absolute;
 	z-index: 10;
+	display: none;
 }
 
 .add-social .main-social {
@@ -26,6 +27,14 @@ article, .add-social {
 
 .main-facebook-icon {
 	right: 32px;
+}
+
+// Show the extra social buttons once the screen is big enough
+// that they don't collide with the headline 
+@media screen and (min-width : 480px) {
+	.main-social {
+		display: inline-block;
+	}
 }
 
 @media screen and (min-width: 992px) {
