@@ -30,6 +30,18 @@ Immediate to dos:
 	- [ ] Add state for touch screens
 - [x] Download, save for later icons for top of page
 - [ ] Article tools for mobile screens
+- [ ] eCommerce/nature shop
+- [ ] Subscriptions
+- [ ] Nature Shop button
+- [ ] Responsive infographic - Trex?
+
+Comment requests:
+
+- [ ] Multiple authors - no headshot, but other visual elements that shout ‘opinion/debate’
+- [ ] How/where the community discussion will sit [comments/correspondence]
+- [ ] Metrics
+- [ ] Multimedia
+- [ ] Books/obituaries
 
 Killer feature:
 - Drop down menu to dynamically change the page on the fly see DATGUI
