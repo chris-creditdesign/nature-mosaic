@@ -1,0 +1,52 @@
+// modal / Image lightbox
+
+// Resets the standard bootstrap fade modal
+.modal-backdrop.in {
+	opacity: 1;
+	background-color: #ffffff;
+}
+
+.modal-backdrop {
+	background-color: #ffffff;
+}
+
+.in, .fade {
+	transition: opacity 0.1s ease;
+}
+
+.modal.fade .modal-dialog, .modal.in .modal-dialog {
+	transform: none;
+}
+
+.modal figure {
+	padding: 0 0 10px 0;
+}
+
+.close {
+	font-size: 2em;
+	text-shadow: none;
+	color: $volume-arrow;
+	opacity: 1;
+	cursor: pointer;
+	outline: none;
+}
+
+@media screen and (min-width: 768px) {
+	.close {
+		font-size: 3em;
+		top: -20px;
+	}
+
+	.modal-dialog {
+		width: 90%;
+		max-width: 1400px;
+		// max-height: 933px;
+		margin: 8% auto;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.modal-dialog {
+		margin: 4% auto;
+	}
+}

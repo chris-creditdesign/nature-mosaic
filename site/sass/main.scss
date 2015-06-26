@@ -1,17 +1,13 @@
 @import 'colors';
 @import 'fonts';
 @import 'typography';
-
-body {
-	font-family: body;
-}
-
 @import 'nav';
 @import 'articletools';
 @import 'buttons';
 @import 'figure';
 @import 'readnext';
 @import 'commentauthor';
+@import 'modal';
 
 .advert-row {
 	border-top: 1px solid $font-colour-2;

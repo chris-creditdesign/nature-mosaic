@@ -30,6 +30,10 @@
   font-family: knockFourtyNine;
   src: url("../fonts/Knockout-49Liteweight.otf") format("opentype");
 }
+body {
+  font-family: body;
+}
+
 article header.img-first {
   margin-top: 0px;
 }
@@ -155,10 +159,6 @@ article .attributions li {
     font-family: proseBold;
   }
 }
-body {
-  font-family: body;
-}
-
 .navbar {
   background-color: #5a5a62;
   border: none;
@@ -441,6 +441,13 @@ figure .img-tools {
   right: 10px;
   bottom: 0px;
 }
+figure .img-expand-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  outline: none;
+}
 figure .img-expand, figure .img-email, figure .img-pintrest, figure .img-plus, figure .img-twitter, figure .img-facebook {
   position: absolute;
   transition: -webkit-transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
@@ -623,6 +630,55 @@ figure:hover .img-facebook {
   font-family: bodyBold;
 }
 
+.modal-backdrop.in {
+  opacity: 1;
+  background-color: #ffffff;
+}
+
+.modal-backdrop {
+  background-color: #ffffff;
+}
+
+.in, .fade {
+  transition: opacity 0.1s ease;
+}
+
+.modal.fade .modal-dialog, .modal.in .modal-dialog {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+.modal figure {
+  padding: 0 0 10px 0;
+}
+
+.close {
+  font-size: 2em;
+  text-shadow: none;
+  color: #999999;
+  opacity: 1;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .close {
+    font-size: 3em;
+    top: -20px;
+  }
+
+  .modal-dialog {
+    width: 90%;
+    max-width: 1400px;
+    margin: 8% auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal-dialog {
+    margin: 4% auto;
+  }
+}
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;

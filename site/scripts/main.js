@@ -37,7 +37,7 @@ $(function() {
 		so that they sit at the bottom right of the image */
 	figures.each(function (index) {
 		var captionHeight = $(this).children("figcaption").height();
-		var nudge = (captionHeight + 60 ) + "px";
+		var nudge = (captionHeight + 30 ) + "px";
 		var icon = $(this).children(".img-tools");
 		
 		icon.css({"bottom": nudge});
