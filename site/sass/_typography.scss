@@ -75,17 +75,27 @@ article {
 		font-family: headMain;
 	}
 
+	.alt-dropcap:first-letter {
+		font-family: knockFourtyNine;
+		font-size: 5.66em;
+		padding-top: 7px;
+
+	}
+
+	// Alternative headline style
+	.alt-font, .alt-font em {
+		font-family: knockFourtyNine;
+		text-transform: uppercase;
+	}
+
 	h2 {
 		font-family: headBold;
 		font-size: 1.8em;
 		letter-spacing: 0.03em;
 	}
 
-	h2.news {
-		font-family: knockFourtyNine;
-		text-transform: uppercase;
-		font-size: 1.8em;
-		letter-spacing: 0.03em;
+	h2.alt-font {
+		margin-bottom: 5px;
 	}
 
 	blockquote {
@@ -136,6 +146,10 @@ article {
 		font-size: 4em;
 	}
 
+	article header h1.alt-font {
+		font-size: 5em;
+	}
+
 	article header h1.small-headline {
 		font-size: 3em;
 	}
@@ -150,6 +164,10 @@ article {
 
 	article header h1.small-headline {
 		font-size: 3em;
+	}
+
+	article header h1.alt-font {
+		font-size: 6em;
 	}
 
 	article header	p.standfirst {
