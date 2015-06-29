@@ -42,6 +42,14 @@ module.exports = function(grunt){
 			],
 			dest: 'site/index.html'
 		},
+		featureB: {
+			src: [
+				'site/includes/header.html',
+				'site/pages/feature-b.html',
+				'site/includes/footer.html'
+			],
+			dest: 'site/feature-b.html'
+		},
 		newsA: {
 			src: [
 				'site/includes/header.html',

@@ -25,9 +25,10 @@ Immediate to dos:
 - [x] Columns 2, 6, 4
 - [x] Author module for the top and bottom of the page
 - [x] Style for read next boxes vert, horiz + list
-- [ ] Mini read next for news stories 
+- [x] Mini read next for news stories 
 - [x] Interactive social icons for figures
 	- [ ] Add state for touch screens
+	- [ ] Share buttons in modal view
 - [x] Download, save for later icons for top of page
 - [ ] Article tools for mobile screens
 - [ ] eCommerce/nature shop
@@ -45,3 +46,25 @@ Comment requests:
 
 Killer feature:
 - Drop down menu to dynamically change the page on the fly see DATGUI
+
+# Sizes for ai2html graphics at .col-md-8 size
+
+min (420px) => 390px
+min (480px) => 450px
+min (768px) => 720px
+min (992px) => 616.6px;
+min (1200px) => 750px
+
+
+
+
+
+
+
+
+
+
+
+
+
+

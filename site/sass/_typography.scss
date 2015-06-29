@@ -1,8 +1,12 @@
 // Typography
 body {
 	font-family: body;
+
 }
 
+i, em {
+	font-family: bodyItalic;
+}
 
 article {
 	header.img-first {
@@ -16,6 +20,10 @@ article {
 		h1 {
 			font-family: headMain;
 			font-size: 3em;
+
+			em {
+				font-family: prose;
+			}
 		}
 
 		h1.small-headline {
