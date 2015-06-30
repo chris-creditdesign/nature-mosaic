@@ -14,10 +14,9 @@ Immediate to dos:
 
 - [x] Fixed aspect ratios for thumbnail images 
 - [x] Head above / below main image
-- [ ] Alternative Headlines / Standfirst styles 
-	- [ ] Knockout
-	- [ ] centered
-	- [ ] full width
+- [x] Alternative Headlines / Standfirst styles 
+	- [x] Knockout
+	- [x] centered
 - [x] Make credit line smaller / lighter
 - [ ] Move eyebrow + add content type
 - [x] Icon list, smaller, news gothic 
@@ -35,6 +34,7 @@ Immediate to dos:
 - [ ] Subscriptions
 - [ ] Nature Shop button
 - [ ] Responsive infographic - Trex?
+- [ ] Large intro image, minimal header - NYT style
 
 Comment requests:
 
