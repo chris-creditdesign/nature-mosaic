@@ -53,9 +53,13 @@ $(function() {
 	});
 
 	$("body").keypress(function (event) {
+
+		console.log(event.keyCode);
 		if (event.keyCode === 113) {
-			$(this).toggleClass("minion");
-		} 
+			$(this).removeClass("source-sans").toggleClass("minion");
+		} else if (event.keyCode === 119) {
+			$(this).removeClass("minion").toggleClass("source-sans");
+		}
 	});
 
 

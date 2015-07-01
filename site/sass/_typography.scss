@@ -17,11 +17,23 @@ body.minion {
 
 	p {
 		font-size: 1.2em;
-		line-height: 1.6em;
 	}
 
 	i, em {
 		font-family: minionItalic;
+	}
+}
+
+body.source-sans {
+	font-family: 'Source Sans Pro';
+
+	p {
+		font-size: 1.2em;
+	}
+
+	i, em {
+		font-family: 'Source Sans Pro';
+		font-style: italic;
 	}
 }
 
