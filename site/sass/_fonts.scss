@@ -36,6 +36,21 @@
 }
 
 @font-face {
+	font-family: minion;
+	src: url("../fonts/MinionPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: minionItalic;
+	src: url("../fonts/MinionPro-It.otf") format("opentype");
+}
+
+@font-face {
+	font-family: minionBold;
+	src: url("../fonts/MinionPro-Bold.otf") format("opentype");
+}
+
+@font-face {
 	font-family: knockSixtyNine;
 	src: url("../fonts/Knockout-69FullLiteweight.otf") format("opentype");
 }

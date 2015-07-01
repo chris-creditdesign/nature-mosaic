@@ -27,6 +27,18 @@
   src: url("../fonts/NewsGothicMTOT-Italic.otf") format("opentype");
 }
 @font-face {
+  font-family: minion;
+  src: url("../fonts/MinionPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: minionItalic;
+  src: url("../fonts/MinionPro-It.otf") format("opentype");
+}
+@font-face {
+  font-family: minionBold;
+  src: url("../fonts/MinionPro-Bold.otf") format("opentype");
+}
+@font-face {
   font-family: knockSixtyNine;
   src: url("../fonts/Knockout-69FullLiteweight.otf") format("opentype");
 }
@@ -40,6 +52,22 @@ body {
 
 i, em {
   font-family: bodyItalic;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+body.minion {
+  font-family: minion;
+}
+body.minion p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+body.minion i, body.minion em {
+  font-family: minionItalic;
 }
 
 article header.img-first {
@@ -80,10 +108,6 @@ article header .attributions span {
   position: relative;
   top: 4px;
   padding-left: 3px;
-}
-article p {
-  font-size: 1.1em;
-  line-height: 1.6em;
 }
 article .dropcap:first-letter {
   float: left;

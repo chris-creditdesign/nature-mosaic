@@ -1,11 +1,28 @@
 // Typography
 body {
 	font-family: body;
-
 }
 
 i, em {
 	font-family: bodyItalic;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.6em;
+}
+
+body.minion {
+	font-family: minion;
+
+	p {
+		font-size: 1.2em;
+		line-height: 1.6em;
+	}
+
+	i, em {
+		font-family: minionItalic;
+	}
 }
 
 article {
@@ -58,11 +75,6 @@ article {
 				padding-left: 3px;
 			}
 		}
-	}
-
-	p {
-		font-size: 1.1em;
-		line-height: 1.6em;
 	}
 	
 	.dropcap:first-letter {

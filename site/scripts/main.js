@@ -52,6 +52,12 @@ $(function() {
 		}
 	});
 
+	$("body").keypress(function (event) {
+	  if (event.keyCode === 39) {
+	  	$(this).toggleClass("minion");
+	  } 
+	});
+
 
 	window.addEventListener('resize', adjustValues);
 	adjustValues();
