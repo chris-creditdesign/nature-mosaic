@@ -53,9 +53,9 @@ $(function() {
 	});
 
 	$("body").keypress(function (event) {
-	  if (event.keyCode === 39) {
-	  	$(this).toggleClass("minion");
-	  } 
+		if (event.keyCode === 113) {
+			$(this).toggleClass("minion");
+		} 
 	});
 
 
