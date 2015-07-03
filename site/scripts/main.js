@@ -54,7 +54,6 @@ $(function() {
 
 	$("body").keypress(function (event) {
 
-		console.log(event.keyCode);
 		if (event.keyCode === 113) {
 			$(this).removeClass("source-sans").toggleClass("minion");
 		} else if (event.keyCode === 119) {

@@ -3,13 +3,17 @@ body {
 	font-family: body;
 }
 
+p {
+	font-size: 1.1em;
+	line-height: 1.6em;
+}
+
 i, em {
 	font-family: bodyItalic;
 }
 
-p {
-	font-size: 1.1em;
-	line-height: 1.6em;
+b, strong {
+	font-family: bodyBold;
 }
 
 body.minion {
@@ -87,6 +91,8 @@ article {
 				padding-left: 3px;
 			}
 		}
+
+
 	}
 	
 	.dropcap:first-letter {
@@ -176,6 +182,10 @@ article {
 
 	article header h1.small-headline {
 		font-size: 3em;
+	}
+
+	article header .attributions-columns {
+		column-count: 2;
 	}
 
 }

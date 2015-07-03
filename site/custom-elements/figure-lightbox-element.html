@@ -1,0 +1,80 @@
+<dom-module id="figure-lightbox-element">
+
+	<template>
+		<figure>
+			<img src={{image}} alt="" class="img-responsive">
+			<span class="img-tools">
+				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-facebook">
+					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+					<use xlink:href="./images/icons/svg-symbols.svg#facebook-icon" />
+				</svg>
+				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-twitter">
+					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+					<use xlink:href="./images/icons/svg-symbols.svg#twitter-icon" />
+				</svg>
+				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-plus">
+					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+					<use xlink:href="./images/icons/svg-symbols.svg#plus-icon" />
+				</svg>
+				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-pintrest">
+					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+					<use xlink:href="./images/icons/svg-symbols.svg#pintrest-icon" />
+				</svg>
+				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-email">
+					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+					<use xlink:href="./images/icons/svg-symbols.svg#email-icon" />
+				</svg>
+				<button class="img-expand-button" data-toggle="modal" data-target$="{{computeID(modal)}}">
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-expand">
+						<circle fill="#656565" cx="15" cy="15" r="15"/>
+						<use xlink:href="./images/icons/svg-symbols.svg#expand-icon" />
+					</svg>
+				</button>
+			</span>
+			<figcaption>{{caption}}<small>{{credit}}</small></figcaption>
+		</figure>
+
+		<!-- Modal -->
+		<div class="modal fade" id="{{modal}}" tabindex="-1">
+			<div class="modal-dialog">
+				<figure>
+					<img src={{lightbox}} alt="" class="img-responsive">
+					<figcaption>{{caption}}<small>{{credit}}</small>
+					</figcaption>							
+				</figure>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div><!-- .modal-dialog -->
+		</div><!-- .modal -->
+	</template>
+
+	<script>
+		// register the new element
+		Polymer({
+			is: "figure-lightbox-element",
+			properties: {
+				image: {
+					type: String
+				},
+				lightbox: {
+					type: String,
+					value: ""
+				},
+				caption: {
+					type: String
+				},
+				credit: {
+					type: String
+				},
+				modal: {
+					type: String
+				}
+			},
+			computeID: function(modal) {
+		        return "#" + modal;
+		    }
+		});
+	</script>
+
+</dom-module>
+
+

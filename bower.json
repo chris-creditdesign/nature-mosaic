@@ -1,0 +1,13 @@
+{
+  "name": "nature-mosaic",
+  "version": "0.0.0",
+  "homepage": "https://github.com/chris-creditdesign/nature-mosaic",
+  "authors": [
+    "Chris Ryan <creditdesign@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

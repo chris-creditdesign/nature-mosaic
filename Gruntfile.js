@@ -57,8 +57,7 @@ module.exports = function(grunt){
 				'site/includes/footer.html'
 			],
 		dest: 'site/news-a.html'
-		}
-		,
+		},
 		commentA: {
 			src: [
 				'site/includes/header.html',
@@ -66,6 +65,14 @@ module.exports = function(grunt){
 				'site/includes/footer.html'
 			],
 		dest: 'site/comment-a.html'
+		},
+		newsAndViewsA: {
+			src: [
+				'site/includes/header.html',
+				'site/pages/news-views-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/news-views-a.html'
 		}
 	},
 
