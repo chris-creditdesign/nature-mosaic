@@ -1,7 +1,5 @@
 $(function() {
 
-	// data-spy="affix" data-offset-top="30"
-
 	var header = $(".fixed-header");
 	var offset = header.offset().top;
 	var nav = $("nav");

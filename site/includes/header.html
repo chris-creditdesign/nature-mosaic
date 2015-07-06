@@ -10,6 +10,22 @@
 	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
 	<link rel="import" href="./custom-elements/main-social-element.html">
 
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+	</script>
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
 </head>

@@ -5,7 +5,6 @@
 				<use xlink:href="#main-facebook-icon" />
 			</svg>
 
-
 			<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
 				<use xlink:href="#main-twitter-icon" />
 			</svg>
@@ -37,7 +36,17 @@
 	</header>
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 col-lg-6">
+		<div class="col-md-8 col-md-offset-2" id="test">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2 hidden-sm hidden-xs">
+			<main-social-element />
+		</div>
+
+
+		<div class="col-md-8 col-lg-6">
 			<p class="dropcap">In daylight, light-sensing photoreceptor cells called cones endow us with rich, high-acuity colour vision. By contrast, their night-time counterparts, rod cells, are so light-sensitive that they enable us to see when walking in the woods under starlight. Sadly, a mutation in any one of more than 200 genes can cause diseases such as retinitis pigmentosa that bring about photoreceptor degeneration and lead to blindness<sup><a href="#ref1" title="https://sph.uth.edu/retnet" id="ref-link-2">1</a>, <a href="#ref2" title="Hartong, D. T., Berson, E. L. &amp; Dryja, T. P. Lancet 368, 1795-1809 (2006)." id="ref-link-3">2</a></sup>. Many of these disease-causing genes are rod-specific, affecting only night vision, but when rods die, the malfunction and death of cones soon follows. Writing in <i>Cell</i>, Aït-Ali <i>et al</i>.<sup><a href="#ref3" title="Ait-Ali, N. et al. Cell 161, 817-832 (2015)." id="ref-link-4">3</a></sup> provide evidence for an interaction between these two cell types that might explain why cones depend on rods for their survival, and that might eventually lead to a therapy for such diseases.</p>
 			<p>Retinitis pigmentosa affects 1 in 3,000 people<sup><a href="#ref2" title="Hartong, D. T., Berson, E. L. &amp; Dryja, T. P. Lancet 368, 1795-1809 (2006)." id="ref-link-5">2</a></sup>, and effective treatments are sorely needed. The large number of disease-causing mutations means that these treatments should be gene-independent, focusing instead on targeting the biological pathways that cause the cones' death. The reasons for their death are unclear. However, there is evidence that several factors can contribute to cone death in retinitis pigmentosa. These include hyperoxia (an excess of oxygen), which causes oxidative damage by increasing the levels of free radicals<sup><a href="#ref4" title="Komeima, K., Rogers, B. S., Lu, L. &amp; Campochiaro, P. A. Proc. Natl Acad. Sci. USA 103, 11300-11305 (2006)." id="ref-link-6">4</a>, <a href="#ref5" title="Yu, D.-Y., Cringle, S. J., Su, E.-N. &amp; Yu, P. K. Invest. Ophthalmol. Vis. Sci. 41, 3999-4006 (2000)." id="ref-link-7">5</a>, <a href="#ref6" title="Xiong, W., MacColl Garfinkel, A. E., Li, Y., Benowitz, L. I. &amp; Cepko, C. L. J. Clin. Invest. 125, 1433-1445 (2015)." id="ref-link-8">6</a></sup>; a lack of energy<sup><a href="#ref7" title="Punzo, C., Kornacker, K. &amp; Cepko, C. L. Nature Neurosci. 12, 44-52 (2009)." id="ref-link-9">7</a></sup>; and a lack of intermediates in the anabolic processes by which large molecules are constructed from smaller ones<sup><a href="#ref7" title="Punzo, C., Kornacker, K. &amp; Cepko, C. L. Nature Neurosci. 12, 44-52 (2009)." id="ref-link-10">7</a></sup>.</p>
 			<p>In agreement with a role for such factors, hyperactivation of the protein complex mTOR1, which controls cell metabolism by balancing demand with supply, increases cone survival<sup><a href="#ref8" title="Venkatesh, A. et al. J. Clin. Invest. 125, 1446-1458 (2015)." id="ref-link-11">8</a></sup>. This protein complex probably acts by promoting the expression of genes that improve glucose uptake and use, raising levels of anabolic intermediates and of an anabolic cofactor molecule called NADPH. Adequate levels of NADPH are likely to be crucial to cone survival because, in addition to its role in anabolic processes, it is needed for pathways that detoxify free radicals in hyperoxic retinas. Injection of antioxidants<sup><a href="#ref4" title="Komeima, K., Rogers, B. S., Lu, L. &amp; Campochiaro, P. A. Proc. Natl Acad. Sci. USA 103, 11300-11305 (2006)." id="ref-link-12">4</a></sup> or viral-vector delivery of genes that fight oxidation<sup><a href="#ref6" title="Xiong, W., MacColl Garfinkel, A. E., Li, Y., Benowitz, L. I. &amp; Cepko, C. L. J. Clin. Invest. 125, 1433-1445 (2015)." id="ref-link-13">6</a></sup> prolong cone survival in mouse models of retinitis pigmentosa, supporting the theory that oxidation is a cause of cone death.</p>
@@ -51,4 +60,45 @@
 		</div>
 	</div>
 
+	<script>
+
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		addImportLink("./imports/test.html", "test");
+
+	</script>
+
 </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
