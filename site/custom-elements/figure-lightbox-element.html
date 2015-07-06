@@ -1,9 +1,9 @@
 <dom-module id="figure-lightbox-element">
 
 	<template>
-		<figure>
-			<img src={{image}} alt="" class="img-responsive">
-			<span class="img-tools">
+		<figure id="container">
+			<img src={{image}} alt="" id="inlineImage" class="img-responsive">
+			<span id="icons" class="img-tools">
 				<svg width="30px" height="30px" viewBox="0 0 30 30" class="img-facebook">
 					<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
 					<use xlink:href="./images/icons/svg-symbols.svg#facebook-icon" />
@@ -31,7 +31,7 @@
 					</svg>
 				</button>
 			</span>
-			<figcaption>{{caption}}<small>{{credit}}</small></figcaption>
+			<figcaption id="caption">{{caption}}<small>{{credit}}</small></figcaption>
 		</figure>
 
 		<!-- Modal -->
@@ -71,6 +71,12 @@
 			},
 			computeID: function(modal) {
 		        return "#" + modal;
+		    },
+		    ready: function() {
+	      	/*	Adjust the positions of the social icons
+				so that they sit at the bottom right of the image */
+				var captionHeight = this.$.caption.offsetHeight;
+				this.$.icons.style.bottom = (captionHeight + 30 ) + "px";
 		    }
 		});
 	</script>

@@ -8,7 +8,6 @@ $(function() {
 	var headerLogo = $(".header-logo");
 	var headerButtons = $(".header-buttons");
 	var pushLeft, pushDown;
-	var figures = $("figure");
 
 	function adjustValues () {
 		pushLeft = $("article.container").offset().left + "px";
@@ -31,16 +30,6 @@ $(function() {
 		nav.css({"margin-bottom": "0"});
 		headerLogo.removeClass("col-md-9").addClass("col-md-8");
 		headerButtons.addClass("col-md-offset-1");
-	});
-
-	/*	Adjust the positions of the social icons within fifures
-		so that they sit at the bottom right of the image */
-	figures.each(function (index) {
-		var captionHeight = $(this).children("figcaption").height();
-		var nudge = (captionHeight + 30 ) + "px";
-		var icon = $(this).children(".img-tools");
-		
-		icon.css({"bottom": nudge});
 	});
 
 	/*	Toggle the like button on and off */
