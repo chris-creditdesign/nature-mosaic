@@ -75,8 +75,18 @@
 		    ready: function() {
 	      	/*	Adjust the positions of the social icons
 				so that they sit at the bottom right of the image */
-				var captionHeight = this.$.caption.offsetHeight;
-				this.$.icons.style.bottom = (captionHeight + 30 ) + "px";
+				var caption = this.$.caption;
+				var icons = this.$.icons;
+				var captionHeight;
+
+				/*	Wait for the image to load before checking
+					the height of the caption and adjusting the icons */ 
+				this.$.inlineImage.onload = function () {
+					captionHeight = caption.offsetHeight;
+					icons.style.bottom = (captionHeight + 30 ) + "px";
+				};
+
+
 		    }
 		});
 	</script>
