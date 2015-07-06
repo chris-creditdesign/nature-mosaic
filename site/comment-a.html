@@ -11,6 +11,7 @@
 	<link rel="import" href="./custom-elements/main-social-element.html">
 
 	<script>
+		/* Helper function to add and implement html imports */
 		function addImportLink (url, target) {
 			var link = document.createElement("link");
 			var container = document.getElementById(target);
@@ -20,6 +21,10 @@
 			link.onload = function (e) {
 				var graphic = this.import.querySelector(".ai2html");
 				container.appendChild(graphic.cloneNode(true));
+			}
+
+			link.onerror = function (e) {
+				console.log("ouch!");
 			}
 
 			document.head.appendChild(link);
