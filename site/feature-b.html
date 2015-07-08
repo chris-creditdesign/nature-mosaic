@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/main.css">
 	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
 	<link rel="import" href="../bower_components/polymer/polymer.html">
 	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
 	<link rel="import" href="./custom-elements/main-social-element.html">
@@ -24,6 +25,23 @@
 			}
 
 			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
 		}
 	</script>
 
@@ -266,6 +284,12 @@
 	<script>
 		addImportLink("./imports/feature-b/feature-b-1.html", "feature-b-1-graphic");
 		addImportLink("./imports/feature-b/feature-b-5.html", "feature-b-5-graphic");
+
+		document.addEventListener('HTMLImportsLoaded', function () {
+			addGraphicPointers("#feature-b-1-graphic .g-description", "#feature-b-1-graphic .g-artboard");
+
+			addGraphicPointers("#feature-b-5-graphic .g-description.g-pointers", "#feature-b-5-graphic .g-artboard");
+		});
 	</script>
 
 </article>

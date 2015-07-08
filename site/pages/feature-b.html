@@ -219,6 +219,12 @@
 	<script>
 		addImportLink("./imports/feature-b/feature-b-1.html", "feature-b-1-graphic");
 		addImportLink("./imports/feature-b/feature-b-5.html", "feature-b-5-graphic");
+
+		document.addEventListener('HTMLImportsLoaded', function () {
+			addGraphicPointers("#feature-b-1-graphic .g-description", "#feature-b-1-graphic .g-artboard");
+
+			addGraphicPointers("#feature-b-5-graphic .g-description.g-pointers", "#feature-b-5-graphic .g-artboard");
+		});
 	</script>
 
 </article>

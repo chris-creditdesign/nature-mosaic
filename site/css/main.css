@@ -751,63 +751,52 @@ figure:hover .img-facebook {
 }
 .ai2html {
   margin: 20px 0;
+  padding: 0;
 }
 .ai2html .g-artboard {
   margin: 0;
+  padding: 0;
   position: relative;
+}
+.ai2html .g-artboard .g-description {
+  padding: 0;
+}
+.ai2html h1 {
+  font-size: 1.5em;
 }
 .ai2html p {
   margin: 0;
 }
-.ai2html figure {
-  padding: 0;
+.ai2html .g-header, .ai2html .g-description {
+  padding: 10px 20px;
 }
-.ai2html .g-header {
-  padding: 20px;
+.ai2html dl {
+  margin-bottom: 0px;
 }
-.ai2html .g-headline {
-  font-family: knockFourtyNine;
-  font-size: 2.4em;
-  line-height: 0.9em;
-  padding-bottom: 8px;
-  letter-spacing: 0.02em;
-  color: #000000;
-  margin: 0;
-  text-transform: uppercase;
+.ai2html dt {
+  font-family: bodyBold;
 }
-.ai2html .g-list {
-  margin: 20px;
-  padding: 0 0 20px 20px;
-  counter-reset: item;
+.ai2html dd {
+  margin-bottom: 10px;
 }
-.ai2html .g-list li {
-  margin: 0;
-  padding: 0 0 5px 0;
-  text-indent: -3.2em;
-  list-style-type: none;
-  counter-increment: item;
+.ai2html dd p, .ai2html dt p {
+  font-size: 1em;
+  line-height: 1.4em;
 }
-.ai2html .g-list li:before {
-  display: inline-block;
-  font-family: knockFourtyNine;
-  font-size: 1.3em;
-  width: 2.5em;
-  padding-right: 0.5em;
-  font-weight: bold;
-  text-align: right;
-  content: counter(item) " .";
+.ai2html .dl-horizontal dt {
+  width: 22px;
+  text-align: left;
+  float: left;
+  clear: both;
+}
+.ai2html .dl-horizontal dd {
+  margin-left: 22px;
+  margin-bottom: 2px;
 }
 .ai2html .g-aiImg {
   display: block;
   width: 100% !important;
   max-width: 100%;
-}
-.ai2html .g-aiAbs {
-  position: absolute;
-}
-.ai2html .g-pointer {
-  font-family: knockFourtyNine;
-  font-size: 1.3em;
 }
 
 .advert-row {
