@@ -53,6 +53,18 @@
 			<p>Healthy photoreceptors are metabolically very active<sup><a href="#ref9" title="Graymore, C. Br. J. Ophthalmol. 43, 34-39 (1959)." id="ref-link-14">9</a></sup>, and so require high levels of glucose, which is delivered from the bloodstream through retinal pigmented epithelial cells. Because NADPH is produced by the oxidation of glucose, the demand for glucose in hyperoxic conditions is likely to be exceptionally high. A glucose transporter protein called Glut-1, located on the cell surface, mediates glucose uptake by photoreceptors, and evidence suggests<sup><a href="#ref7" title="Punzo, C., Kornacker, K. &amp; Cepko, C. L. Nature Neurosci. 12, 44-52 (2009)." id="ref-link-15">7</a></sup> that a failure to take up sufficient glucose might contribute to cone death in retinitis pigmentosa. But there is a puzzling aspect to this model — glucose is delivered to the retina at a high rate and, after the death of rods, cones should have access to higher than normal levels of glucose. This suggests that there must be an added level of complexity underlying glucose uptake in cones.</p>
 			<p>Another factor that supports cone-cell survival<sup><a href="#ref10" title="Leveillard, T. S. et al. Nature Genet. 36, 755-759 (2004)." id="ref-link-16">10</a></sup> is a protein secreted from rods, called rod-derived cone viability factor (RdCVF)<sup><a href="#ref11" title="Holmgren, A. Annu. Rev. Biochem. 54, 237-271 (1985)." id="ref-link-17">11</a></sup>, that may have antioxidant activity. The cones of mice lacking RdCVF are more susceptible to oxidative damage than those of controls, and these mice show reduced photoreceptor activity with ageing<sup><a href="#ref12" title="Cronin, T. et al. Cell Death Differ. 17, 1199-1210 (2010)." id="ref-link-18">12</a></sup>. Aït-Ali <i>et al</i>. therefore set out to explore the mechanism by which RdCVF promotes cone-cell survival. Using mass spectrometry, they identified a protein, called Basigin-1, that binds to RdCVF. Basigin-1 is found on the surface of cones and is known<sup><a href="#ref13" title="Hori, K. et al. Invest. Ophthalmol. Vis. Sci. 41, 3128-3133 (2000)." id="ref-link-19">13</a></sup> to cause retinitis pigmentosa when mutated in mice. The authors also identified Glut-1 as a Basigin-1-binding protein. But a previous study showed that, contrary to what might have been expected, loss of Basigin-1 did not affect the expression of Glut-1 or, for the most part, its distribution in the retina<sup><a href="#ref14" title="Philp, N. J., Ochrietor, J. D., Rudoy, C., Muramatsu, T. &amp; Linser, P. J. Invest. Ophthalmol. Vis. Sci. 44, 1305-1311 (2003)." id="ref-link-20">14</a></sup>.</p>
 			<p>Aït-Ali and colleagues observed that addition of RdCVF increased glucose uptake, lactate release and ATP production in photoreceptor cells <i>in vitro</i> — three cellular responses suggesting that RdCVF increases metabolic flux. Furthermore, the authors found that a decrease in levels of Basigin-1 and Glut-1 eliminated the ability of RdCVF to promote photoreceptor survival. The authors propose that RdCVF, Basigin-1 and Glut-1 form a complex at the cell surface that increases glucose uptake (<a href="/nature/journal/v522/n7557/full/522428a.html#f1">Fig. 1</a>). However, the level of Glut-1 on the cell surface did not increase after RdCVF addition, leading the researchers to suggest that this complex instead acts to increase levels of the active form of Glut-1. Future work should test this model. It will also be of interest to study the potential antioxidant role of RdCVF, together with the formation and activity of this three-protein complex, which might, as Aït-Ali <i>et al</i>. suggest, depend on a redox-sensitive interaction between RdCVF and Basigin-1.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div id="news-views-a-1-graphic"></div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-lg-6">
 			<p>A study published earlier this year showed that the delivery of RdCVF in mice with retinitis pigmentosa using an adeno-associated virus (AAV) prolonged cone survival and function<sup><a href="#ref15" title="Byrne, L. C. et al. J. Clin. Invest. 125, 105-116 (2015)." id="ref-link-21">15</a></sup>. AAV is a safe and effective vector that is used for ocular gene therapy in humans<sup><a href="#ref16" title="Trapani, I., Banfi, S., Simonelli, F., Surace, E. M. &amp; Auricchio, A. Hum. Gene Ther. 26, 193-200 (2015)." id="ref-link-22">16</a></sup>, and this, together with Aït-Ali and colleagues' finding that Basigin-1 is expressed in human retinas, suggests that AAV–RdCVF might be an effective way to treat many types of photoreceptor disease. Owing to the large number of disease genes that cause blindness in humans, a treatment that could promote the survival of cones in a gene-independent manner would be a welcome prospect.</p>
 
 
@@ -62,22 +74,10 @@
 
 	<script>
 
-		function addImportLink (url, target) {
-			var link = document.createElement("link");
-			var container = document.getElementById(target);
-			link.rel = "import";
-			link.href = url;
-
-			link.onload = function (e) {
-				var graphic = this.import.querySelector(".ai2html");
-				container.appendChild(graphic.cloneNode(true));
-			}
-
-			document.head.appendChild(link);
-		}
-
-		addImportLink("./imports/test.html", "test");
-
+		addImportLink("./imports/news-views-a/news-views-a-1.html", "news-views-a-1-graphic");
+		document.addEventListener("DOMContentLoaded", function () {
+			addGraphicPointers("#news-views-a-1-graphic .g-description", "#news-views-a-1-graphic .g-artboard");
+		});
 	</script>
 
 </article>
