@@ -29,6 +29,14 @@ article, .add-social {
 	right: 32px;
 }
 
+// Pop-up button on content select
+.tweetbutton {
+    display:none;
+    position:absolute;
+    z-index:1010;
+    padding-left:10px;
+}
+
 // Show the extra social buttons once the screen is big enough
 // that they don't collide with the headline 
 @media screen and (min-width : 480px) {

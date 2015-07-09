@@ -6,6 +6,13 @@ $(function() {
 	var headerLogo = $(".header-logo");
 	var headerButtons = $(".header-buttons");
 	var pushLeft, pushDown;
+	/*	Store mouse possition for tweet button on 
+	 	content select */
+	var mouseX = 0;
+	var mouseY = 0;
+	var tweetButton = $("#tweetbutton");
+	var url = encodeURI(document.URL);
+	var selectedText = "";
 
 	function adjustValues () {
 		pushLeft = $("article.container").offset().left + "px";
@@ -51,5 +58,37 @@ $(function() {
 
 	window.addEventListener('resize', adjustValues);
 	adjustValues();
+
+	function getSelectionText() {
+	    var text = "";
+	    if (window.getSelection) {
+	        text = window.getSelection().toString();
+	    } else if (document.selection && document.selection.type != "Control") {
+	        text = document.selection.createRange().text;
+	    }
+	    return text;
+	}
+
+    $('body').mouseup(function (e) {
+	    mouseX = e.pageX;
+	    mouseY = e.pageY;
+
+        if (getSelectionText() !== "") {
+        	selectedText = encodeURI(getSelectionText());
+
+            tweetButton.attr("href", 'https://twitter.com/intent/tweet?text=' + selectedText + '&url=' + url);
+            tweetButton.attr("target", '_blank');
+            tweetButton.css({
+                'top': mouseY - 10,
+                'left': mouseX
+            }).fadeIn();
+        } else {
+        	tweetButton.hide();
+        }
+    });
+
+    tweetButton.mouseup(function (e) {
+        tweetButton.hide();
+    });
 
 });
