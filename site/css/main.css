@@ -116,6 +116,9 @@ article header .attributions {
   padding: 12px 0 10px;
   margin-left: 0px;
 }
+article header .attributions a {
+  color: #666666;
+}
 article header .attributions li {
   padding-left: 0px;
 }
@@ -141,6 +144,14 @@ article .alt-dropcap:first-letter {
 article .alt-font, article .alt-font em {
   font-family: knockFourtyNine;
   text-transform: uppercase;
+}
+article .review-link {
+  padding: 10px 15px 7px;
+  color: #ffffff;
+  background-color: #666666;
+}
+article .review-link a {
+  color: #ffffff;
 }
 article h2 {
   font-family: headBold;
@@ -175,6 +186,9 @@ article .attributions {
 }
 article .attributions li {
   padding-left: 0px;
+}
+article .attributions a {
+  color: #666666;
 }
 
 .breaking-news {
@@ -414,8 +428,12 @@ header .svg-icons {
   margin-top: 6px;
 }
 
-.svg-icons {
+.image-first .svg-icons {
   margin-top: 20px;
+}
+
+.svg-icons {
+  margin-top: 4px;
   border: 1px solid #999;
 }
 .svg-icons .article-facebook-icon,
@@ -493,7 +511,7 @@ header .svg-icons {
 .references:hover {
   background-color: #e2e2e2;
 }
-.references:active span {
+.references:hover span {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);

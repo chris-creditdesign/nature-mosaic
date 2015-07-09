@@ -81,8 +81,13 @@ article {
 			padding: 12px 0 10px;
 			margin-left: 0px;
 
+			a {
+				color: $font-colour-2;
+			}
+
 			li {
 				padding-left: 0px;
+				
 			}
 
 			span {
@@ -116,6 +121,17 @@ article {
 	.alt-font, .alt-font em {
 		font-family: knockFourtyNine;
 		text-transform: uppercase;
+	}
+
+	// News and views link to paper
+	.review-link {
+		padding: 10px 15px 7px;
+		color: #ffffff;
+		background-color: $font-colour-2;
+
+		a {
+			color: #ffffff;
+		}
 	}
 
 	h2 {
@@ -155,6 +171,10 @@ article {
 
 		li {
 			padding-left: 0px;
+		}
+
+		a {
+			color: $font-colour-2;
 		}
 	}
 }
