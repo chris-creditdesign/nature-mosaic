@@ -1,0 +1,52 @@
+// Cards
+.card-container {
+	overflow: hidden;
+	backface-visibility: hidden;
+	transform: translate3d(0,0,0) scale3d(1,1,1);
+	transform-style: preserve-3d;
+	margin: 0 auto;
+
+	&, ol, li {
+		padding: 0;
+		margin: 0;
+		position: relative;
+	}
+
+	ol.animate {
+		transition: all .3s;
+	}
+
+	ol {
+		transform: translate3d(0%,0,0) scale3d(1,1,1);
+		overflow: hidden;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		// box-shadow: 0 0 20px rgba(0,0,0,.2);
+		position: relative;
+	}
+
+	li {
+		float: left;
+	}
+
+	article {
+		padding: 20px;
+		margin: 20px 15px 0;
+		border: 1px solid $volume-arrow;
+		border-radius: 5px;
+	}
+}
+
+.card-toc {
+	button {
+		border: none;
+		background-color: #ffffff;
+		color: $volume-arrow;
+		outline: none;
+		text-align: left;
+	}
+
+	.active {
+		color: $font-colour-1;
+	}
+}

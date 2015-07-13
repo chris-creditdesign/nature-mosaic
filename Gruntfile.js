@@ -37,6 +37,7 @@ module.exports = function(grunt){
 		index: {
 			src: [
 				'site/includes/header.html',
+				'site/includes/fixed-header.html',
 				'site/pages/index.html',
 				'site/includes/footer.html'
 			],
@@ -45,6 +46,7 @@ module.exports = function(grunt){
 		featureB: {
 			src: [
 				'site/includes/header.html',
+				'site/includes/fixed-header.html',
 				'site/pages/feature-b.html',
 				'site/includes/footer.html'
 			],
@@ -53,6 +55,7 @@ module.exports = function(grunt){
 		newsA: {
 			src: [
 				'site/includes/header.html',
+				'site/includes/fixed-header.html',
 				'site/pages/news-a.html',
 				'site/includes/footer.html'
 			],
@@ -61,6 +64,7 @@ module.exports = function(grunt){
 		commentA: {
 			src: [
 				'site/includes/header.html',
+				'site/includes/fixed-header.html',
 				'site/pages/comment-a.html',
 				'site/includes/footer.html'
 			],
@@ -69,10 +73,29 @@ module.exports = function(grunt){
 		newsAndViewsA: {
 			src: [
 				'site/includes/header.html',
+				'site/includes/fixed-header.html',
 				'site/pages/news-views-a.html',
 				'site/includes/footer.html'
 			],
 		dest: 'site/news-views-a.html'
+		},
+		sevenDaysA: {
+			src: [
+				'site/includes/header.html',
+				'site/includes/fixed-header.html',
+				'site/pages/seven-days-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/seven-days-a.html'
+		},
+		researchHighlightsA: {
+			src: [
+				'site/includes/header.html',
+				'site/includes/fixed-header.html',
+				'site/pages/research-highlights-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/research-highlights-a.html'
 		}
 	},
 

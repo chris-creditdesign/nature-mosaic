@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
+	<link rel="import" href="./custom-elements/main-social-element.html">
+
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
+		}
+	</script>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+	
+
+	<!-- twitter / facebook pop-up button -->
+	<a id="tweetbutton" class="tweetbutton"><img src = "images/icons/hover-icons.png"/></a>
+
+	<div class="header-banner-advert">
+		<img src="images/adverts/advert-728x90.jpg" alt="" class="img-responsive">
+	</div>
+
+	<nav class="navbar" id="top-nav">
+	</nav>
+		
+	<header class="container fixed-header">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+
+
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+		<button type="button" class="btn btn-default navbar-btn" id="prev">Prev</button>
+		<button type="button" class="btn btn-default navbar-btn" id="next">Next</button>
+    </div>
+</nav>
+ -->
+
+<article class="container add-fixed-header">
+	<div class="row">
+		<div class="col-md-4 hidden-xs">
+			<h1>The week in science: 3–9 July 2015</h1>
+			<p>Solar plane breaks record; California clamps down on vaccine exemptions; and the outlook on world farming and food supply.</p>
+
+			<ol class="list-unstyled card-toc" id="card-toc">
+			</ol>
+
+			<button type="button" class="btn btn-default" id="prev">Prev</button>
+			<button type="button" class="btn btn-default" id="next">Next</button>
+
+		</div>
+
+		<div class="col-md-8 card-container" id="card-container">
+			<ol class="list-unstyled">
+				<li>
+					<article>
+					    <header>
+							<h2>Policy</h2>
+							<h1>Vaccine push</h1>
+						</header>
+						<section>
+							<p> California governor Jerry Brown signed into law on 30 June a bill that mandates vaccinations for all children attending public schools. Parents can no longer choose not to vaccinate these children for religious or ideological reasons. Exemptions would be granted only for medical reasons. The move was sparked by a measles outbreak last December that could be partly attributed to low vaccination rates, and comes in the same week as the United States announced its first measles death in 12&nbsp;years on 2 July. California is only the third US state to ban vaccine exemptions that are based on personal and religious beliefs.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Technology</h2>
+							<h1>Joy as solar plane breaks flight record</h1>
+						</header>
+						<section>
+							<figure-lightbox-element 
+								image="images/seven-days/seven-days-a-1.jpg"
+								lightbox="images/seven-days/seven-days-a-1.jpg"
+								credit="Zhang Chaoqun/Xinhua Press/Corbis"
+								modal="lightbox1"
+							></figure-lightbox-element>
+							<p> The aeroplane <i>Solar Impulse 2 </i>broke the record for the longest non-stop solar-powered solo flight on 3 July. It landed at Kalaeloa Airport in Honolulu after travelling for 4&nbsp;days, 21 hours and 52 minutes and covering 7,212 kilometres. The trip was the riskiest leg of an attempt to fly around the world, starting from Abu Dhabi in March, relying exclusively on solar power. Pilot André Borschberg (right) flew the craft from Nagoya, Japan, and Bertrand Piccard (left) will fly the plane on to Phoenix, Arizona.</p>
+						</section>
+					</article>	
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Research</h2>
+							<h1>Telescope dreams</h1>
+						</header>
+						<section>
+							<p> NASA and its international partners should build a space telescope five times the size of the current Hubble Space Telescope, an influential group of US astronomers says in a 6 July report. This 12-metre ‘High-Definition Space Telescope’ would be the first true Hubble replacement; the James Webb Space Telescope, NASA’s next big observatory launching in 2018, operates in infrared light and not the visible and ultraviolet wavelengths that Hubble uses. The report, from the Association of Universities for Research in Astronomy in Washington DC, does not specify a cost or time frame for building the telescope. See <a href="http://go.nature.com/vskh3s">go.nature.com/vskh3s</a> for more.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>Research</h2>
+							<h1>Greek scientists</h1>
+						</header>
+						<section>
+							<p> The economic crisis in Greece is hitting researchers hard, with Greek scientists losing access to some digital journals. The Internet portal that provides many Greek universities and research institutes with access to electronic journals from 27 publishers suspended many of its services on 1 July because the government has not provided funds to keep it going. The Hellenic Academic Libraries Link has nearly shut down many times over the past decade. But now with the threat of state bankruptcy, scientists are not expecting rescue funds. See <a href="http://go.nature.com/vgc5wj">go.nature.com/vgc5wj</a> for more.</p>
+						</section>
+					</article>	
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Business</h2>
+							<h1>Cystic-fibrosis drug</h1>
+						</header>
+						<section>
+							<p>US regulators have approved a drug to treat the most common form of cystic fibrosis. On 2&nbsp;July, the US Food and Drug Administration announced that it had approved Orkambi (lumacaftor and ivacaftor) for people with cystic fibrosis who have two copies of a mutation called F508del in the CFTR protein. Orkambi is made by Vertex Pharmaceuticals of Boston, Massachusetts, a company that has pioneered cystic-fibrosis treatments that target the cause of the disease (see <a href="http://www.nature.com/uidfinder/10.1038/482145a"><i>Nature</i><b> 482, </b>145; 2012</a>), rather than just the symptoms.</p>
+						</section>		
+					</article>
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Events</h2>
+							<h1>BP oil settlement</h1>
+						</header>
+						<section>
+							<figure-lightbox-element 
+								image="images/seven-days/seven-days-a-2.jpg"
+								lightbox="images/seven-days/seven-days-a-2.jpg"
+								credit="EPA/Christopher Berkley/Corbis"
+								modal="lightbox2"
+							></figure-lightbox-element>
+							<p> Oil company BP would pay US$18.7 billion over 18 years to settle civil lawsuits related to the 2010 Deepwater Horizon oil spill (pictured), under a tentative settlement with US state and federal governments. The deal, announced on 2&nbsp;July, would be the largest settlement with a corporation in US history, according to the US Department of Justice. Before the agreement can be finalized, it must undergo a public comment period and review by a federal court. See <a href="http://go.nature.com/xsus9t">go.nature.com/xsus9t</a> for more.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>Events</h2>
+							<h1>Pluto probe scare</h1>
+						</header>
+						<section>
+							<p> NASA’s New Horizons probe stopped recording science data on 4 July, ten days before it is to fly past Pluto in the first-ever visit to that dwarf planet. Mission controllers lost communication with the probe for 81 minutes, but recovered it completely the following day. Roughly 30 science observations were lost during the glitch, which happened when the onboard processor tried to simultaneously compress data that had already been gathered and write a sequence of future flight commands into its flash memory. This caused the probe’s main computer to enter a ‘safe mode’. See <a href="http://go.nature.com/dckjgk">go.nature.com/dckjgk</a> for more.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>Events</h2>
+							<h1>Liberia Ebola</h1>
+						</header>
+						<section>
+							<p> Authorities in Liberia are scrambling to find out how a 17-year-old boy became infected with the Ebola virus and died, becoming the first case since the country was declared free of the disease on 9 May. The World Health Organization reported the case on 3 July. The boy died on 28 June in Margibi county close to the capital Monrovia, far from the borders with Sierra Leone and Guinea&nbsp;— where the epidemic continues at low levels. Authorities are trying to trace the boy’s contacts. Of the 200&nbsp;identified so far, two have tested positive for the virus and have been isolated.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>Events</h2>
+							<h1>Farming outlook</h1>
+						</header>
+						<section>
+							<p> All is calm on the world food-supply and price front, at least for now, say the Organisation for Economic Cooperation and Development (OECD) and the Food and Agriculture Organization of the United Nations (FAO).Their latest annual <i>Agricultural Outlook</i>, released in Paris on 1 July, predicts a slide in farm-product prices over the next decade owing to higher crop yields and productivity, and slower growth in demand. OECD Secretary-General Angel Gurría said “The outlook for global agriculture is calmer than it has been in recent years.” But he added that price spikes in the coming years cannot be ruled out.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>People</h2>
+							<h1>Researcher jailed</h1>
+						</header>
+						<section>
+							<p> Dong-Pyou Han, a former biomedical scientist at Iowa State University in Ames, was sentenced on 1 July to 57 months in jail for fabricating and falsifying data in HIV vaccine trials. He was also fined US$7.2 million and will be subject to three years of supervised release after he leaves prison. His case had a higher profile than most, attracting interest from Iowa senator Charles Grassley. Han’s sentence raises questions about how alleged research fraud is handled in the United States. See <a href="http://www.nature.com/uidfinder/10.1038/nature.2015.17660">page 138</a> for more.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>People</h2>
+							<h1>New ESA head</h1>
+						</header>	
+						<section>
+							<p> Johann-Dietrich Wörner started as director-general of the European Space Agency (ESA) on 1 July. Formerly the chairman of the German Aerospace Center (DLR), the civil engineer will serve a four-year term. He succeeds Jean-Jacques Dordain, who led the agency from 2003. Wörner plans to continue ESA’s existing programmes, including the Rosetta mission, Gaia space observatory and Copernicus observation programme. He will also prepare for what he calls “Space 4.0”, a phase during which space becomes a day-to-day consideration for industry and society in general.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>People</h2>
+							<h1>Science panel</h1>
+						</header>
+						<section>
+							<p> David King, former UK chief science adviser, is to help the European Commission to set up a new scientific-advice mechanism. On 6&nbsp;July, the European research commissioner Carlos Moedas appointed King and two other experts&nbsp;—&nbsp;Dutch law scholar Rianne Letschert and former deputy prime minister of Portugal António Vitorino&nbsp;—&nbsp;as members of a committee tasked with recommending to the commission potential candidates for a seven-strong science advisory panel that is to begin work in autumn.</p>
+						</section>
+					</article>
+				</li>
+				<li>	
+					<article>
+						<header>
+							<h2>People</h2>
+							<h1>Academy chief </h1>
+						</header>
+						<section>
+							<p>Editor-in-chief of the Science group of journals, Marcia McNutt, was nominated on 6&nbsp;July to stand for election as president of the US National Academy of Sciences (NAS). If elected, as expected, she will become the first woman to head the organization since its inception in 1863. McNutt, a geophysicist, was appointed the first female editor-in-chief of <i>Science</i> — published by the American Association for the Advancement of Science — in 2013, where she will continue until the NAS’s current president, Ralph Cicerone, ends his second term on 1&nbsp;July 2016.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Trend watch</h2>
+							<h1>On the level</h1>
+						</header>
+						<section>
+							<p>China submitted its pledge to cut carbon emissions to the United Nations on 30&nbsp;June. The country pledged to boost renewable energies and to reduce the amount of carbon dioxide emitted per unit of gross domestic product (carbon intensity) to 60–65% below 2005 levels. An analysis by GWG Energy in London suggests that China could level off its emissions before 2030 if it meets the carbon-intensity target, depending on how fast its economy grows. See <a href="http://go.nature.com/3bkybj">go.nature.com/3bkybj</a> for more.</p>
+						</section>
+					</article>
+				</li>
+				<li>
+					<article>
+					    <header>
+							<h2>Coming up</h2>
+							<h1>11–15 July</h1>
+						</header>
+						<section>
+							<p><br> Emerging viruses, viral evolution and host interactions are among topics to discuss at the American Society for Virology’s annual meeting in London, Canada.
+							    <br>
+							    <a href="http://go.nature.com/ywpdiw">go.nature.com/ywpdiw</a></p>
+					   </section>
+					</article>
+				</li>
+				<li>
+					<article>
+						<header>
+							<h2>Coming up</h2>
+							<h1>12–18 July</h1>
+						</header>
+						<section>
+							<p>
+							    <br> Researchers meet in Rome for the 14th Marcel Grossmann meeting on general relativity, astrophysics and relativistic field theory.
+							    <br>
+							    <a href="http://go.nature.com/xxaaru">go.nature.com/xxaaru</a></p>
+						</section>
+					</article>
+				</li>
+			</ol>
+		</div>
+	</div>
+</article>
+
+<script src="scripts/cards.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/jquery-hammerjs/jquery.hammer.js"></script>
+<script src="../bower_components//bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

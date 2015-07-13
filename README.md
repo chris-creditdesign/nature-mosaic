@@ -33,7 +33,7 @@ Immediate to dos:
 - [ ] eCommerce/nature shop
 - [ ] Subscriptions
 - [ ] Nature Shop button
-- [ ] Responsive infographic - Trex?
+- [x] Responsive infographic - Trex?
 - [ ] Large intro image, minimal header - NYT style
 
 Comment requests:

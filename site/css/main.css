@@ -824,6 +824,55 @@ figure:hover .img-facebook {
   max-width: 100%;
 }
 
+.card-container {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 0 auto;
+}
+.card-container, .card-container ol, .card-container li {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.card-container ol.animate {
+  transition: all .3s;
+}
+.card-container ol {
+  -webkit-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+.card-container li {
+  float: left;
+}
+.card-container article {
+  padding: 20px;
+  margin: 20px 15px 0;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+.card-toc button {
+  border: none;
+  background-color: #ffffff;
+  color: #999999;
+  outline: none;
+  text-align: left;
+}
+.card-toc .active {
+  color: #222222;
+}
+
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;

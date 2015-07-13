@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
+	<link rel="import" href="./custom-elements/main-social-element.html">
+
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
+		}
+	</script>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+	
+
+	<!-- twitter / facebook pop-up button -->
+	<a id="tweetbutton" class="tweetbutton"><img src = "images/icons/hover-icons.png"/></a>
+
+	<div class="header-banner-advert">
+		<img src="images/adverts/advert-728x90.jpg" alt="" class="img-responsive">
+	</div>
+
+	<nav class="navbar" id="top-nav">
+	</nav>
+		
+	<header class="container fixed-header">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+
+
+<article class="container add-fixed-header">
+	<div class="row">
+		<div class="col-md-4 hidden-xs">
+			<h1>Research highlights: 3–9 July 2015</h1>
+			<p>Selections from the scientific literature.</p>
+
+			<ol class="list-unstyled card-toc" id="card-toc">
+			</ol>
+
+			<button type="button" class="btn btn-default" id="prev">Prev</button>
+			<button type="button" class="btn btn-default" id="next">Next</button>
+
+		</div>
+
+		<div class="col-md-8 card-container" id="card-container">
+			<ol class="list-unstyled">
+				<li>
+					<article>
+						<header>
+							<p class="topic">Conservation</p>
+							<p class="topic">Environmental sciences</p>
+							<h1 class="article-heading">Amazon wildlife hit by hydropower</h1>
+						</header>
+
+						<section>
+							<figure-lightbox-element 
+								image="images/research-highlights/research-highlights-a-1.jpg"
+								lightbox="images/research-highlights/research-highlights-a-1.jpg"
+								credit="Eduardo M. Venticinque"
+								modal="lightbox1"
+							></figure-lightbox-element>
+							<p>A major hydroelectric dam in the Amazon basin has severely reduced biodiversity.</p>
+
+							<p>Brazil's Balbina Dam left more than 3,000 square kilometres of Amazonian forest underwater and created thousands of islands (pictured) when it was built in 1986. Maíra Benchimol and Carlos Peres from the University of East Anglia in Norwich, UK, surveyed 37 of these islands for 35 large and medium-sized mammal, bird and reptile species, using walking surveys and motion-activated cameras.</p>
+							
+							<p>They estimate that, in the 26 years between the dam's construction and their survey, isolation has led to an overall species loss of 70<span class="mb">%</span> across all islands created by the dam, with smaller islands suffering the most. Just 25 of the 3,546 islands are likely to host 80<span class="mb">%</span> or more of the animals that they looked for. Such negative impacts have not been generally considered, and biodiversity impacts should be better assessed before future hydropower projects go ahead, the authors suggest.</p>
+
+							<p><i>PLoS ONE</i> <a href="http://doi.org/5xh">http://doi.org/5xh</a> (<span class="year">2015</span>)</p>
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+					    <header>
+					        <p class="topic">Crop Science</p>
+					        <p class="topic">Agriculture</p>
+					        <p class="topic">Plant sciences</p>
+					        <h1 class="article-heading">A gene for better and longer rice</h1>
+					    </header>
+					    
+					    <section>
+					        <p>A gene that can improve the quality of rice without reducing yield has been identified by two separate teams.</p>
+
+					        <p>Long, slender grains are considered a mark of quality for rice in many parts of the world. Xiangdong Fu of the Chinese Academy of Sciences in Beijing and his team mapped the genomes of 4,500 plants from a long-grain rice variety and zeroed in on a gene known as <i>Os07g0603300</i>. Upregulation of this gene increases cell division in the longitudinal direction and decreases it in the transverse direction. This results in a long, thin grain with very little 'chalkiness' — an undesirable opaque appearance — and no yield penalty. The gene can be repressed by a transcription factor encoded by a neighbouring gene.</p>
+
+					        <p>Independently, Qian Qian of the Chinese Academy of Agricultural Sciences in Shenzhen, and his team discovered extra copies of <i>Os07g0603300</i> in rice varieties with these desirable traits.</p>
+
+					        <p><i>Nature Genet.</i> <a href="http://dx.doi.org/10.1038/ng.3352">http://dx.doi.org/10.1038/ng.3352</a>; <a href="http://dx.doi.org/10.1038/ng.3346">http://dx.doi.org/10.1038/ng.3346</a> (<span class="year">2015</span>)</p>
+
+					    </section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Physics</p>
+							<p class="topic">Particle physics</p>
+							<h1 class="article-heading">Tighter limits on dark matter</h1>
+						</header>
+
+						<section>
+							<p>Atomic spectroscopy can aid the search for ultralight dark matter.</p>
+
+							<p>Ken Van Tilburg at Stanford University, California, and his team measured the energy emitted as atoms of the rare-earth element dysprosium transitioned between two electronic states of very similar energy over a two-year period.</p>
+
+							<p>They looked for fluctuations in this energy over time, which would reveal short-term, local changes in the strength of the electromagnetic force. These could be caused by interactions with certain ultralight dark-matter particles.</p>
+
+							<p>No fluctuations were observed, meaning that any such dark-matter particles interacting would have to be heavier than 3 × 10<sup>−18</sup> electronvolts or would have to interact very weakly. The results improve on previous bounds for the strength of such interactions by four orders of magnitude. If similar measurements were performed with atomic clocks, the limits might be improved by another order of magnitude.</p>
+
+							<p><a href="http://dx.doi.org/10.1103/PhysRevLett.115.011802"><i>Phys. Rev. Lett.</i> <b>115</b>, <span class="start-page">011802</span> (<span class="year">2015</span>) </a></p>
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Animal Behaviour</p>
+							<p class="topic">Zoology</p>
+							<h1 class="article-heading">Flying spiders also sail on water</h1>
+							
+						</header>
+
+						<section>
+							<p>Spiders that use wind to carry them to new locations not only can survive a landing on water, but can also sail, even on fairly turbulent surfaces.</p>
+
+							<p>Many spiders exhibit 'ballooning' behaviour — they spin silken sails to travel long distances on the wind. It had been thought that encountering water would be fatal. But Morito Hayashi at the Natural History Museum, London, and his team found that some species could survive on fresh and salt water in laboratory tests carried out at the University of Nottingham, UK, and would raise their legs or abdomens to use as sails to move across the surface. The spiders also used silk to anchor themselves in place while afloat.</p>
+
+							<p>This ability to control movement on water counterbalances the risks of ballooning by helping them to survive watery landings.</p>
+
+							<p><a href="http://dx.doi.org/10.1186/s12862-015-0402-5"><i>BMC Evol. Biol.</i> <b>15</b>, <span class="start-page">118</span> (<span class="year">2015</span>) </a></p>
+
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Plant science</p>
+							<p class="topic">Genetics</p>
+							<h1 class="article-heading">A gene for evening scents</h1>
+							
+						</header>
+
+						<section>
+							<p>Petunias release their scent following the daily rhythm of a circadian-clock gene.</p>
+
+							<p>Takato Imaizumi of the University of Washington in Seattle and his colleagues identified a gene that they call <i>PhLHY</i> in the fragrant flower <i>Petunia hybrida</i>, which releases volatile scent molecules primarily at night.</p>
+
+							<p>This gene is typically expressed in the morning, dampening the expression of other genes and the production of enzymes involved in producing scent molecules.</p>
+
+							<p>Plants engineered to constantly express PhLHY stop producing scent molecules entirely. By contrast, plants in which this gene's expression is reduced show peak scent production around midday.</p>
+
+							<p><i>Proc. Natl Acad. Sci. USA</i> <a href="http://doi.org/5xg">http://doi.org/5xg</a> (<span class="year">2015</span>)</p>
+
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Astronomy</p>
+							<p class="topic">Astrophysics</p>
+							<h1 class="article-heading">Event pile-up may explain solar storm</h1>
+							
+						</header>
+
+						<section>
+							<figure-lightbox-element 
+								image="images/research-highlights/research-highlights-a-2.jpg"
+								lightbox="images/research-highlights/research-highlights-a-2.jpg"
+								credit="DDP USA/REX"
+								modal="lightbox2"
+							></figure-lightbox-element>
+							<p>A rare combination of factors might have combined to make a solar storm in March 2015 the strongest seen for a decade.</p>
+							
+							<p>Like most such storms, this one began when the Sun spurted fast-moving plasma in an event called a coronal mass ejection. A different part of the Sun then sent out a stream of plasma as 'solar wind'. This wind could have pushed the coronal mass ejection from behind, suggests a team led by Ryuho Kataoka at the National Institute of Polar Research in Tokyo. The whole mass could have then ploughed through space, piling up dense particles from earlier blasts of solar wind ahead of it. The Sun's magnetic field lines also happened to be oriented to drive the storm powerfully towards Earth. On hitting Earth's atmosphere, it sparked aurora (<b>pictured</b>) around the Northern Hemisphere on 17 March.</p>
+							
+							<p><i>Geophys. Res. Lett.</i> <a href="http://doi.org/5wn">http://doi.org/5wn</a> (<span class="year">2015</span>)</p>
+							
+
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Applied physics</p>
+							<p class="topic">Chemistry</p>
+							<p class="topic">Imaging</p>
+							<h1 class="article-heading">A boost for magnetic imaging</h1>
+							
+						</header>
+
+						<section>
+							<p>Signals from magnetic resonance imaging (MRI) can be substantially enhanced by 'hyperpolarizing' nuclear spins.</p>
+
+							<p>Nuclear magnetic resonance and MRI rely on powerful magnets to align the nuclear spins of protons in atoms, which then emit radio signals on returning to their normal states. These signals can be recorded to produce images or provide information on chemical composition.</p>
+
+							<p>Neal Kalechofsky at Millikelvin Technologies in Braintree, Massachusetts, James Kempf at Bruker Biospin Corporation in Billerica, Massachusetts, and their colleagues at these lab-equipment companies demonstrate a way to boost signals from an isotope of carbon used in medical imaging by around 1,600-fold. Their 'brute-force' approach uses low temperatures and high magnetic fields to align the spins of more atoms in a sample at 2.3 kelvin and 14 tesla than is usually possible for MRI. Samples are then ejected from the low-temperature environment, dissolved and finally transferred for imaging at room temperature and 1 tesla, providing better signals.</p>
+
+							<p><i>J. Am. Chem. Soc.</i> <a href="http://doi.org/5x8">http://doi.org/5x8</a> (<span class="year">2015</span>)</p>
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Virology</p>
+							<p class="topic">Medical research</p>
+							<h1 class="article-heading">Mapping viral disease vectors</h1>
+							
+						</header>
+
+						<section>
+							<p>The mosquitoes that carry the dengue and chikungunya viruses are more widespread than ever before, and are likely to increase their ranges.</p>
+
+							<p>Simon Hay at the University of Oxford, UK, and his team compiled more than 40,000 records of the occurrence of the mosquitoes <i>Aedes aegypti</i> and <i>Aedes albopictus</i>. They combined this with environmental data to map the current and possible range of these insects at a 5 × 5-kilometre scale.</p>
+
+							<p>These two <i>Aedes</i> species are found widely in all continents except Antarctica, but are still not reported in habitat that is potentially suitable for them. The team's maps could direct surveillance of these mosquitoes in understudied areas.</p>
+
+							<p><i>eLife</i> <a href="http://doi.org/5tz">http://doi.org/5tz</a> (<span class="year">2015</span>)</p>
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+						<header>
+							<p class="topic">Biomechanics</p>
+							<p class="topic">Zoology</p>
+							<h1 class="article-heading">Seahorses benefit from square tails</h1>
+							
+						</header>
+
+						<section>
+						    <p>The unusual square tails of seahorses both help the animals' grasping ability and increase their toughness.</p>
+						    
+						    <p>Seahorses use their bone-armour-plated tails to grip the corals and plants in which they hide, but, unlike most animal tails, the cross-section of theirs is square rather than circular. Michael Porter at Clemson University, South Carolina, and his team printed 3D articulated models of both square and circular tails and tested them under various conditions. Although the twisting ability of the cylindrical model was greater, the square prism structure provided the tail with more contact area for gripping objects and assisted the tail in relaxation, which could reduce the amount of energy a seahorse expends on grasping.</p>
+						    
+						    <p>The square tail was also three times stiffer and four times stronger when compressed.</p>
+						    
+						    <p><i>Science</i> <a href="http://doi.org/5z9">http://doi.org/5z9</a> (<span class="year">2015</span>)</p>
+
+
+						</section>
+					</article>
+				</li>
+
+				<li>
+					<article>
+					    <header>
+					        <h2 class="topic">Social selection</h2>
+					        <h1 class="article-heading">Long wait for publication plagues many journals</h1>
+					        <p class="standfirst">Scientific publishing requires patience, even after a paper has been formally accepted.</p>
+					    </header>
+					    <section>
+					        <p>While waiting for his paper to be published, Daniel Himmelstein, a PhD student in biological and medical informatics at the University of California, San Francisco, compiled the median time between acceptance and publication for 3,476&nbsp;journals. He found that the wait ranged from 3 to more than 100 days.</p>
+
+					        <p>Long delays are common, he noted on his <a href="http://blog.dhimmel.com/plos-and-publishing-delays/">blog</a>. Among 16&nbsp;journals in his field, <i>PLoS Computational Biology</i> was the worst with a median wait time of 57&nbsp;days. <i>PLoS Genetics</i> was not far behind. (<i>Nature</i>’s median wait was almost 48&nbsp;days.)</p>
+
+					        <p>The blog post caused a stir on social media. <a href="https://integrativebio.utexas.edu/component/cobalt/item/7-integrative-biology/237-wilke-claus-o?Itemid=1224">Claus Wilke</a>, an integrative biologist at the University of Texas at Austin, tweeted:</p>
+
+					        <p>David Knutson, a spokesperson at the journals’ publisher the Public Library of Science (PLOS), says that producing high-quality papers takes time, but the publisher has a “laser focus” on reducing delays.</p>
+
+					        <p>Knutson says that PLOS has been overhauling parts of its production system in recent months, including working with a new contractor to handle typesetting. Wait time should be significantly reduced by the end of the year. “Speed to publication is one of the biggest priorities of our authors,” he says.</p>
+
+					        <p>Other journals also take their time. According to Himmelstein’s searchable database, the median wait for the <i>Journal of Clinical Neuroscience</i> is 99&nbsp;days, and for the <i>Journal of Forensic Sciences</i> it’s 289&nbsp;days. By contrast, <i>eLife</i>, a journal that offers the option of rapid publication of accepted manuscripts, had a median wait time of just three days.</p>
+
+					        <p>Often, there is a broad spread of wait times within each journal, Himmelstein found. Waits of at least 100&nbsp;days were especially common for <i>PLoS Computational Biology</i> and <i>PLoS Genetics</i> (see figure). This is of particular interest to Himmelstein, because he has now been waiting two months for his accepted paper to appear in <i>PLoS Computational Biology</i>.</p>
+
+					        <p>“I’m a big fan of PLOS,” Himmelstein told <i>Nature</i>. “But if something doesn’t seem to be working efficiently, it’s important to point that out."</p>
+
+					        <p>He added, "There’s no scientific advance that’s happening when your paper is just sitting in a queue."</p>
+
+					        <p>In his blog post, Himmelstein wrote that it would be handy to have a website that rates the service of journals in much the same way that the site Yelp ranks restaurants. Just as a slow pizza restaurant might get a bad review, long wait times could hurt a journal’s overall rating.</p>
+
+					        <p><a href="https://amyfreitag.wordpress.com/cv/">Amy Freitag</a>, a conservation ecologist at the Virginia Institute of Marine Science, Gloucester Point tweeted:</p>
+
+					        <p><a href="http://www.nature.com/news/rate-that-journal-1.17225  ">Some sites</a> already try to serve this function, including SciRev, JournalReviewer and Journalysis — but they are sometimes incomplete. Journalysis currently lists the publisher of <i>PLoS Genetics</i> as “unknown.”</p>
+
+					        <p><a href="http://macarthurlab.org/people/">Daniel MacArthur</a>, a geneticist at the Broad Institute of MIT and Harvard in Cambridge tweeted:</p>
+
+					        <p>He told <i>Nature </i>he hasn’t had a chance to independently assess Himmelstein’s numbers or methodology, but the problem of long wait times is well known. “Publishers need to do better than the current glacial pace of distribution or they’ll be increasingly irrelevant to scientific discussion,” he says.</p>
+
+					    </section>
+					</article>
+				</li>
+			</ol>
+		</div>
+
+
+	</div>
+</article>
+
+<script src="scripts/cards.js"></script>
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/jquery-hammerjs/jquery.hammer.js"></script>
+<script src="../bower_components//bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
