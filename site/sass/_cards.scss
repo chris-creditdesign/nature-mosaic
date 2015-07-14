@@ -58,7 +58,7 @@
 .card-toc {
 	opacity: 0;
 	position: absolute;
-	top: 0px;
+	top: 40px;
 	background-color: #ffffff;
 	z-index: 0;
 	overflow: scroll;
@@ -102,7 +102,6 @@
 		overflow: hidden;
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
-		// box-shadow: 0 0 20px rgba(0,0,0,.2);
 		position: relative;
 	}
 
