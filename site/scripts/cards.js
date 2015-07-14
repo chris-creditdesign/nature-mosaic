@@ -182,7 +182,7 @@ function Cards(target,toc) {
 			var prevBtn = $("#prev");
 
 			card.init();
-			card.showPane(13);
+			card.showPane(0);
 
 			nextBtn.click(card.next);
 			prevBtn.click(card.prev);
