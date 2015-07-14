@@ -78,6 +78,7 @@
 		opacity: 1;
 		width: 33.33333333%;
 		position: relative;
+		top: 14px;
 	}
 }
 
@@ -119,19 +120,83 @@
 		border: 1px solid $volume-arrow;
 		border-radius: 5px;
 		background-color: #fff;
+
+	}
+
+	header {
+		margin-top: 0;
+	}
+
+	h1 {
+		font-size: 2em;
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		font-size: 1.4em;
+		font-family: knockFourtyNine;
+		text-transform: uppercase;
+		color: $volume-arrow;
+		margin-top: 0;
+	}
+
+	figure {
+		padding-top: 0;
 	}
 }
 
+@media screen and (min-width: 768px) { 
+	.card-container {
+		h1 {
+			font-size: 3em;
+		}	
+	}
+}
+
+.card-toc {
+	h1 {
+		font-family: knockFourtyNine;
+		text-transform: uppercase;
+		margin-top: 0;
+	}
+
+	h2 {
+		font-family: bodyBold;
+		font-size: 1.4em;
+		color: $volume-arrow;
+		margin-top: 0;
+	}
+	
+}
+
+
 .card-toc ol {
+	li strong {
+		// font-family: knockFourtyNine;
+		color: $font-colour-1;
+		// background-color: $volume-arrow;
+		letter-spacing: 0.15em;
+		// text-transform: uppercase;
+		font-size: 1.1em; 
+		display: inline-block;
+		// width: 100%;
+		// padding-left: 8px;
+		margin-top: 6px;
+	}
+
 	button {
 		border: none;
 		background-color: #ffffff;
 		color: $volume-arrow;
 		outline: none;
 		text-align: left;
+		padding: 2px 0 0 6px;
+		margin: 4px 6px 3px 0px;
 	}
 
 	.active {
 		color: $font-colour-1;
+		border-left: 2px solid $nature-red;
+		padding: 2px 0 0 4px;
 	}
 }

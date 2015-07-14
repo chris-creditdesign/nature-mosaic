@@ -904,6 +904,7 @@ figure:hover .img-facebook {
     opacity: 1;
     width: 33.33333333%;
     position: relative;
+    top: 14px;
   }
 }
 .card-container {
@@ -947,16 +948,61 @@ figure:hover .img-facebook {
   border-radius: 5px;
   background-color: #fff;
 }
+.card-container header {
+  margin-top: 0;
+}
+.card-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.card-container h2 {
+  font-size: 1.4em;
+  font-family: knockFourtyNine;
+  text-transform: uppercase;
+  color: #999999;
+  margin-top: 0;
+}
+.card-container figure {
+  padding-top: 0;
+}
 
+@media screen and (min-width: 768px) {
+  .card-container h1 {
+    font-size: 3em;
+  }
+}
+.card-toc h1 {
+  font-family: knockFourtyNine;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.card-toc h2 {
+  font-family: bodyBold;
+  font-size: 1.4em;
+  color: #999999;
+  margin-top: 0;
+}
+
+.card-toc ol li strong {
+  color: #222222;
+  letter-spacing: 0.15em;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 6px;
+}
 .card-toc ol button {
   border: none;
   background-color: #ffffff;
   color: #999999;
   outline: none;
   text-align: left;
+  padding: 2px 0 0 6px;
+  margin: 4px 6px 3px 0px;
 }
 .card-toc ol .active {
   color: #222222;
+  border-left: 2px solid #bf0222;
+  padding: 2px 0 0 4px;
 }
 
 .advert-row {
