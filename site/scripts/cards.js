@@ -2,6 +2,7 @@ function Cards() {
 	var self = this;
 	var touch = true;
 	element = $("#card-container");
+	var width = $(window).width();
 
 	var nextBtn = $("#card-next");
 	var prevBtn = $("#card-prev");
@@ -58,8 +59,12 @@ function Cards() {
 		cardTotal.text(pane_count);
 		
 		$(window).on("load resize orientationchange", function() {
-			setPaneDimensions();
-			that.showPane(current_pane);
+			if($(window).width() != width){ 
+				width = $(window).width();
+
+				setPaneDimensions();
+				that.showPane(current_pane);
+			}
 		});
 	};
 
