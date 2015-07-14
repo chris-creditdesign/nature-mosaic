@@ -884,7 +884,7 @@ figure:hover .img-facebook {
 }
 
 .card-toc {
-  opacity: 0;
+  display: none;
   position: absolute;
   top: 0px;
   background-color: #ffffff;
@@ -894,7 +894,7 @@ figure:hover .img-facebook {
   padding-bottom: 20px;
 }
 .card-toc.overlay {
-  opacity: 1;
+  display: block;
   z-index: 9998;
 }
 
