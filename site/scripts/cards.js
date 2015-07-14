@@ -58,7 +58,13 @@ function Cards() {
 
 		cardTotal.text(pane_count);
 		
-		$(window).on("load resize orientationchange", function() {
+		$(window).on("load", function() {			
+			setPaneDimensions();
+			that.showPane(current_pane);
+		
+		});
+
+		$(window).on("resize orientationchange", function() {
 			if($(window).width() != width){ 
 				width = $(window).width();
 
@@ -75,7 +81,7 @@ function Cards() {
 			$(this).width(pane_width);
 			$(this).height($(window).height() - 40);
 		});
-		cardToc.height($(window).height() - 40);
+		cardToc.height($(window).height() - 60);
    		container.width(pane_width * pane_count);
 	}
 
@@ -150,8 +156,8 @@ function Cards() {
 						drag_offset *= 0.4;
 					}
 
+					setContainerOffset(drag_offset + pane_offset);
 				}
-				setContainerOffset(drag_offset + pane_offset);
 				break;
 
 			case 'swipeleft':
