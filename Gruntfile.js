@@ -82,7 +82,7 @@ module.exports = function(grunt){
 		sevenDaysA: {
 			src: [
 				'site/includes/header.html',
-				'site/includes/fixed-header.html',
+				'site/includes/card-header.html',
 				'site/pages/seven-days-a.html',
 				'site/includes/footer.html'
 			],
@@ -91,7 +91,7 @@ module.exports = function(grunt){
 		researchHighlightsA: {
 			src: [
 				'site/includes/header.html',
-				'site/includes/fixed-header.html',
+				'site/includes/card-header.html',
 				'site/pages/research-highlights-a.html',
 				'site/includes/footer.html'
 			],

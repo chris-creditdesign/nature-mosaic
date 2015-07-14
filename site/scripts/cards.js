@@ -1,12 +1,20 @@
-function Cards(target,toc) {
+function Cards() {
 	var self = this;
 	var touch = true;
-	element = $(target);
+	element = $("#card-container");
 
-	var container = $(target + " ol");
-	var panes = $(target + " li");
-	var tocList = $(toc);
+	var nextBtn = $("#card-next");
+	var prevBtn = $("#card-prev");
+	var nextTocBtn = $("#card-toc-next");
+	var prevTocBtn = $("#card-toc-prev");
+	var infoBtn = $("#card-info");
+	var cardToc = $("#card-toc");
+	var container = $("#card-container ol");
+	var panes = $("#card-container li");
+	var tocList = $("#card-toc ol");
 	var tocButtons;
+	var cardCounter = $("#card-counter");
+	var cardTotal = $("#card-total");
 
 	/*	Array used to keep track of the article straps */
 	var strapArray = [];
@@ -16,6 +24,8 @@ function Cards(target,toc) {
 	var current_pane = 0;
 
 	var hammerEvents = "panend panleft panright swipeleft swiperight";
+
+
 
 	/* Initial */
 	this.init = function() {
@@ -38,12 +48,14 @@ function Cards(target,toc) {
 			}
 		});
 
-		tocButtons = $(toc).find("li button");
+		tocButtons = $("#card-toc").find("li button");
 
 		tocButtons.click(function () {
 			var num = $(this).attr("id");
 			that.showPane(parseInt(num.slice(5), 10), true);
 		});
+
+		cardTotal.text(pane_count);
 		
 		$(window).on("load resize orientationchange", function() {
 			setPaneDimensions();
@@ -56,7 +68,9 @@ function Cards(target,toc) {
 		pane_width = element.width();
 		panes.each(function() {
 			$(this).width(pane_width);
+			$(this).height($(window).height() - 40);
 		});
+		cardToc.height($(window).height() - 40);
    		container.width(pane_width * pane_count);
 	}
 
@@ -74,6 +88,10 @@ function Cards(target,toc) {
 			$(this).removeClass("active");
 		});
 		tocButtons.eq(current_pane).addClass("active");
+		
+		cardToc.removeClass("overlay");
+
+		cardCounter.text(current_pane + 1);
 	};
 
 	function setContainerOffset(percent, animate) {
@@ -106,7 +124,6 @@ function Cards(target,toc) {
 		/*	Check that we are panning in horizontal direction 
 			and not trying to scroll the page */
 		if ( (ev.angle < 30 && ev.angle > -30) || (ev.angle > -180 && ev.angle < -150 ) || (ev.angle > 150 && ev.angle < 180 ) ) {
-			console.log("We're panning!");
 			sideways = true;
 		} else {
 			sideways = false;
@@ -161,6 +178,15 @@ function Cards(target,toc) {
 		
 	}
 
+	nextBtn.click(this.next);
+	prevBtn.click(this.prev);
+	nextTocBtn.click(this.next);
+	prevTocBtn.click(this.prev);
+
+	infoBtn.click(function () {
+		cardToc.toggleClass("overlay");
+	});
+
 
 	try {
 		document.createEvent("TouchEvent");
@@ -177,15 +203,9 @@ function Cards(target,toc) {
 
 	var init = function($) {
 
-			var card = new Cards("#card-container","#card-toc");
-			var nextBtn = $("#next");
-			var prevBtn = $("#prev");
-
+			var card = new Cards();
 			card.init();
 			card.showPane(0);
-
-			nextBtn.click(card.next);
-			prevBtn.click(card.prev);
 
 	};
 

@@ -828,6 +828,82 @@ figure:hover .img-facebook {
   max-width: 100%;
 }
 
+.card-header {
+  color: #dadada;
+  background-color: #bf0222;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  padding: 6px 15px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  z-index: 9999;
+}
+.card-header .btn-card {
+  padding: 0;
+  background-color: #bf0222;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+}
+.card-header .btn-next, .card-header .btn-prev {
+  font-size: 1.5em;
+}
+.card-header .card-card {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card-header {
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card-header {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .card-header .btn-card {
+    display: none;
+  }
+  .card-header .card-card {
+    display: inline;
+  }
+}
+.card-layout {
+  margin-top: 40px;
+}
+
+.card-toc {
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  background-color: #ffffff;
+  z-index: 0;
+  overflow: scroll;
+  transition: opacity 0.3s ease;
+  padding-bottom: 20px;
+}
+.card-toc.overlay {
+  opacity: 1;
+  z-index: 9998;
+}
+
+@media screen and (min-width: 992px) {
+  .card-toc {
+    opacity: 1;
+    position: relative;
+  }
+}
 .card-container {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
@@ -837,6 +913,7 @@ figure:hover .img-facebook {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   margin: 0 auto;
+  z-index: 10;
 }
 .card-container, .card-container ol, .card-container li {
   padding: 0;
@@ -858,22 +935,24 @@ figure:hover .img-facebook {
 }
 .card-container li {
   float: left;
+  overflow: scroll;
 }
 .card-container article {
   padding: 20px;
-  margin: 20px 15px 0;
+  margin: 20px 15px 20px 15px;
   border: 1px solid #999999;
   border-radius: 5px;
+  background-color: #fff;
 }
 
-.card-toc button {
+.card-toc ol button {
   border: none;
   background-color: #ffffff;
   color: #999999;
   outline: none;
   text-align: left;
 }
-.card-toc .active {
+.card-toc ol .active {
   color: #222222;
 }
 
