@@ -880,7 +880,7 @@ figure:hover .img-facebook {
   }
 }
 .card-layout {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .card-toc {
@@ -935,7 +935,8 @@ figure:hover .img-facebook {
 }
 .card-container li {
   float: left;
-  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .card-container article {
   padding: 20px;

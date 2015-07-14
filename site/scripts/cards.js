@@ -126,21 +126,31 @@ function Cards() {
 		// DIRECTION_LEFT	== 2
 		// DIRECTION_RIGHT	== 4
 
+		/*	Check that we are panning in horizontal direction 		
+			and not trying to scroll the page */		
+		if ( (ev.angle < 30 && ev.angle > -30) || (ev.angle > -180 && ev.angle < -150 ) || (ev.angle > 150 && ev.angle < 180 ) ) {		
+			sideways = true;		
+		} else {		
+			sideways = false;		
+		}
+
 	    switch(ev.type) {
 			case 'panright':
 			case 'panleft':
 				
-				/*	Sticky fingaz */
-				/*	Make the pane follow the cursor/finger */
-				var pane_offset = -(100/pane_count)*current_pane;
-				var drag_offset = ((100/pane_width)*ev.deltaX) / pane_count;
-					
-				/* Slow down at the first and last pane */
-				if((current_pane === 0 && ev.direction === 4) ||
-					(current_pane === (pane_count - 1) && ev.direction === 2)) {
-					drag_offset *= 0.4;
-				}
+				if (sideways) {
+					/*	Sticky fingaz */
+					/*	Make the pane follow the cursor/finger */
+					var pane_offset = -(100/pane_count)*current_pane;
+					var drag_offset = ((100/pane_width)*ev.deltaX) / pane_count;
+						
+					/* Slow down at the first and last pane */
+					if((current_pane === 0 && ev.direction === 4) ||
+						(current_pane === (pane_count - 1) && ev.direction === 2)) {
+						drag_offset *= 0.4;
+					}
 
+				}
 				setContainerOffset(drag_offset + pane_offset);
 				break;
 
