@@ -1,5 +1,6 @@
 function Cards(target,toc) {
 	var self = this;
+	var touch = true;
 	element = $(target);
 
 	var container = $(target + " ol");
@@ -22,8 +23,8 @@ function Cards(target,toc) {
 		var that = this;
 
 		panes.each(function () {
-			var strap = $(this).find("h2").text();
-			var head = $(this).find("h1").text();
+			var strap = $(this).find("header h2").text();
+			var head = $(this).find("header h1").text();
 			var number = $(this).index();
 
 			if (strapArray.indexOf(strap) == -1 && (strap.length > 0)) {
@@ -97,25 +98,39 @@ function Cards(target,toc) {
 	function handleHammer(ev) {
     	// disable browser scrolling - Not sure if this is necessary
 		ev.preventDefault();
+		var sideways = true;
 
 		// DIRECTION_LEFT	== 2
 		// DIRECTION_RIGHT	== 4
-		
+
+		/*	Check that we are panning in horizontal direction 
+			and not trying to scroll the page */
+		if ( (ev.angle < 30 && ev.angle > -30) || (ev.angle > -180 && ev.angle < -150 ) || (ev.angle > 150 && ev.angle < 180 ) ) {
+			console.log("We're panning!");
+			sideways = true;
+		} else {
+			sideways = false;
+		}
+
 	    switch(ev.type) {
 			case 'panright':
 			case 'panleft':
-				/*	Sticky fingaz */
-				/*	Make the pane follow the cursor/finger */
-				var pane_offset = -(100/pane_count)*current_pane;
-				var drag_offset = ((100/pane_width)*ev.deltaX) / pane_count;
-					
-				/* Slow down at the first and last pane */
-				if((current_pane === 0 && ev.direction === 4) ||
-					(current_pane === (pane_count - 1) && ev.direction === 2)) {
-					drag_offset *= 0.4;
+
+				if (sideways) {
+					/*	Sticky fingaz */
+					/*	Make the pane follow the cursor/finger */
+					var pane_offset = -(100/pane_count)*current_pane;
+					var drag_offset = ((100/pane_width)*ev.deltaX) / pane_count;
+						
+					/* Slow down at the first and last pane */
+					if((current_pane === 0 && ev.direction === 4) ||
+						(current_pane === (pane_count - 1) && ev.direction === 2)) {
+						drag_offset *= 0.4;
+					}
+
+					setContainerOffset(drag_offset + pane_offset);
 				}
 
-				setContainerOffset(drag_offset + pane_offset);
 				break;
 
 			case 'swipeleft':
@@ -142,9 +157,19 @@ function Cards(target,toc) {
 	        }
 	        break;
 	    }
+
+		
 	}
 
-	new Hammer(element[0], { dragLockToAxis: true }).on(hammerEvents, handleHammer);
+
+	try {
+		document.createEvent("TouchEvent");
+		new Hammer(element[0], { dragLockToAxis: true }).on(hammerEvents, handleHammer);
+	}
+	catch (e) {
+		touch = false;
+	}
+
 }
 
 
@@ -157,7 +182,7 @@ function Cards(target,toc) {
 			var prevBtn = $("#prev");
 
 			card.init();
-			card.showPane(0);
+			card.showPane(13);
 
 			nextBtn.click(card.next);
 			prevBtn.click(card.prev);

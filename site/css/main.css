@@ -792,8 +792,12 @@ figure:hover .img-facebook {
 .ai2html p {
   margin: 0;
 }
-.ai2html .g-header, .ai2html .g-description {
+.ai2html .g-header, .ai2html .g-description, .ai2html .g-footnote {
   padding: 10px 20px;
+}
+.ai2html .g-footnote {
+  text-align: right;
+  font-size: 0.8em;
 }
 .ai2html dl {
   margin-bottom: 0px;

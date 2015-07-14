@@ -22,8 +22,13 @@
 		margin: 0;
 	}
 
-	.g-header, .g-description {
+	.g-header, .g-description, .g-footnote {
 		padding: 10px 20px;
+	}
+
+	.g-footnote {
+		text-align: right;
+		font-size: 0.8em;
 	}
 
 	dl {
