@@ -887,6 +887,7 @@ figure:hover .img-facebook {
   opacity: 0;
   position: absolute;
   top: 40px;
+  width: 100%;
   background-color: #ffffff;
   z-index: 0;
   overflow: scroll;
@@ -901,6 +902,7 @@ figure:hover .img-facebook {
 @media screen and (min-width: 992px) {
   .card-toc {
     opacity: 1;
+    width: 33.33333333%;
     position: relative;
   }
 }

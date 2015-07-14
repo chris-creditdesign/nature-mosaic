@@ -81,7 +81,10 @@ function Cards() {
 			$(this).width(pane_width);
 			$(this).height($(window).height() - 40);
 		});
-		cardToc.height($(window).height() - 60);
+		if ($(document).width() < 992 ) {
+			cardToc.height($(window).height() - 60);			
+		}
+
    		container.width(pane_width * pane_count);
 	}
 
