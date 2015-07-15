@@ -899,6 +899,10 @@ figure:hover .img-facebook {
   z-index: 9998;
 }
 
+.toc-btns {
+  margin-bottom: 15px;
+}
+
 @media screen and (min-width: 992px) {
   .card-toc {
     opacity: 1;
@@ -1010,6 +1014,57 @@ figure:hover .img-facebook {
   font-family: bodyBold;
   border-left: 4px solid #bf0222;
   padding: 2px 0 0 6px;
+}
+
+/* ---- grid ---- */
+.grid {
+  position: relative;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+.grid-item {
+  height: 120px;
+  float: left;
+  /* vertical gutter */
+  margin-bottom: 4%;
+  background: #999999;
+  border-radius: 5px;
+}
+
+.grid-item,
+.grid-sizer {
+  width: 100%;
+}
+
+.grid-item--width2 {
+  width: 100%;
+}
+
+.grid-item--width3 {
+  width: 100%;
+}
+
+.grid-gutter {
+  width: 0px;
+}
+
+.grid-item--height2 {
+  height: 200px;
+}
+
+.grid-item--height3 {
+  height: 260px;
+}
+
+.grid-item--height4 {
+  height: 360px;
 }
 
 .advert-row {

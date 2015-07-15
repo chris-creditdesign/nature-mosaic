@@ -96,6 +96,15 @@ module.exports = function(grunt){
 				'site/includes/footer.html'
 			],
 		dest: 'site/research-highlights-a.html'
+		},
+		audioVideoA: {
+			src: [
+				'site/includes/header.html',
+				'site/includes/fixed-header.html',
+				'site/pages/audio-video-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/audio-video-a.html'
 		}
 	},
 
