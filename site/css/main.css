@@ -974,35 +974,42 @@ figure:hover .img-facebook {
 .card-toc h1 {
   font-family: knockFourtyNine;
   text-transform: uppercase;
-  margin-top: 0;
 }
 .card-toc h2 {
-  font-family: bodyBold;
-  font-size: 1.4em;
+  font-family: body;
+  font-size: 1.2em;
   color: #999999;
   margin-top: 0;
 }
 
+@media screen and (min-width: 992px) {
+  .card-toc h1 {
+    margin-top: 0;
+  }
+}
 .card-toc ol li strong {
-  color: #222222;
-  letter-spacing: 0.15em;
-  font-size: 1.1em;
+  font-family: knockFourtyNine;
+  color: #999999;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 1em;
   display: inline-block;
   margin-top: 6px;
 }
 .card-toc ol button {
   border: none;
   background-color: #ffffff;
-  color: #999999;
+  color: #222222;
   outline: none;
   text-align: left;
-  padding: 2px 0 0 6px;
+  padding: 2px 0 0 10px;
   margin: 4px 6px 3px 0px;
 }
 .card-toc ol .active {
   color: #222222;
-  border-left: 2px solid #bf0222;
-  padding: 2px 0 0 4px;
+  font-family: bodyBold;
+  border-left: 4px solid #bf0222;
+  padding: 2px 0 0 6px;
 }
 
 .advert-row {

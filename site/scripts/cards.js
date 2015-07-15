@@ -26,8 +26,6 @@ function Cards() {
 
 	var hammerEvents = "panend panleft panright swipeleft swiperight";
 
-
-
 	/* Initial */
 	this.init = function() {
 		setPaneDimensions();
