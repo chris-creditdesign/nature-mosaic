@@ -1,0 +1,57 @@
+<dom-module id="small-video-element">
+
+	<template>
+
+			<div>
+				<span id="icons" class="media-tools">
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="media-facebook">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="./images/icons/svg-symbols.svg#facebook-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="media-twitter">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="./images/icons/svg-symbols.svg#twitter-icon" />
+					</svg>
+					<svg width="30px" height="30px" viewBox="0 0 30 30" class="media-playlist">
+						<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+						<use xlink:href="./images/icons/svg-symbols.svg#playlist-icon" />
+					</svg>
+					<button class="media-dismiss-btn">
+						<svg width="30px" height="30px" viewBox="0 0 30 30" class="media-dismiss">
+							<circle fill="#B3B3B3" cx="15" cy="15" r="15"/>
+							<use xlink:href="./images/icons/svg-symbols.svg#close-icon" />
+						</svg>
+					</button>
+				</span>
+				<img src={{image}}>
+				<ul class="list-unstyled">
+					<li class="media-title">{{headline}}</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">{{date}}</time>
+					</li>
+				</ul>
+			</div>
+
+	</template>
+
+	<script>
+		// register the new element
+		Polymer({
+			is: "small-video-element",
+			properties: {
+				image: {
+					type: String
+				},
+				headline: {
+					type: String
+				},
+				date: {
+					type: String
+				}
+			}
+		});
+	</script>
+
+</dom-module>
+
+

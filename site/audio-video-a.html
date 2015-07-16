@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
+	<link rel="import" href="./custom-elements/main-social-element.html">
+	<link rel="import" href="./custom-elements/small-video-element.html">
+
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
+		}
+	</script>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+	
+
+	<!-- twitter / facebook pop-up button -->
+	<a id="tweetbutton" class="tweetbutton"><img src = "images/icons/hover-icons.png"/></a>
+
+	<div class="header-banner-advert">
+		<img src="images/adverts/advert-728x90.jpg" alt="" class="img-responsive">
+	</div>
+
+	<nav class="navbar" id="top-nav">
+	</nav>
+		
+	<header class="container fixed-header">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+
+
+<article class="container add-fixed-header">
+	<header class="row center-text">
+		<div class="main-social">
+			<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+				<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+			</svg>
+
+
+			<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+				<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+			</svg>
+		</div>
+
+		<div class="col-md-12 col-lg-8 col-lg-offset-2">
+			<h1>Audio & video</h1>
+			<p class="standfirst">
+			Get more of the best science news and research. Add videos and podcasts to your playlist and subsribe via iTunes or or YouTube.
+			</p>
+		</div>
+	</header>
+
+	<div class="grid">
+
+			<div class="grid-sizer"></div>
+			<div class="grid-gutter"></div>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-1.jpg"
+				headline="How to see around corners"
+				date="24 June 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/audio-circle-4.png"
+				headline="Podcast Extra: Backchat"
+				date="6 July 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-2.jpg"
+				headline="Go green, go driverless!"
+				date="6 July 2015"
+			></small-video-element>
+
+			<div class="grid-item">
+				<img src="./images/audio-video/audio-2.png">
+				<ul class="list-unstyled">
+					<li class="media-title">Podcast: A Beautiful Question</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">14 July 2014</time>
+					</li>
+				</ul>
+			</div>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-3.jpg"
+				headline="Creating Gollum"
+				date="11 December 2014"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-4.jpg"
+				headline="Immunotherapy: Boosting the immune system to fight cancer"
+				date="30 March 2012"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-5.jpg"
+				headline="Immunology in the Gut Mucosa"
+				date="5 February 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/audio-circle-3.png"
+				headline="Podcast: Talking temperature"
+				date="28 May 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-6.jpg"
+				headline="Laniakea: Our home supercluster"
+				date="3 September 2014"
+			></small-video-element>
+
+			<div class="grid-item">
+				<img src="./images/audio-video/audio-2.png">
+				<ul class="list-unstyled">
+					<li class="media-title">How best to teach kids science</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">16 July 2015</time>
+					</li>
+				</ul>
+			</div>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-7.jpg"
+				headline="Lego Antikythera Mechanism"
+				date="9 December 2010"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-8.jpg"
+				headline="Miniature lab can diagnose disease in the field"
+				date="29 July 2011"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/audio-circle-1.png"
+				headline="Podcast: Talking temperature"
+				date="28 May 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-9.jpg"
+				headline="Prepare for Pluto: the New Horizons fly-by"
+				date="8 June 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-10.jpg"
+				headline="Why pluto?"
+				date="25 June 2015"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-11.jpg"
+				headline="Stem cells put women on fertile ground"
+				date="24 February 2012"
+			></small-video-element>
+
+			<small-video-element class="grid-item" 
+				image="./images/audio-video/video-12.jpg"
+				headline="Virtual Environments for Health"
+				date="3 August 2011"
+			></small-video-element>
+	
+	</div>
+
+	<aside class="row read-next read-next-inline">
+		<div class="col-md-12">
+			<h2>What to read next</h2>
+		</div>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="">
+			<img src="images/read-next-7.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Urban microbes come out of the shadows</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">22 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-8.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Private asteroid hunt lacks cash to spy threats in orbit</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">19 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-9.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Europe’s superlab: Sir Paul’s cathedral</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">24 July 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-10.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Wastewater disposal causes sharp rise in central US earthquakes</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="#">
+				<img src="images/read-next-11.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Astronomers claim first glimpse of primordial stars</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2015</time>
+					</li>
+				</ul>
+			</a>	
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="">
+				<img src="images/read-next-12.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Why the Pope's letter on climate change matters</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2012</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+	</aside>
+
+
+
+<script src="scripts/masonry-layout.js"></script>
+</article>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="../bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

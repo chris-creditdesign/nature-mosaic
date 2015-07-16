@@ -1018,7 +1018,7 @@ figure:hover .img-facebook {
 
 /* ---- grid ---- */
 .grid {
-  position: relative;
+  margin-top: 30px;
 }
 
 /* clearfix */
@@ -1030,17 +1030,16 @@ figure:hover .img-facebook {
 
 /* ---- grid-item ---- */
 .grid-item {
-  height: 120px;
   float: left;
   /* vertical gutter */
   margin-bottom: 4%;
-  background: #999999;
   border-radius: 5px;
 }
 
 .grid-item,
 .grid-sizer {
   width: 100%;
+  position: relative;
 }
 
 .grid-item--width2 {
@@ -1055,18 +1054,101 @@ figure:hover .img-facebook {
   width: 0px;
 }
 
-.grid-item--height2 {
-  height: 200px;
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.grid-item--height3 {
-  height: 260px;
+.grid-item .media-tools {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.grid-item .media-dismiss-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.grid-item .media-dismiss, .grid-item .media-playlist, .grid-item .media-twitter, .grid-item .media-facebook {
+  position: absolute;
+  transition: -webkit-transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+  right: 0px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  opacity: 0;
+  cursor: pointer;
+}
+.grid-item .media-dismiss circle, .grid-item .media-playlist circle, .grid-item .media-twitter circle, .grid-item .media-facebook circle {
+  transition: fill 0.2s ease;
+}
+.grid-item .media-dismiss:hover circle {
+  fill: #bf0222;
+}
+.grid-item .media-playlist:hover circle {
+  fill: #656565;
+}
+.grid-item .media-twitter:hover circle {
+  fill: #39A9E0;
+}
+.grid-item .media-facebook:hover circle {
+  fill: #37589A;
+}
+.grid-item:hover .media-dismiss {
+  opacity: 1;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.grid-item:hover .media-playlist {
+  right: 38px;
+  opacity: 1;
+}
+.grid-item:hover .media-twitter {
+  right: 76px;
+  opacity: 1;
+}
+.grid-item:hover .media-facebook {
+  right: 114px;
+  opacity: 1;
 }
 
-.grid-item--height4 {
-  height: 360px;
+.grid-item ul {
+  margin-top: 8px;
 }
 
+.media-title {
+  font-family: headBold;
+  color: #222222;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+@media screen and (min-width: 480px) {
+  .grid-item,
+  .grid-sizer {
+    width: 48%;
+  }
+
+  .grid-gutter {
+    width: 4%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid-item,
+  .grid-sizer {
+    width: 30.6666666%;
+  }
+
+  .grid-gutter {
+    width: 4%;
+  }
+}
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;
