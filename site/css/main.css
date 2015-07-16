@@ -969,6 +969,10 @@ figure:hover .img-facebook {
 .card-container figure {
   padding-top: 0;
 }
+.card-container .main-social {
+  top: 14px;
+  display: block;
+}
 
 @media screen and (min-width: 768px) {
   .card-container h1 {
