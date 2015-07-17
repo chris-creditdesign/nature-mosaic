@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
+	<link rel="import" href="./custom-elements/main-social-element.html">
+	<link rel="import" href="./custom-elements/small-video-element.html">
+
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
+		}
+	</script>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-spy="scroll" data-target="#fast-scroll-toc">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+	
+
+	<!-- twitter / facebook pop-up button -->
+	<a id="tweetbutton" class="tweetbutton"><img src = "images/icons/hover-icons.png"/></a>
+
+	<div class="header-banner-advert">
+		<img src="images/adverts/advert-728x90.jpg" alt="" class="img-responsive">
+	</div>
+
+	<nav class="navbar" id="top-nav">
+	</nav>
+		
+	<header class="container fixed-header">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+
+
+<article class="container fast-moving">
+
+	<header class="row" id="toc">
+		<div class="main-social">
+			<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+				<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+			</svg>
+
+			<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+				<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+			</svg>
+		</div>
+
+		<div class="col-md-10">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-2">
+					<div class="hidden-xs">
+						<button class="btn btn-default subject">Live coverage</button>
+						<button class="btn btn-default subject">MERS</button>
+					</div>
+					<h4 class="visible-xs">Live coverage | MERS</h4>
+					<h1 class="small-headline">MERS outbreak in South Korea</h1>
+					<p class="standfirst">Here you can follow Nature's full, up-to-date coverage of the crisis as it unfolds, read a selection of stories about MERS from our archive, and see recent research papers related to MERS.</p>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="row" id="section-1">
+
+
+		<div class="col-md-10">
+
+			<article class="row">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<h2 class="fast-head">MERS is not a human virus</h2>
+					<figure-lightbox-element 
+						image="./images/fast-moving/fast-moving-a-1.jpg"
+						lightbox="./images/fast-moving/fast-moving-a-1.jpg"
+						caption="A women and her baby in Seoul wear masks as a precaution against MERS. "
+						credit="Chung Sung-Jun/Getty Images"
+						modal="lightbox1"
+					></figure-lightbox-element>
+					<p>For a virus to go pandemic, it must be able to spread easily between people, but MERS-CoV, which was first detected in Saudi Arabia in 2012, is primarily an animal virus. It is thought to have originated in bats, and occasionally&nbsp; jumps to humans through animal intermediates, probably camels. The virus can occasionally spread between people, as happened in South Korea, but only in hospital settings (for more, see below), or to a much lesser extent in households where people caring for an infected person have had close contact. The current outbreak was sparked when a 68-year-old Korean man flew back to Seoul on 4 May after a visit to four Middle Eastern countries. Before he was diagnosed, he spread the virus to health-care workers, family members, and other patients at the four different health-care facilities in which he was treated. To go pandemic, MERS-CoV would need to mutate so that it could spread easily between humans in the wider community — but the epidemiological information shows that the outbreak in South Korea is not unusual.</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+					
+				</div>
+			</article>
+
+			<article class="row" id="section-2">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10">
+					<h2 class="fast-head" >MERS mainly spreads in hospitals</h2>
+					<p>Though MERS-CoV is not considered a human virus, there is one place where it sometimes behaves like one: hospitals. In these settings, medical procedures on an undiagnosed patient, for example to aid breathing, can generate aerosols from the lungs that contaminate the area and infect people nearby with the virus. Otherwise, MERS-CoV which infects the deeper areas of the lung, is not coughed out. In this outbreak, the source developed flu-like symptoms and a cough on 11 May, but was only diagnosed and isolated on 20 May. This created a time window during which no special infection-control precautions were taken, which explains how he transmitted the infection. That he was treated at four different health facilities before he was diagnosed multiplied the risk of infection.</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+
+				</div>
+			</article>
+
+			<article class="row" id="section-3">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10">
+					<h2 class="fast-head">South Korea is doing a great job</h2>
+					<p>Because it spreads very poorly between people, MERS-CoV can be controlled by public-health measures, which South Korean authorities are now pursuing aggressively. The authorities have been exceptionally thorough in tracing all contacts of infected people and monitoring them for 14 days — the maximum incubation period of the disease. Any who begin to show symptoms are isolated. So far, all new cases have been among listed contacts, adding to confidence that the outbreak is under control. There are new cases reported each day but these do not represent any new spread of the virus since they can be accounted for by the more than 1,600 contacts of those already infected before MERS-CoV was diagnosed in South Korea.</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+
+				</div>
+			</article>
+
+			<article class="row" id="section-4">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10">
+					<p class="fast-slug">Update</p>
+					<h2 class="fast-head">MERS is not SARS</h2>
+					<figure-lightbox-element class="right"
+						image="./images/fast-moving/fast-moving-a-2.jpg"
+						lightbox="./images/fast-moving/fast-moving-a-2.jpg"
+						caption="The coronavirus that causes MERS has not evolved to spread easily between humans."
+						credit="NIAID/CDC"
+						modal="lightbox2"
+					></figure-lightbox-element>
+					<p>Over the past week, some may have been reminded of Severe Acute Respiratory Syndrome (SARS), which swept the globe in 2003. Even that was eventually brought under control, but it was different to MERS in one very important way: the coronavirus that caused SARS had evolved the ability to spread more easily between people than MERS does. MERS-CoV by contrast has not. Might MERS-CoV similarly evolve to cause a SARS-like outbreak? Viruses are unpredictable, so that possibility cannot be excluded, but nor is it inevitable. As is routine in such outbreaks, the virus will be sequenced to look for any genetic changes. But given that there is nothing extraordinary in the pattern of spread in the South Korean outbreak, there is no need to invoke hypothetical evolution. Were cases springing up around South Korea outside of hospital settings, that would be cause for alarm — but they are not.</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+
+				</div>
+			</article>
+
+			<article class="row" id="section-5">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10">
+					<p class="fast-slug">Update</p>
+					<h2 class="fast-head">This outbreak is not that big</h2>
+					<p>This outbreak may be the largest outside the Middle East, but it is not exceptional in size. An outbreak in Jeddah in Saudi Arabia during the spring of 2014 resulted in 255 people becoming infected, and a cluster of infections in 2013 at a hospital in Al-Hasa, in eastern Saudi Arabia, resulted in 23 confirmed and 11 suspected cases. Dozens of other hospital outbreaks have occurred in Saudi Arabia, prompting the health authorities there to retrain the hospital workforce in infection control. The number of those infected in the South Korean outbreak is also likely to be inflated because the authorities have comprehensively tested contacts for virus, and so have probably picked up many mild cases that may have gone undetected in past hospital outbreaks.</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+
+				</div>
+			</article>
+
+			<article class="row" id="section-6">
+				<div class="col-md-2">
+					<ul class="list-unstyled fast-time">
+						<li>
+							<time>Today</time>
+						</li>
+						<li>
+							<time>11:02am</time>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-10">
+					<p class="fast-slug">Update</p>
+					<h2 class="fast-head">Section 6</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias dolorum tenetur delectus commodi at alias ratione iusto cupiditate obcaecati illo architecto accusamus facilis, accusantium sunt quod cumque cum inventore doloremque!</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias dolorum tenetur delectus commodi at alias ratione iusto cupiditate obcaecati illo architecto accusamus facilis, accusantium sunt quod cumque cum inventore doloremque!</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias dolorum tenetur delectus commodi at alias ratione iusto cupiditate obcaecati illo architecto accusamus facilis, accusantium sunt quod cumque cum inventore doloremque!</p>
+
+					<div class="fast-social">
+						<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+							<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+						</svg>
+
+
+						<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+							<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+						</svg>
+					</div>
+
+					<ul>
+						<li><a href="#toc">Back to top</a></li>
+					</ul>
+
+				</div>
+			</article>
+
+
+
+		</div>
+
+		<div class="col-md-2 hidden-sm hidden-xs fast-lg-toc">
+			<nav class="fast-lg-toc" id="fast-scroll-toc" data-spy="affix" data-offset-top="440">
+				<ul class="nav nav-stacked">
+					<li><a href="#section-1">MERS is not a human virus</a></li>
+					<li><a href="#section-2">MERS mainly spreads in hospitals</a></li>
+					<li><a href="#section-3">South Korea is doing a great job</a></li>
+					<li><a href="#section-4">MERS is not SARS</a></li>
+					<li><a href="#section-5">This outbreak is not that big</a></li>
+					<li><a href="#section-6">Section 6</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="../bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

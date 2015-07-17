@@ -1,0 +1,25 @@
+.fast-moving {
+	margin-bottom: 500px;
+		
+	.fast-lg-toc {
+		width: 155px;
+
+		a {
+			color: $font-colour-2;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.active a {
+			color: $font-colour-1;
+			font-family: bodyBold;
+		}
+
+		&.affix {
+			top: 40px;
+		}
+
+	}
+}

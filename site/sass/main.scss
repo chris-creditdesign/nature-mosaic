@@ -11,6 +11,7 @@
 @import 'ai2html';
 @import 'cards';
 @import 'masonry';
+@import 'fastmoving';
 
 .advert-row {
 	border-top: 1px solid $font-colour-2;
@@ -26,6 +27,11 @@
 		max-width: 100%;
 		padding: 0 15px;
 	}
+}
+
+.anchor {
+	position:relative; 
+	top:-200px;
 }
 
 .obsessions {

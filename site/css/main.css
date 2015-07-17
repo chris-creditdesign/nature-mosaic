@@ -49,6 +49,7 @@
 }
 body {
   font-family: body;
+  position: relative;
 }
 
 p {
@@ -160,6 +161,10 @@ article h2 {
 }
 article h2.alt-font {
   margin-bottom: 5px;
+}
+article h2.fast-head {
+  border-top: 1px solid #e2e2e2;
+  padding-top: 15px;
 }
 article blockquote {
   font-family: proseBold;
@@ -1153,6 +1158,26 @@ figure:hover .img-facebook {
     width: 4%;
   }
 }
+.fast-moving {
+  margin-bottom: 500px;
+}
+.fast-moving .fast-lg-toc {
+  width: 155px;
+}
+.fast-moving .fast-lg-toc a {
+  color: #666666;
+}
+.fast-moving .fast-lg-toc a:hover {
+  text-decoration: underline;
+}
+.fast-moving .fast-lg-toc .active a {
+  color: #222222;
+  font-family: bodyBold;
+}
+.fast-moving .fast-lg-toc.affix {
+  top: 40px;
+}
+
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;
@@ -1166,6 +1191,11 @@ figure:hover .img-facebook {
 .advert-banner img {
   max-width: 100%;
   padding: 0 15px;
+}
+
+.anchor {
+  position: relative;
+  top: -200px;
 }
 
 .obsessions {

@@ -1,6 +1,7 @@
 // Typography
 body {
 	font-family: body;
+	position: relative;
 }
 
 p {
@@ -142,6 +143,11 @@ article {
 
 	h2.alt-font {
 		margin-bottom: 5px;
+	}
+
+	h2.fast-head {
+		border-top: 1px solid $rules;
+		padding-top: 15px;
 	}
 
 	blockquote {
