@@ -1,0 +1,1308 @@
+<style scoped>
+.status-message {
+  border: 1px solid #c00;
+  background: #fac7c7;
+  padding: 10px;
+  display: none;
+}
+
+.js-disabled .status-message, .ie6 .status-message, .ie7 .status-message, .ie8 .status-message {
+  display: block;
+}
+
+.outer-wrapper {
+  width: 100%;
+  position: relative;
+  display: none;
+  margin: 0 0 1.65em;
+}
+.outer-wrapper h2 {
+  padding: 20px 10px 0 10px;
+  margin: 0;
+}
+.outer-wrapper h3 {
+  padding: 0 10px;
+  margin: 0;
+}
+.outer-wrapper p {
+  padding: 10px;
+  margin: 0;
+}
+.outer-wrapper .chart {
+  position: relative;
+}
+.outer-wrapper .chart .axis path, .outer-wrapper .chart .axis line {
+  fill: none;
+  stroke: #666;
+  shape-rendering: crispEdges;
+}
+.outer-wrapper .chart text {
+  font-family: sans-serif;
+  fill: #666;
+  font-size: 13px;
+  shape-rendering: crispEdges;
+}
+.outer-wrapper .chart circle {
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.outer-wrapper .scatterGroup circle {
+  cursor: pointer;
+}
+.outer-wrapper .widget-tooltip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  padding: 6px 10px 6px 15px;
+  color: #ccc;
+  background-color: #333;
+  pointer-events: none;
+  border-radius: 5px;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.outer-wrapper .widget-tooltip p {
+  padding: 0;
+}
+.outer-wrapper .widget-tooltip span {
+  font-weight: bold;
+  color: #fff;
+}
+.outer-wrapper .hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.outer-wrapper .palette {
+  border-left: 20px solid;
+  padding-left: 4px;
+  display: inline-block;
+  margin: 10px;
+}
+.outer-wrapper .widget-footnote {
+  font-size: 0.8em;
+  color: #666;
+  display: none;
+}
+.outer-wrapper .options {
+  margin: 10px;
+}
+.outer-wrapper .options button {
+  padding: 10px;
+  background: #666;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+.outer-wrapper .options button:active, .outer-wrapper .options button:focus {
+  background-color: #222;
+}
+.outer-wrapper .options span {
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.outer-wrapper .options .choose-state, .outer-wrapper .options .choose-type {
+  position: absolute;
+  left: -5000%;
+  height: 0;
+  opacity: 0;
+}
+.outer-wrapper .options.open-section .choose-state, .outer-wrapper .options.open-section .choose-type {
+  position: relative;
+  left: 0;
+  height: auto;
+  opacity: 1;
+}
+.outer-wrapper .options span {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.outer-wrapper .options.open-section span {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.outer-wrapper .choose-state, .outer-wrapper .choose-type {
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  background-color: #ddd;
+  padding: 10px;
+  overflow: hidden;
+}
+@media (min-width: 630px) {
+  .outer-wrapper .choose-state, .outer-wrapper .choose-type {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 629px) {
+  .outer-wrapper .choose-state, .outer-wrapper .choose-type {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+.outer-wrapper ul {
+  overflow: visible;
+  padding-left: 0px;
+  margin: 0;
+}
+.outer-wrapper ul li {
+  list-style: none;
+  padding: 0 0 0 10px;
+  margin: 4px 0px 8px;
+}
+.outer-wrapper input[type="checkbox"] {
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  margin-right: 5px;
+  position: relative;
+  width: 20px;
+  background-color: #666;
+  -webkit-appearance: none;
+  outline: none;
+}
+.outer-wrapper input[type="checkbox"]:active, .outer-wrapper input[type="checkbox"]:focus {
+  background-color: #222;
+}
+.outer-wrapper input[type="checkbox"]:after {
+  content: "\2714";
+  font-size: 1em;
+  display: inline-block;
+  left: 0.3em;
+  position: relative;
+  top: 0.15em;
+}
+.outer-wrapper input[type="checkbox"]:after {
+  color: #666;
+}
+.outer-wrapper input[type="checkbox"]:active:after, .outer-wrapper input[type="checkbox"]:focus:after {
+  color: #222;
+}
+.outer-wrapper input[type="checkbox"]:checked:after {
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */
+
+</style>
+<div class="status-message">
+	<p>This interactive graphic requires a modern browser (e.g. Chrome, Safari or Firefox) with javascript enabled.</p>
+	<p>The data used to build this graphic can be downloaded as comma-separated values in plain-text form here: <a href="http://www.nature.com/polopoly_fs/7.21861!/file/indirect-costs-calculated.txt" title="Download Indirect costs calculated  76K">Indirect costs calculated.txt</a>.</p>
+</div>
+
+<div class="outer-wrapper ai2html" id="idc-graphic">
+	<h2>Interactive graphic</h2>
+	<p>In 2013, the US National Institutes of Health (NIH) awarded more than US$5 billion to research institutes for indirect costs: shared overhead expenses such as lighting, heat and maintenance. Institutes negotiate the rate at which they will be reimbursed. Data obtained by <em>Nature</em> reveal the disparity in these negotiated rates and show that the actual rate collected (as calculated by figures in the NIH RePORTER database) is generally much lower than the negotiated rate.</p>
+	<p>Hover your mouse over a data point to reveal the institution and key stats. Use the axis tabs to select a particular section of the data. You can also select the region (state or country) and the type of institution for which data will appear.</p>
+
+	<div class="chart">
+		<div class="widget-tooltip hidden" id="widget-tooltip">
+			<p id="name"></p>
+			<p>Funding: <span id="funding">0</span></p>
+			<p>Negotiated indirect cost: <span id="fy13">0</span></p>
+			<p>Calculated indirect cost: <span id="calculated-indirect-cost">0</span></p>
+		</div>
+	</div>
+
+	<div class="key" id="key"></div>
+
+	<section class="options">
+		<button id="show-hide">Select by region
+			<span>
+				<svg x="0px" y="0px" width="15px" height="10px">
+					<path d="M0,0 L15,0 7.5,10 Z" fill="#fff"></path>
+				</svg>
+			</span>
+		</button>
+		<form class="choose-state" id="states"></form>
+	</section>
+
+	<section class="options">
+		<button id="show-hide">Select by institution type
+			<span>
+				<svg x="0px" y="0px" width="15px" height="10px">
+					<path d="M0,0 L15,0 7.5,10 Z" fill="#fff"></path>
+				</svg>
+			</span>
+		</button>
+		<form class="choose-type" id="type"></form>
+	</section>
+
+
+	<p class="widget-footnote" id="widget-footnote"></p>
+
+</div>
+<!--[if gt IE 8]><!-->
+<script type="text/javascript">
+/* http://bl.ocks.org/mbostock/7555321 */
+function wrapSvgText(text, width) {
+	text.each(function() {
+		var text = d3.select(this),
+			words = text.text().split(/\s+/).reverse(),
+			word,
+			line = [],
+			lineNumber = 0,
+			lineHeight = 1.2, // ems
+			x = text.attr("x"),
+			y = text.attr("y"),
+			dy = parseFloat(text.attr("dy")),
+			tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+		while ( (word = words.pop()) !== undefined ) {
+			line.push(word);
+			tspan.text(line.join(" "));
+			if (tspan.node().getComputedTextLength() > width) {
+				line.pop();
+				tspan.text(line.join(" "));
+				line = [word];
+				tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+			}
+		}
+	});
+}
+
+function buildParams () {
+	var params = {};
+
+	params.colour =  [	"#88be3d", /* Higher Ed */
+						"#01a4c6", /* Hosp */
+						"#e9bb09", /* NP res inst */
+						"#ab2715"  /* Other */
+					];
+
+	params.uiColour = {
+		veryLightGrey: "#ddd",
+		lightGrey: "#999",
+		grey: "#666",
+		darkGrey: "#333"		
+	};
+
+	params.key = {
+		keyRange: [1000000, 100000000, 500000000],
+		verticalShift: [20, 36, 60],
+		horizontalShift: 25,
+		keyHead: "Total NIH funding for 2013, US$ million",
+		xAxisLabel: "Negotiated rate, from institutions (%)",
+		xAxisShort: "Negotiated rate (%)**",
+		xAxisFootnote: "**from institutions",
+		yAxisLabel: "Calculated rate, from NIH RePORTER database (%)",
+		yAxisShort: "Calculated rate (%)*",
+		yAxisFootnote: "*from NIH RePORTER database"
+	};
+
+	/*	Margin, Width and height */
+	params.margin = {top: 20, right: 20, mid: 30, bottom: 50, left: 50};
+	params.brushThickness = 30;
+	params.handleWidth = 10;
+	params.miniMapMargin = 10;
+	params.miniMapThickness = params.margin.left + params.brushThickness - params.miniMapMargin;
+	params.width = jQuery('.outer-wrapper').width()  - params.margin.left - params.brushThickness - params.margin.mid - params.margin.right;
+	// params.width = 600  - params.margin.left - params.brushThickness - params.margin.mid - params.margin.right;
+	// params.height = jQuery('.outer-wrapper').width() - params.margin.top - params.margin.mid - params.brushThickness - params.margin.bottom;
+	params.height = 450 - params.margin.top - params.margin.mid - params.brushThickness - params.margin.bottom;
+
+	params.duration = 450;
+	
+	params.startExtent = [0,105];
+	params.fullExtent = [0,105];
+	params.fullExtentInvert = [105,0];
+
+	params.format = d3.format("0,000");
+
+	return params;
+}
+
+function ifNaNmakeZero (num) {
+	if (isNaN(num)) {
+		num = 0;
+	}
+	return num;
+}
+
+function buildData (data) {
+
+	var institutionTypesArray = [];
+	var statesArray = [];
+	var filteredData = [];
+	
+
+	for (var i = 0; i < data.length; i++) {
+
+		if (data[i].institution_type === "Higher Ed") {
+			data[i].institution_type = "Universities";
+			data[i].institution_type_id = "universities";
+		} else if (data[i].institution_type === "Hosp") {
+			data[i].institution_type = "Hospitals";
+			data[i].institution_type_id = "hospitals";
+		} else if (data[i].institution_type === "NP res inst") {
+			data[i].institution_type = "Non-profits";
+			data[i].institution_type_id = "non-profits";
+		}
+
+		var my_state = data[i].state;
+
+		data[i].stateID = my_state.toLowerCase().split(' ').join("_");
+
+		data[i].floatFY12 = data[i].FY12.length > 0 ? parseFloat(data[i].FY12) : 0;
+		data[i].floatFY12 = ifNaNmakeZero(data[i].floatFY12);
+		
+		data[i].floatFY13 = data[i].FY13.length > 0 ? parseFloat(data[i].FY13) : 0;
+		data[i].floatFY13 = ifNaNmakeZero(data[i].floatFY13);
+		
+		data[i].floatCalculated_indirect_cost = parseFloat(data[i].calculated_indirect_cost);
+		data[i].floatCalculated_indirect_cost = ifNaNmakeZero(data[i].floatCalculated_indirect_cost);
+
+		data[i].intDirect_cost = parseInt(data[i].direct_cost, 10);
+		data[i].intDirect_cost = ifNaNmakeZero(data[i].intDirect_cost);
+
+		data[i].intIndirect_cost = parseInt(data[i].indirect_cost, 10);
+		data[i].intIndirect_cost = ifNaNmakeZero(data[i].intIndirect_cost);
+		
+		data[i].intFunding = parseInt(data[i].funding, 10);
+		data[i].intFunding = ifNaNmakeZero(data[i].intFunding);
+	}
+
+	data.forEach(function (element, array, index) {
+		if (element.floatFY13 && element.floatCalculated_indirect_cost > 0) {
+			filteredData.push(element);
+		}
+	});
+
+	for (var j = 0; j < filteredData.length; j++) {
+
+		if (statesArray.indexOf(filteredData[j].state) === -1 ) {
+			statesArray.push(filteredData[j].state);
+		}
+
+		if (institutionTypesArray.indexOf(filteredData[j].institution_type) === -1 ) {
+			institutionTypesArray.push(filteredData[j].institution_type);
+		}
+	}
+
+	statesArray.sort();
+	statesArray.unshift("ALL");
+
+	return {
+		data: data,
+		filteredData: filteredData,
+		activeData: [],
+		type: institutionTypesArray,
+		state: statesArray
+	};
+}
+
+function BuildWidget (target, params, data) {
+	this.target = target;
+	this.params = params;
+	this.data = data;
+}
+
+BuildWidget.prototype.updateWidget = function (params) {
+	this.params = params;
+}
+
+
+BuildWidget.prototype.buildScales = function () {
+	
+	var maxValue = d3.max(this.data.filteredData, function(d) { 
+		return d.intFunding; 
+	});
+
+	this.yScale = d3.scale.linear()
+					.range([this.params.height, 0])
+					.domain(this.params.startExtent);
+
+	this.yBrushScale = d3.scale.linear()
+					.range([this.params.height, 0])
+					.domain(this.params.fullExtent);
+
+	this.xScale = d3.scale.linear()
+					.range([0, this.params.width])
+					.domain(this.params.startExtent);
+
+	this.xBrushScale = d3.scale.linear()
+					.range([0, this.params.width])
+					.domain(this.params.fullExtent);
+
+	this.radiusScale = d3.scale.sqrt()
+						.domain([1000000, maxValue])
+						.range([2,15])
+						.clamp(true);
+
+	this.yMiniMapScale = d3.scale.linear()
+						.range([this.params.miniMapThickness, 0])
+						.domain(this.params.fullExtent);
+
+	this.yMiniMapInvertScale = d3.scale.linear()
+						.range([this.params.miniMapThickness, 0])
+						.domain(this.params.fullExtentInvert);
+
+	this.xMiniMapScale = d3.scale.linear()
+							.range([0, this.params.miniMapThickness])
+							.domain(this.params.fullExtent);
+
+	this.typeColourScale = d3.scale.ordinal()
+							.domain(this.data.type)
+							.range(this.params.colour);
+
+};
+
+BuildWidget.prototype.buildGraphic = function () {
+	this.svg = d3.select(this.target  + " > .chart").append("svg")
+		.attr("width", this.params.width + this.params.margin.left + this.params.brushThickness + this.params.margin.mid + this.params.margin.right)
+		.attr("height", this.params.height + this.params.margin.top + this.params.brushThickness + this.params.margin.mid + this.params.margin.bottom);
+
+	var clip = this.svg.append("defs").append("svg:clipPath")
+					.attr("id", "clip")
+				  .append("svg:rect")
+					.attr("x", 0)
+					.attr("y", 0)
+					.attr("width", this.params.width)
+					.attr("height", this.params.height);
+
+	var miniClip = this.svg.append("defs").append("svg:clipPath")
+					.attr("id", "mini-clip")
+				  .append("svg:rect")
+					.attr("x", 0)
+					.attr("y", 0)
+					.attr("width", this.params.miniMapThickness)
+					.attr("height", this.params.miniMapThickness);
+
+
+	this.scatterGroup = this.svg.append("g")
+							.attr("class","scatterGroup")
+							.attr("clip-path", "url(#clip)")
+							.attr("transform","translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + this.params.margin.top + ")");
+
+	this.keyGroup = this.svg.append("g")
+							.attr("class","keyGroup")
+							.attr("transform","translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + this.params.margin.top + ")");
+
+	this.xBrushGroup = this.svg.append("g")
+							.attr("class","xBrushGroup")
+							.attr("transform","translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + (this.params.margin.top + this.params.height + this.params.margin.mid)+ ")");
+
+	this.yBrushGroup = this.svg.append("g")
+							.attr("class","yBrushGroup")
+							.attr("transform","translate(" + this.params.margin.left + "," + this.params.margin.top + ")");
+
+	this.miniMapGroup = this.svg.append("g")
+							.attr("class","miniMapGroup")
+							.attr("clip-path", "url(#mini-clip)")
+							.attr("transform","translate(" + this.params.miniMapMargin + "," + (this.params.margin.top + this.params.height + this.params.margin.mid) + ")");
+
+	this.mapperGroup = this.svg.append("g")
+							.attr("class","miniMapGroup")
+							.attr("transform","translate(" + this.params.miniMapMargin + "," + (this.params.margin.top + this.params.height + this.params.margin.mid) + ")");
+};
+
+BuildWidget.prototype.destroyGraphic = function () {
+	this.svg.remove();
+};
+
+BuildWidget.prototype.buildAxes = function () {
+	var self = this;
+
+	this.yAxis = d3.svg.axis()
+					.scale(this.yScale)
+					.tickSize(3,0)
+					.orient("left");
+
+	this.yBrushAxis = d3.svg.axis()
+					.scale(this.yBrushScale)
+					.tickSize(3,0)
+					.orient("left");
+
+	this.xAxis = d3.svg.axis()
+					.scale(this.xScale)
+					.tickSize(3,0)
+					.orient("bottom");
+
+	this.xBrushAxis = d3.svg.axis()
+					.scale(this.xBrushScale)
+					.tickSize(3,0)
+					.orient("bottom");
+
+	/* Prepare the y axis */
+	this.svg.append("g")
+		.attr("class", "y axis")
+		.attr("transform", "translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + this.params.margin.top + ")")
+		.call(this.yAxis);
+
+	this.svg.append("g")
+		.attr("class", "y-brush axis")
+		.attr("transform", "translate(" + this.params.margin.left + "," + this.params.margin.top + ")")
+		.call(this.yBrushAxis)	
+	  .append("g")
+		.attr("class", "axisLabel")
+	  .append("text")
+		.attr("transform", "translate(" + -(this.params.margin.left * 0.6) + "," + (this.params.height / 2) + "), rotate(-90)")
+		.style("text-anchor", "middle")
+		.text(function () {
+			if ( self.params.width > 350  ) {
+				return self.params.key.yAxisLabel;
+			} else {
+				return self.params.key.yAxisShort;
+			}
+		});
+
+	/*	Prepare the x axis */
+	this.svg.append("g")
+		.attr("class", "x axis")
+		.attr("transform", "translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + (this.params.margin.top + this.params.height) + ")")
+		.call(this.xAxis)
+
+	this.svg.append("g")
+		.attr("class", "x-brush axis")
+		.attr("transform", "translate(" + (this.params.margin.left + this.params.brushThickness + this.params.margin.mid) + "," + (this.params.margin.top + this.params.height + this.params.margin.mid + this.params.brushThickness) + ")")
+		.call(this.xBrushAxis)	
+	  .append("g")
+		.attr("class","axisLabel")
+	  .append("text")
+		.attr("transform", "translate(" + (this.params.width / 2) + "," + (this.params.margin.bottom * 0.7) + ")")
+		.style("text-anchor","middle")
+		.text(function () {
+			if ( self.params.width > 350  ) {
+				return self.params.key.xAxisLabel;
+			} else {
+				return self.params.key.xAxisShort;
+			}
+		});
+		
+};
+
+BuildWidget.prototype.buildBrush = function () {
+	var self = this;
+
+	var xDisplay = function () {
+		var extent = self.xBrush.extent();
+
+		self.xScale.domain(extent);
+
+		self.updateView();
+	};
+
+	var xBrushend = function () {
+		if (self.xBrush.extent()[0] === self.xBrush.extent()[1]) {
+			d3.select(this).call(self.xBrush.extent(self.params.fullExtent));
+			self.xScale.domain(self.params.fullExtent);
+
+			self.updateView();
+		}
+	};
+
+	var yDisplay = function () {
+		var extent = self.yBrush.extent();
+
+		self.yScale.domain(extent);
+
+		self.updateView();
+	};
+
+	var yBrushend = function () {
+		if (self.yBrush.extent()[0] === self.yBrush.extent()[1]) {
+			d3.select(this).call(self.yBrush.extent(self.params.fullExtent));
+			self.yScale.domain(self.params.fullExtent);
+
+			self.updateView();
+		}
+	};
+
+	var buildHandles = function (target, horizontal) {
+		var handleGroup = target.selectAll(".resize").append("g") 
+			.attr("transform", function(d, i) {
+				if (horizontal) {
+					return  i ? "translate(" + -(self.params.handleWidth) + ",0)" : "translate(0,0)";   
+				} else {
+					return  i ?  "translate(0,0)" : "translate(0," + -(self.params.handleWidth) + ")"; 
+				}
+			});
+
+		handleGroup.append("rect")
+			.attr("x", 0)
+			.attr("y", 0)
+			.attr("fill", self.params.uiColour.grey)
+			.attr("width", horizontal ? self.params.handleWidth : self.params.brushThickness)
+			.attr("height", horizontal ? self.params.brushThickness : self.params.handleWidth);
+
+		handleGroup.append("line")
+			.attr("x1", horizontal ? (self.params.handleWidth * 0.65) : (self.params.brushThickness * 0.2))
+			.attr("y1", horizontal ? (self.params.brushThickness * 0.2) : (self.params.handleWidth * 0.65))
+			.attr("x2", horizontal ? (self.params.handleWidth * 0.65) : (self.params.brushThickness * 0.8))
+			.attr("y2", horizontal ? (self.params.brushThickness * 0.8): (self.params.handleWidth * 0.65))
+			.attr("stroke", self.params.uiColour.veryLightGrey)
+			.attr("stroke-width", 1);
+
+		handleGroup.append("line")
+			.attr("x1", horizontal ? (self.params.handleWidth * 0.35) : (self.params.brushThickness * 0.2))
+			.attr("y1", horizontal ? (self.params.brushThickness * 0.2) : (self.params.handleWidth * 0.35))
+			.attr("x2", horizontal ? (self.params.handleWidth * 0.35) : (self.params.brushThickness * 0.8))
+			.attr("y2", horizontal ? (self.params.brushThickness * 0.8) : (self.params.handleWidth * 0.35))
+			.attr("stroke", self.params.uiColour.veryLightGrey)
+			.attr("stroke-width", 1);
+	};
+
+	this.xBrush = d3.svg.brush()
+					.x(this.xBrushScale)
+					.extent(this.params.startExtent)
+					.on("brush", xDisplay)
+					.on("brushend", xBrushend);
+
+	this.yBrush = d3.svg.brush()
+					.y(this.yBrushScale)
+					.extent(this.params.startExtent)
+					.on("brush", yDisplay)
+					.on("brushend", yBrushend)
+
+	this.xBrushGroup.append("g")
+		.attr("class", "brush")
+		.call(this.xBrush)
+		.selectAll("rect")
+		.attr("fill",this.params.uiColour.veryLightGrey)
+		.attr("height", this.params.brushThickness );
+
+	buildHandles(this.xBrushGroup, true);
+
+	this.yBrushGroup.append("g")
+		.attr("class", "brush")
+		.call(this.yBrush)
+		.selectAll("rect")
+		.attr("fill", this.params.uiColour.veryLightGrey)
+		.attr("width", this.params.brushThickness);
+
+	buildHandles(this.yBrushGroup, false);
+};
+
+BuildWidget.prototype.enterScatterPlot = function (target, main) {
+	var self = this;
+
+	target.selectAll("circle")
+			.data(this.data.activeData, function (d) {
+				return d.organization_name;
+			})
+			.enter()
+		  .append("circle")
+			.attr("cx", function (d) {
+				return main ? self.xScale(d.floatFY13) : self.xMiniMapScale(d.floatFY13);
+			})
+			.attr("cy", function (d) {
+				return main ? self.yScale(d.floatCalculated_indirect_cost) : self.yMiniMapScale(d.floatCalculated_indirect_cost);
+			})
+			.attr("r", 0)
+			.attr("opacity", 0.8)
+			.attr("fill", function (d) {
+				return self.typeColourScale(d.institution_type);
+			})
+			.attr("stroke", self.params.uiColour.darkGrey)
+			.attr("stroke-width", 0)
+			.classed("hidden", false)
+			.attr("r", function (d) {
+				if ( main ) {
+					if ( self.params.width > 350  ) {
+						return self.radiusScale(d.intFunding)
+					} else {
+						return 3;
+					}
+				} else {
+					return 1;
+				}
+			});
+
+};
+
+BuildWidget.prototype.updateScatterPlot = function () {
+	var self = this;
+
+	this.scatterGroup.selectAll("circle")
+			.data(this.data.activeData, function (d) {
+				return d.organization_name;
+			})
+			.attr("cx", function (d) {
+				return self.xScale(d.floatFY13);
+			})
+			.attr("cy", function (d) {
+				return self.yScale(d.floatCalculated_indirect_cost);
+			})
+			.classed("hidden", false);
+};
+
+BuildWidget.prototype.exitScatterPlot = function () {
+	var self = this;
+
+	this.scatterGroup.selectAll("circle")
+		.data(this.data.activeData, function (d) {
+			return d.organization_name;
+		})
+		.exit()
+		.classed("hidden", true);
+};
+
+BuildWidget.prototype.buildTooltip = function () {
+	var self = this;
+
+	this.scatterGroup.selectAll("circle")
+		.on("mouseover", function (d) {
+			var myCircle = d3.select(this);
+
+			myCircle.attr("stroke-width", 3);
+
+			var tooltipWidth = parseInt(d3.select("#widget-tooltip").style("padding-left"),10) + parseInt(d3.select("#widget-tooltip").style("width"),10) + parseInt(d3.select("#widget-tooltip").style("padding-right"),10);
+
+			var top = (parseFloat(myCircle.attr("cy")) + self.params.margin.top);
+			var left = (parseFloat(myCircle.attr("cx")) + self.params.margin.left + self.params.brushThickness + self.params.margin.mid );
+
+			if ( parseFloat(myCircle.attr("cx")) > (self.params.width / 2) ) {
+				left -= tooltipWidth;
+			}
+
+			d3.select("#widget-tooltip")
+				.style("top",  top + "px")
+				.style("left", left + "px")
+				.classed("hidden", false);
+			
+			d3.select("#name").text(d.organization_name);
+			d3.select("#funding").text("$" + self.params.format(d.funding));
+			d3.select("#fy13").text(d.FY13 + "%");
+			d3.select("#calculated-indirect-cost").text(d.calculated_indirect_cost + "%");
+
+		}).on("mouseout", function () {
+			d3.select(this).attr("stroke-width", 0);
+			self.hideTooltip();
+		});
+};
+
+BuildWidget.prototype.hideTooltip = function () {
+	d3.select("#widget-tooltip").classed("hidden", true);
+};
+
+BuildWidget.prototype.buildMiniMap = function () {
+	var self = this;
+
+	this.miniMapGroup.append("rect")
+					.attr("x", 0)
+					.attr("y", 0)
+					.attr("width", this.params.miniMapThickness)
+					.attr("height", this.params.miniMapThickness)
+					.attr("fill", this.params.uiColour.veryLightGrey)
+					.attr("stroke","none");
+
+	this.mapper = this.mapperGroup.append("rect")
+						.attr("x", function () {
+							return self.xMiniMapScale(self.params.startExtent[0])
+						})
+						.attr("y", function () {
+							var top = self.params.fullExtent[1] - self.params.startExtent[1];
+							return self.yMiniMapInvertScale(top);
+						})
+						.attr("width", function () {
+							var width = self.params.startExtent[1] - self.params.startExtent[0];
+							return self.xMiniMapScale(width);
+						})
+						.attr("height", function () {
+							var height = self.params.startExtent[1] - self.params.startExtent[0];
+							return self.yMiniMapInvertScale(height);
+						})
+						.attr("fill","none")
+						.attr("stroke", this.params.uiColour.darkGrey)
+						.attr("storke-width","1px");
+};
+
+BuildWidget.prototype.updateMiniMap = function(x, y) {
+	var self = this;
+
+	this.mapper
+			.attr("x", function() {
+				return self.xMiniMapScale(x[0]);
+			})
+			.attr("y", function() {
+				var top = self.params.fullExtent[1] - y[1];
+				return self.yMiniMapInvertScale(top);
+			})
+			.attr("width", function () {
+				var width = x[1] - x[0];
+				return self.xMiniMapScale(width);
+			})
+			.attr("height", function () {
+				var height = y[1] - y[0];
+				return self.yMiniMapInvertScale(height);
+			});
+};
+
+BuildWidget.prototype.buildBox = function (target) {
+	this.keyBox = target.append("rect")
+		.attr("x", 10)
+		.attr("y", 10)
+		.attr("width", 150)
+		.attr("height", 200)
+		.attr("fill", "#fff")
+		.attr("stroke", this.params.uiColour.grey)
+		.attr("stroke-width", 1)
+		.attr("opacity", 0.8);
+
+}
+
+BuildWidget.prototype.buildColourKey = function (target) {
+	var self = this;
+
+	this.colourGroup = target.append("g")
+							.attr("class","colourGroup")
+							.attr("transform","translate(0,45)")
+							.attr("opacity", 1)
+
+	this.colourGroup.selectAll("text")
+		.data(self.data.type)
+		.enter()
+	  .append("text")
+		.attr("x", self.params.key.horizontalShift)
+		.attr("y", function (d,i) {
+			return (i * self.params.key.verticalShift[0]) + 10;
+		})
+		.attr("dx", 15)
+		.text(function (d) {
+			return d;
+		});
+
+	this.colourGroup.selectAll("rect")
+		.data(self.data.type)
+		.enter()
+	  .append("rect")
+		.attr("x", self.params.key.horizontalShift)
+		.attr("y", function (d,i) {
+			return i * self.params.key.verticalShift[0];
+		})
+		.attr("width", 10)
+		.attr("height", 10)
+		.attr("fill", function (d) {
+			return self.typeColourScale(d);
+		});
+};
+
+BuildWidget.prototype.buildRadiusKey = function (target) {
+	var self = this;
+
+	this.radiusGroup = target.append("g")
+						.attr("class","radiusGroup")
+						.attr("transform","translate(0,125)")
+						.attr("opacity", 1);
+
+	this.radiusGroup.selectAll("circle")
+		.data(self.params.key.keyRange)
+		.enter()
+	  .append("circle")
+		.attr("cx", function (d,i) {
+			return ++i * self.params.key.horizontalShift;
+		})
+		.attr("cy", self.params.key.verticalShift[1])
+		.attr("r", function(d) {
+			return self.radiusScale(d);
+		})
+		.style("stroke", this.params.uiColour.grey)
+		.style("stroke-width", 0)
+		.style("fill", this.params.uiColour.grey);
+
+	this.radiusGroup.selectAll("line")
+		.data(self.params.key.keyRange)
+		.enter()
+	  .append("line")
+		.attr("x1", function (d,i) {
+			return ++i * self.params.key.horizontalShift;
+		})
+		.attr("y1", self.params.key.verticalShift[1])
+		.attr("x2", function (d,i) {
+			return ++i * self.params.key.horizontalShift;
+		})
+		.attr("y2", self.params.key.verticalShift[2])
+		.attr("stroke", self.params.uiColour.lightGrey)
+		.attr("stroke-width", 1);
+
+	this.radiusGroup.selectAll("text")
+		.data(self.params.key.keyRange)
+		.enter()
+	  .append("text")
+		.attr("x", function (d,i) {
+			return ++i * self.params.key.horizontalShift;
+		})
+		.attr("y", self.params.key.verticalShift[2])
+		.attr("text-anchor", "left")
+		.attr("dx", -4)
+		.attr("dy", 13)
+		.text(function (d, i) {
+			if (i === 0) {
+				return "≤" + (d / 1000000);
+			} else {
+				return d / 1000000;
+			}
+		});
+
+	this.radiusGroup.append("text")
+		.attr("x", (self.params.key.horizontalShift - 2))
+		.attr("y", 0)
+		.attr("dx", 0)
+		.attr("dy", 0)
+		.text(self.params.key.keyHead)
+		.call(wrapSvgText, 150);
+};
+
+BuildWidget.prototype.buildColourList = function (target) {
+	var self = this;
+
+	d3.select(target)
+	  .append("ul")
+		.selectAll("li")
+		.data(self.data.type)
+		.enter()
+	  .append("li")
+		.attr("class", "palette")
+		.attr("title", function(d) { return d.key; })
+		.text(function(d) {
+			return d;
+		})
+		.style("border-color", function(d) {
+			return self.typeColourScale(d)
+		});
+};
+
+BuildWidget.prototype.destroyColourList = function (target) {
+	d3.select(target).select("ul").remove();
+};
+
+BuildWidget.prototype.buildButton = function (target) {
+	var self = this;
+
+	var visible = true;
+	var topBar;
+	var bottomBar;
+
+	var topBarPoints = [{x1: 23, y1: 15, x2: 23, y2: 29},
+						{x1: 15, y1: 15, x2: 30, y2: 29}
+						];
+
+	var	bottomBarPoints = [{x1: 15, y1: 22, x2: 30, y2: 22},
+							{x1: 15, y1: 29, x2: 30, y2: 15}
+						];
+
+	function hideKey () {
+		topBar.transition()
+			.duration(self.params.duration/2)
+			.attr("x1", topBarPoints[0].x1)
+			.attr("y1", topBarPoints[0].y1)
+			.attr("x2", topBarPoints[0].x2)
+			.attr("y2", topBarPoints[0].y2);
+
+		bottomBar.transition()
+			.duration(self.params.duration/2)
+			.attr("x1", bottomBarPoints[0].x1)
+			.attr("y1", bottomBarPoints[0].y1)
+			.attr("x2", bottomBarPoints[0].x2)
+			.attr("y2", bottomBarPoints[0].y2);
+
+		self.colourGroup
+			.transition()
+			.duration(self.params.duration/2)
+			.attr("opacity", 0);
+
+		self.radiusGroup
+			.transition()
+			.duration(self.params.duration/2)
+			.attr("opacity", 0);
+
+		self.keyBox
+			.transition()
+			.delay(self.params.duration/4)
+			.duration(self.params.duration)
+			.attr("width", 25)
+			.attr("height", 25)
+			.each("end", function () {
+				self.colourGroup
+					.attr("display", "none");
+
+				self.radiusGroup
+					.attr("display", "none");
+			});
+	}
+
+	function showKey () {
+		topBar.transition()
+			.duration(self.params.duration/2)
+			.attr("x1", topBarPoints[1].x1)
+			.attr("y1", topBarPoints[1].y1)
+			.attr("x2", topBarPoints[1].x2)
+			.attr("y2", topBarPoints[1].y2);
+
+		bottomBar.transition()
+			.duration(self.params.duration/2)
+			.attr("x1", bottomBarPoints[1].x1)
+			.attr("y1", bottomBarPoints[1].y1)
+			.attr("x2", bottomBarPoints[1].x2)
+			.attr("y2", bottomBarPoints[1].y2);
+		self.colourGroup
+			.attr("display", "block")
+			.transition()
+			.delay(self.params.duration/2)
+			.duration(self.params.duration)
+			.attr("opacity", 1);
+
+		self.radiusGroup
+			.attr("display", "block")
+			.transition()
+			.delay(self.params.duration/2)
+			.duration(self.params.duration)
+			.attr("opacity", 1);
+
+		self.keyBox
+			.transition()
+			.duration(self.params.duration)
+			.attr("width", 150)
+			.attr("height", 200);
+	}
+	
+	this.keyButton = target.append("rect")
+		.attr("x", 10)
+		.attr("y", 10)
+		.attr("width", 25)
+		.attr("height", 25)
+		.style("fill", this.params.uiColour.grey)
+		.style("stroke-width", 0)
+		.style("stroke", "none")
+		.style("cursor","pointer")
+		.on("mousedown", function () {
+			if ( visible ) {
+				hideKey();
+			} else {
+				showKey();
+			}
+
+			visible = !visible;
+		});
+
+	topBar = target.append("line")
+					.attr("x1", topBarPoints[1].x1)
+					.attr("y1", topBarPoints[1].y1)
+					.attr("x2", topBarPoints[1].x2)
+					.attr("y2", topBarPoints[1].y2)
+					.attr("pointer-events","none")
+					.attr("stroke", self.params.uiColour.veryLightGrey)
+					.attr("stroke-width", 4);
+
+	bottomBar = target.append("line")
+					.attr("x1", bottomBarPoints[1].x1)
+					.attr("y1", bottomBarPoints[1].y1)
+					.attr("x2", bottomBarPoints[1].x2)
+					.attr("y2", bottomBarPoints[1].y2)
+					.attr("pointer-events","none")
+					.attr("stroke", self.params.uiColour.veryLightGrey)
+					.attr("stroke-width", 4);
+};
+
+BuildWidget.prototype.buildCheckboxes = function (target, data) {
+	
+
+	/* Create checkboxes for each site */
+	d3.select(target)
+		.append("ul")
+		.selectAll('li')
+	  .data(data)
+	  	.enter()
+		.append("li")
+		.html(function (d, i) {
+			var checked = 'checked';
+			
+			var safeName = d.toLowerCase().split(' ').join("_");
+
+			var innerHTML = "<label ><input type='checkbox' value='" + safeName + "' " + checked + "> " + d + "</label>";
+
+			return innerHTML;
+		});
+};
+
+BuildWidget.prototype.buildFootnote = function(target) {
+	d3.select(target)
+		.style("display", "block")
+		.text(this.params.key.yAxisFootnote + " " + this.params.key.xAxisFootnote);
+};
+
+
+BuildWidget.prototype.destroyFootnote = function(target) {
+	d3.select(target)
+		.style("display", "none")
+		.text(" ");
+};
+
+BuildWidget.prototype.updateData = function () {
+	var selectedStates = [];
+	var selectedTypes = [];
+
+	var checkboxesState = jQuery('.outer-wrapper #states input:checked');
+	var checkboxesType = jQuery('.outer-wrapper #type input:checked');
+
+	/* First remove the existing data from the arrays */
+	while (this.data.activeData.length > 0) {
+		this.data.activeData.shift();
+	}
+
+	for (var i = 0; i < checkboxesState.length; i++) {
+		selectedStates.push(checkboxesState.eq(i).val());
+	};
+
+	for (var i = 0; i < checkboxesType.length; i++) {
+		selectedTypes.push(checkboxesType.eq(i).val());
+	};
+
+	for (var i = 0; i < this.data.filteredData.length; i++) {
+		var thisState = this.data.filteredData[i].stateID;
+		var thisType = this.data.filteredData[i].institution_type_id;
+		
+		if ((selectedStates.indexOf(thisState) !== -1) && (selectedTypes.indexOf(thisType) !== -1)) {
+			this.data.activeData.push(this.data.filteredData[i]);
+		}
+	}
+};
+
+BuildWidget.prototype.updateView = function () {
+	this.enterScatterPlot(this.scatterGroup, true);
+	this.updateScatterPlot();
+	this.exitScatterPlot();
+
+	this.hideTooltip();
+
+	this.svg.selectAll(".x.axis").call(this.xAxis);
+	this.svg.selectAll(".y.axis").call(this.yAxis);
+	this.updateMiniMap(this.xBrush.extent(), this.yBrush.extent());
+
+	this.buildTooltip();
+};
+
+(function() {
+		var init = function($)
+		{
+			/*	Load D3 */
+			$.getScript("https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js", function() {
+
+				d3.csv("./imports/interactive-a/data/indirect-costs-calculated.csv", function (error, data) {
+					
+					if (error) {
+						$(".status-message").css("display","block");
+					} else {
+
+						var width = $(window).width();
+						var didResize = false;
+
+						$(".status-message").css("display","none");
+						$(".outer-wrapper").css("display","block");
+
+						var params = buildParams();
+
+						var idcData = buildData(data);			
+
+						var idcGraphic = new BuildWidget("#idc-graphic", params, idcData);
+
+						idcGraphic.buildCheckboxes("#type", idcGraphic.data.type);
+						idcGraphic.buildCheckboxes("#states", idcGraphic.data.state);
+
+						var build = function() {
+							idcGraphic.updateData();
+							idcGraphic.buildGraphic();
+							idcGraphic.buildScales();
+							idcGraphic.buildAxes();
+							idcGraphic.buildBrush();
+							idcGraphic.buildMiniMap();
+							idcGraphic.enterScatterPlot(idcGraphic.scatterGroup, true);
+							idcGraphic.buildTooltip();
+							idcGraphic.enterScatterPlot(idcGraphic.miniMapGroup, false);
+
+							if (idcGraphic.params.width > 350 ) {
+								idcGraphic.buildBox(idcGraphic.keyGroup);
+								idcGraphic.buildColourKey(idcGraphic.keyGroup);
+								idcGraphic.buildRadiusKey(idcGraphic.keyGroup);
+								idcGraphic.buildButton(idcGraphic.keyGroup);
+							} else {
+								idcGraphic.buildColourList("#key");
+								idcGraphic.buildFootnote("#widget-footnote");
+							}
+							
+						};
+
+						build();
+
+						var destroyRebuild = function (argument) {
+							// body...
+							console.log("DESTROY!");
+							idcGraphic.destroyGraphic();
+							idcGraphic.destroyFootnote("#widget-footnote");
+							idcGraphic.destroyColourList("#key");
+							console.log("build!");
+							params = buildParams();
+							idcGraphic.updateWidget(params);
+							build();
+						};
+
+
+						$(".outer-wrapper #show-hide").click(function () {
+							var mySection = $(this).parent("section");
+
+							if (!mySection.hasClass("open-section")) {
+								mySection.addClass("open-section");	
+							} else {
+								mySection.removeClass("open-section");
+							}
+						});
+
+						$(".outer-wrapper .options input").change(function () {
+							var thisProp;
+
+							if ($(this).val() === "all") {
+
+								thisProp = $(this).prop("checked");
+								$(".outer-wrapper #states input").prop("checked", thisProp);	
+							}
+
+							idcGraphic.updateData();
+							idcGraphic.updateView();
+						});
+
+						$(window).on("resize orientationchange", function() {
+							if($(window).width() != width){ 
+								width = $(window).width();
+								didResize = true;
+
+								/* Throttle the resize */
+								setTimeout(function () {
+									if (didResize) {
+										destroyRebuild();
+										didResize = false;
+									}
+								}, 60);
+
+							}
+						});
+					}
+				});
+
+			}); /* End of d3js getscript call
+
+		/* End of active code */
+		};
+
+	setTimeout(function()
+	{
+	if (typeof jQuery !== 'undefined')
+	{
+		init(jQuery);
+	} else
+	{
+		setTimeout(arguments.callee, 60);
+	}
+	}, 60);
+
+})();
+</script>
+<!--<![endif]-->

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nature article</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="../bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="./custom-elements/figure-lightbox-element.html">
+	<link rel="import" href="./custom-elements/main-social-element.html">
+	<link rel="import" href="./custom-elements/small-video-element.html">
+
+	<script>
+		/* Helper function to add and implement html imports */
+		function addImportLink (url, target) {
+			var link = document.createElement("link");
+			var container = document.getElementById(target);
+			link.rel = "import";
+			link.href = url;
+
+			link.onload = function (e) {
+				var graphic = this.import.querySelector(".ai2html");
+				container.appendChild(graphic.cloneNode(true));
+			}
+
+			document.head.appendChild(link);
+		}
+
+		/* Clone figcaption within the figure */
+		function addGraphicPointers (hosts, target) {
+			var content = document.querySelectorAll(hosts);
+			var artboard = document.querySelector(target);	
+
+			Array.prototype.forEach.call(content, function(element, i) {
+				var clone = element.cloneNode(true);
+				clone.classList.remove("g-description");
+
+				var list = clone.querySelector("dl");
+				list.classList.remove("dl-horizontal");
+
+				artboard.appendChild(clone);
+			});
+
+		}
+	</script>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.2,user-scalable=yes"/>
+</head>
+<body data-grid-framework="b3" data-grid-color="red" data-grid-opacity="0.2" data-grid-zindex="100" data-grid-gutterwidth="30px" data-grid-nbcols="12" data-spy="scroll" data-target="#fast-scroll-toc">
+<!-- http://alefeuvre.github.io/foundation-grid-displayer/ -->
+	
+
+	<!-- twitter / facebook pop-up button -->
+	<a id="tweetbutton" class="tweetbutton"><img src = "images/icons/hover-icons.png"/></a>
+
+	<div class="header-banner-advert">
+		<img src="images/adverts/advert-728x90.jpg" alt="" class="img-responsive">
+	</div>
+
+	<nav class="navbar" id="top-nav">
+	</nav>
+		
+	<header class="container fixed-header">
+		<div class="row">
+			<div class="header-logo col-md-8 col-sm-8 col-xs-7" ></div>
+			<div class="header-buttons col-md-3 col-md-offset-1 col-sm-4 col-xs-5"></div>
+		</div>
+	</header>
+
+
+<article class="container add-fixed-header">
+	<header class="row center-text">
+		<div class="main-social">
+			<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+				<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+			</svg>
+
+
+			<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+				<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+			</svg>
+		</div>
+
+		<div class="col-md-12 col-lg-8 col-lg-offset-2">
+			<h4>News Feature | Indirect costs</h4>
+			<h1>Keeping the lights on</h1>
+			<p class="standfirst">Every year, the US government gives research institutions billions of dollars towards infrastructure and administrative support. A Nature investigation reveals who is benefiting most.</p>
+			<ul class="list-inline attributions">
+				<li>Heidi Ledford</li>
+				<li>
+					<time datetime="2013-10-23" pubdate="">| 19 November 2014 | 12:30pm</time>
+				</li>
+				<li class="hidden-md hidden-lg">
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#read-time-icon" />
+						</svg>
+					</span>
+					30 minute read
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="row image-first">
+		<div class="col-md-2 hidden-sm hidden-xs">
+			<main-social-element />
+		</div>
+
+		
+		<div class="col-md-6">
+			<figure-lightbox-element 
+				image="./images/interactive-a/interactive-a-1.jpg"
+				lightbox="./images/interactive-a/interactive-a-1.jpg"
+				credit="Light bulb: Marc Simon/Masterfile/Corbis; Glassware: R. Gino Santa Maria/Shutterstock"
+				modal="lightbox1"
+			></figure-lightbox-element>
+		</div>
+
+		<div class="col-md-4 hidden-sm hidden-xs" style="padding: 10px 30px;">
+			<img src="images/adverts/advert-320x250.jpg" style="padding: 20px 0 0 0" alt="" class="img-responsive">
+		</div>
+	</div>
+
+	<div class="row">
+		<aside class="col-md-2 hidden-sm hidden-xs">
+			<ul class="article-tools list-unstyled">
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#read-time-icon" />
+						</svg>
+					</span>
+				30 minute read
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="2px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#podcast-icon" />
+						</svg>
+					</span>
+					Podcast
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#infographic-icon" />
+						</svg>
+					</span>
+					Infographic
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#slideshow-icon" />
+						</svg>
+					</span>
+					Slideshow
+				</li>
+				<li>
+					<span>
+						<svg x="0px" y="0px" width="20px" height="20px">
+							<use xlink:href="./images/icons/svg-symbols.svg#comment-icon" />
+						</svg>
+					</span>
+					7 Comments
+				</li>
+			</ul>
+		</aside>
+
+
+		<div class="col-md-6">
+			<p class="dropcap">Last year, Stanford University in California received US$358 million in biomedical-research funding from the US National Institutes of Health (NIH). Much of that money paid directly for the cutting-edge projects that make Stanford one of the top winners of NIH grants. But for every dollar that Stanford received for science, 31 cents went to pay for the less sexy side of research: about 15 cents for administrative support; 7 cents to operate and maintain facilities; 1 cent for equipment; and 2 cents for libraries, among other costs.</p>
+
+			<p>The NIH doled out more than $5.7 billion in 2013 to cover these ‘indirect’ costs of doing research — about one-quarter of its $22.5-billion outlay to institutions around the world (see ‘<a href="#box">Critical calculations</a>’). That money has not been distributed evenly, however: research institutions negotiate individual rates with government authorities, a practice that is meant to compensate for the varying costs of doing business in different cities and different states. Data obtained by <i>Nature </i>through a Freedom of Information Act request reveal the disparities in the outcomes of these negotiations: the rates range from 20% to 85% at universities, and have an even wider spread at hospitals and non-profit research institutes (see <a href="#interactive">interactive graphic</a>, <a href="http://www.nature.com/polopoly_fs/7.21889!/file/INDIRECT%20COSTS%20SPREADSHEET%20SUBBED.xlsx" title="Download data for all institutes 87K" class="file-icon xls-icon">data for all institutes</a> and <a href="http://www.nature.com/polopoly_fs/7.21890!/file/Indirect%20costs%20methods%20subbed.docx" title="Download methods used 19K" class="file-icon doc-icon">methods used</a>). The highest negotiated rate in 2013, according to the data, was 103% — for the Boston Biomedical Research Institute (BBRI) in Watertown, Massachusetts. Under financial duress, it closed its doors that same year.<a name="interactive"></a></p>
+
+			<p>Faculty members often chafe at high overheads, because they see them as eating up a portion of the NIH budget that could be spent on research. And lack of transparency about how the money is spent can raise suspicions. “Sometimes faculty feel like they’re at the end of the Colorado River,” says Joel Norris, a climatologist at the University of California, San Diego. “And all the water’s been diverted before it gets to them.”</p>
+
+			<p><i>Nature </i>compared the negotiated rates, as provided by the US Department of Health and Human Services, to the actual awards given to more than 600 hospitals, non-profit research institutions and universities listed in RePORTER, a public database of NIH funding (see ‘<a href="#indirectcosts">Overheads under the microscope</a>’). The analysis shows that institutions often receive much less than what they have negotiated, thanks to numerous restrictions placed on what and how much they can claim. Administrators say that these conditions make it difficult to recoup the cash they spend on infrastructure.</p>
+
+			<p>In addition, new administrative regulations have meant that universities have had to increase their spending, even as federal and state funding for research has diminished. “We lose money on every piece of research that we do,” says Maria Zuber, vice-president for research at the Massachusetts Institute of Technology (MIT) in Cambridge, which has negotiated a rate of 56%.</p>
+
+			<p>But many worry that the negotiation process allows universities to lavish money on new buildings and bloated administrations. “The current system is perverse,” says Richard Vedder, an economist at Ohio University in Athens who studies university financing. “There is a tendency to promote wasteful spending.”<a name="box"></a></p>
+
+
+		</div>
+
+		<aside class="col-md-4 hidden-sm hidden-xs read-next">
+			<h2>Related stories</h2>
+
+			<ul class="list-inline read-next-stack">
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-1.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Antibiotic alternatives rev up bacterial arms race</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">27 May 2015</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-2.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Promising antibiotic discovered in microbial ‘dark matter’</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">07 January 2015</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-3.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Antibiotic resistance: The last resort</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">24 July 2013</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-4.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Researchers glimpse microbial ‘dark matter’</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">14 July 2013</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>	
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-5.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Antibiotics: Recover the lost art of drug discovery</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">24 May 2012</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>	
+
+				<li>
+					<article class="row">
+						<a href="#">
+							<div class="col-md-6">
+								<img src="images/read-next-6.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="col-md-6 align-left">
+								<ul class="list-inline">
+									<li class="teaser">Plant science: Rediscovering the bush telegraph</li>
+									<li>
+										<time datetime="2013-10-23" pubdate="">17 June 2012</time>
+									</li>
+								</ul>
+							</div>
+						</a>
+					</article>
+				</li>	
+			</ul>
+
+		</aside>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="interactive-wrapper" id="interactive-a-1-graphic"></div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<h2>Global disparity</h2>
+			<p>Reimbursement for overheads is dealt with differently around the world. The United Kingdom calculates indirect costs on a per-project basis. Japan has a flat rate of 30%. And last year, to the dismay of some institutions, the European Union announced that it would no longer negotiate rates and instituted a flat rate of 25% for all grant recipients in its Horizon 2020 funding programme (see <a href="http://www.nature.com/uidfinder/10.1038/499018a"><i>Nature</i><b> 499,</b> 18–19; 2013</a>).</p>
+			<p>The comparatively high overhead reimbursement in the United States has generated envy, and at times controversy. About 20 years ago, government auditors found that Stanford was using funds for indirect costs to cover the depreciation in value of its 22-metre yacht moored in San Francisco Bay, and to buy decorations for the president’s house, including a $1,200 chest of drawers.</p>
+			<p>Other universities — including MIT and Harvard University in Cambridge — soon came forward to correct overhead claims that they feared would be perceived as inappropriate. In the end, Stanford paid the government $1.2&nbsp;million and accepted a large reduction — from 70% to 55.5% — in its negotiated rate. But the damage was done. The government layered on new regulations, including an explicit ban on reimbursement for housing and personal living expenses, and a 26% cap on administrative costs, although only for universities.</p>
+			<p>Two decades later, researchers still worry that the system carries the taint of impropriety. Administrators say that changes at some institutions — such as increased transparency about spending and how indirect costs are calculated — have allayed faculty concerns. But not everywhere. “People often think this is about secretarial staff and bloating the mid-level research administration,” says Tobin Smith, vice-president for policy at the Association of American Universities in Washington DC. “The faculty doesn’t often think about all the other costs: the lights are on, the heat is on, you’re using online services the university provides.”</p>
+			<p>Despite the high level of scrutiny for universities, they did not top the chart for negotiated rates in the data that <i>Nature </i>collected. Few universities have rates above 70%, and they would probably face an outcry from faculty if they raised rates too high, says Samuel Traina, vice-chancellor for research at the University of California, Merced.</p>
+			<p>No such threshold seems to exist at non-profit research institutes: more than one-quarter of the 198 institutes for which <i>Nature</i> obtained data negotiated rates above 70%. Fourteen of them have rates of 90% or higher, meaning that their indirect costs come close to equalling their direct research funding. According to Robert Forrester, an independent consultant in Belmont, Massachusetts, who helps institutions to determine their indirect costs, these institutes need to negotiate higher rates because the entire facility is dedicated to research, whereas universities and hospitals also use facilities for other things, such as teaching, that generate funding and must share the burden.</p>
+			<p>Comparisons of negotiated rates against the RePORTER data mined by <i>Nature </i>come with caveats. For example, many smaller institutions negotiate a provisional rate with the NIH that is later adjusted to match actual overhead costs, so some grants in RePORTER seem to have a reimbursed rate that exceeds the negotiated value. A change to the negotiated rate in the middle of a year can also cause a disconnect between the data <i>Nature </i>obtained and the rates given in RePORTER.</p>
+			<p>But overall, the data support administrators’ assertions that their actual recovery of indirect costs often falls well below their negotiated rates. Overall, the average negotiated rate is 53%, and the average reimbursed rate is 34%.interactive</p>
+			<p>The shortfall is largely due to caps imposed by the NIH on some grants and expenditures, says Tony DeCrappeo, president of the Council on Governmental Relations (COGR), an association in Washington DC that is focused on university finance. Some training grants, such as ‘K’ awards for early-career investigators, cap indirect costs at 8%. The NIH also does not award money for conference grants, fellowships or construction. And it has placed limits on specific categories, such as costs associated with research using genomic microarrays.</p>
+			<p>Such restrictions can make it hard to make ends meet, says Eaton Lattman, who heads the Hauptman-Woodward Medical Research Institute in Buffalo, New York. The institute negotiated a rate of 94%, but received just 52%. Although it does not incur some of the costly administrative burdens of hospitals or universities, it still fails to recoup its full investment on research, Lattman says.</p>
+			<p>The increasing competition for NIH grants is a major factor in that. Because funds used to support researchers who lose grants or have yet to win one cannot be reimbursed as indirect costs, Hauptman-Woodward must draw from its endowment to keep them working until they can support themselves. “If you don’t want to kill their research career, you have to provide bridge funding,” Lattman says.</p>
+			<p>The BBRI faced similar strains. The institute was dependent on NIH funding, and could not cope when the NIH budget tightened and faculty members brought in less grant money (see <a href="http://www.nature.com/uidfinder/10.1038/491510a"><i>Nature</i><b> 491,</b> 510; 2012</a>). “The general cost of operating the organization did not diminish as fast as the direct dollars,” says Charles Emerson, former head of the institute and now a developmental biologist at the University of Massachusetts Medical School in Worcester. “So we were able to negotiate a higher rate at the end of our time there, just to keep the operation going.”</p>
+			<p>By 2012, the BBRI’s negotiated rate had swelled to 103%, the highest for any organization in the data provided to <i>Nature</i>. But it ended up recouping just 70%, or $2.4 million on $3.4&nbsp;million in direct funding.</p>
+			<p>Although non-profit institutes command high rates, together they got just $611&nbsp;million of the NIH’s money for indirect costs. The higher-learning institutes for which <i>Nature</i> obtained data received $3.9 billion, with more than $1&nbsp;billion of that going to just nine institutions, including Johns Hopkins University in Baltimore, Maryland, and Stanford (see ‘<a href="#top10">Top 10 earners</a>’). At 38%, the average rate for these nine institutions is about 4% higher than that for all institutions with available data. But the range for higher-learning institutions was wide, with one receiving 62% (York College in Jamaica, New York), and one receiving just under 3% (Dillard University in New Orleans, Louisiana).<a name="top10"></a></p>
+			<img src="./images/interactive-a/interactive-a-2.jpg" alt="" class="img-responsive">
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<h2>Short change</h2>
+			<p>Even if universities did receive the full, negotiated rate, it would still be less than the actual costs of supporting research, says DeCrappeo. The cap on administrative costs that emerged in the wake of the Stanford scandal has remained unchanged even though administrative burdens have swelled. COGR members maintain that their actual costs are about 5% higher than the cap, says DeCrappeo. The rest of the money must come from other revenue, such as tuition fees, donations and endowments.</p>
+			<blockquote>
+				<p>“The research bureaucracy has inflated wildly in universities and it is expensive.”</p>
+			</blockquote>
+			<p>The best solution, according to Barry Bozeman, who studies technology policy at Arizona State University in Phoenix, is not to raise the cap, but to cut costs by getting rid of administrative rules and regulations that are simply wasting time and money. “The research bureaucracy has inflated wildly in universities and it is expensive.” That inflation, he says, is evident in grant applications. Thirty years ago, administrative requirements associated with grants were relatively low. “Nowadays, the actual content of the proposal — what people are going to do and why it’s important — is always a small fraction of what they submit,” he says.</p>
+			<p>As an illustration of the growing bureaucracy, DeCrappeo says that when the COGR began to keep a guide to regulatory requirements for its members in 1989, the document was 20 pages long. Now it is 127&nbsp;pages. And Bozeman says that he has to fill out forms relating to the care of laboratory animals when he applies for grants, even though he has never used animals.</p>
+			<p>The regulatory burden can be particularly high for medical schools, which must adhere to regulations for human-subject research, privacy protection and financial conflicts of interest, among others. The Association of American Medical Colleges in Washington DC says that 70 of its members have spent $22.6&nbsp;million implementing conflicts-of-interest reporting guidelines that came into effect this year.</p>
+			<p>Other funders place strict limits on their reimbursements. The US Department of Agriculture, for example, caps many of its reimbursements at 30%. Many philanthropic organizations do not reimburse for overheads at all, and those that do often pay less than the government rate (see <a href="http://www.nature.com/uidfinder/10.1038/504343a"><i>Nature </i><b>504, </b>343; 2013</a>). As a result, some institutions are reluctant to allow researchers to apply for such grants — providing another source of friction between faculty members and the administration.</p>
+			<p>Tight budgets and fierce competition for federal grants mean that faculty members are keenly sensitive to anything that might affect how much money they receive,says Lattman. Recipients of grants from the National Science Foundation (NSF) are particularly rankled, he says, because the NSF allocates money for indirect costs — at the federal negotiated rate — from the total grant awarded. In other words, researchers told that they will receive a $1-million NSF grant might see only 60% of the money. The NIH, by contrast, typically gives faculty members the full $1 million and then reimburses indirect costs in a separate payment to the university.</p>
+			<p>Even so, would-be NIH grant recipients often fear that a high indirect-cost rate at their institution will hurt their chances of getting a grant funded, despite the lack of evidence supporting any such trend. Others are troubled by the lack of transparency at many institutions as to how the indirect costs are calculated and the funds distributed. Because indirect-cost revenue is considered a reimbursement for money the university has already spent, much of the cash received from the government disappears into a university’s general fund. “Faculty have always been somewhat in the dark,” says Edward Yelin, who studies health policy at the University of California, San Francisco.</p>
+			<p>Although the payout for indirect costs is high, officials at the NIH say that the proportion of the NIH budget dedicated to overheads has held steady for more than two decades. When a 2013 report by the US Government Accountability Office warned that indirect costs could begin to eat up an increasing proportion of the NIH’s research budget, the NIH countered that this was unlikely.</p>
+			<p>DeCrappeo is hopeful that regulations due to come into effect in December will rein in the proliferation of caps on indirect cost rates. The regulations will require officers at agencies such as the NIH to have any new caps on overhead reimbursement approved by the head of the agency and provide a public justification for the change. DeCrappeo says that this could lead to a more transparent process.</p>
+			<p>And for those who fret about where this money is going, DeCrappeo urges them to look beyond their own research programmes. “If all you’re concerned about is the direct costs, it won’t take long for your facilities to deteriorate,” he says. “You can’t do research on the quad.”</p>
+
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6 col-md-offset-2 add-social">
+			<div class="main-social">
+				<svg class="main-facebook-icon" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" >
+					<use xlink:href="./images/icons/svg-symbols.svg#main-facebook-icon" />
+				</svg>
+
+
+				<svg class="main-twitter-icon"x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+					<use xlink:href="./images/icons/svg-symbols.svg#main-twitter-icon" />
+				</svg>
+			</div>
+
+			<ul class="list-inline attributions">
+				<li>Heidi Ledford writes for <em>Nature</em> from Cambridge, Massachusetts.</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-2">
+			<button class="btn btn-default subject">Economics</button>
+			<button class="btn btn-default subject">Lab life</button>
+			<button class="btn btn-default subject">Medical research</button>
+			<button class="btn btn-default subject">Research management</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-2 col-md-6">
+			<button class="btn btn-default btn-lg references">
+				<span>
+					<svg x="0px" y="0px" width="15px" height="10px">
+						<path d="M0,0 L15,0 7.5,10 Z" fill="#666"></path>
+					</svg>
+				</span>
+				References
+			</button>
+		</div>
+	</div>
+
+	<aside class="row read-next read-next-inline">
+		<div class="col-md-12">
+			<h2>What to read next</h2>
+		</div>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="">
+			<img src="images/read-next-7.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Urban microbes come out of the shadows</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">22 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-8.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Private asteroid hunt lacks cash to spy threats in orbit</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">19 June 2015</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-9.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Europe’s superlab: Sir Paul’s cathedral</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">24 July 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6">
+			<a href="#">
+				<img src="images/read-next-10.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Wastewater disposal causes sharp rise in central US earthquakes</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2013</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="#">
+				<img src="images/read-next-11.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Astronomers claim first glimpse of primordial stars</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2015</time>
+					</li>
+				</ul>
+			</a>	
+		</article>
+
+		<article class="col-md-3 col-sm-3 col-xs-6 hidden-lg hidden-md hidden-sm">
+			<a href="">
+				<img src="images/read-next-12.jpg" alt="" class="img-responsive">
+				<ul class="list-inline">
+					<li class="teaser">Why the Pope's letter on climate change matters</li>
+					<li>
+						<time datetime="2013-10-23" pubdate="">18 June 2012</time>
+					</li>
+				</ul>
+			</a>
+		</article>
+
+	</aside>
+	
+	<script>
+		addImportLink("./imports/interactive-a/interactive-a-1.html", "interactive-a-1-graphic");
+	</script>
+	
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="../bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

@@ -114,6 +114,15 @@ module.exports = function(grunt){
 				'site/includes/footer.html'
 			],
 		dest: 'site/fast-moving-a.html'
+		},
+		interactiveA: {
+			src: [
+				'site/includes/header.html',
+				'site/includes/fixed-header.html',
+				'site/pages/interactive-a.html',
+				'site/includes/footer.html'
+			],
+		dest: 'site/interactive-a.html'
 		}
 	},
 

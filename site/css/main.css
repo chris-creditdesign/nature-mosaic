@@ -1178,6 +1178,12 @@ figure:hover .img-facebook {
   top: 40px;
 }
 
+.interactive-wrapper {
+  border-top: 1px solid #c8c7cf;
+  border-bottom: 1px solid #c8c7cf;
+  margin-top: 20px;
+}
+
 .advert-row {
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;
