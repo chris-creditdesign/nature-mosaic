@@ -162,10 +162,6 @@ article h2 {
 article h2.alt-font {
   margin-bottom: 5px;
 }
-article h2.fast-head {
-  border-top: 1px solid #e2e2e2;
-  padding-top: 15px;
-}
 article blockquote {
   font-family: proseBold;
   font-size: 1.6em;
@@ -1158,24 +1154,90 @@ figure:hover .img-facebook {
     width: 4%;
   }
 }
-.fast-moving {
-  margin-bottom: 500px;
-}
 .fast-moving .fast-lg-toc {
   width: 155px;
 }
+.fast-moving .fast-lg-toc .nav {
+  padding: left;
+}
+.fast-moving .fast-lg-toc .nav > li > a:focus, .fast-moving .fast-lg-toc .nav > li > a:hover {
+  background: none;
+}
 .fast-moving .fast-lg-toc a {
   color: #666666;
-}
-.fast-moving .fast-lg-toc a:hover {
-  text-decoration: underline;
+  position: relative;
+  padding: 0 10px 12px 20px;
+  border-left: 1px solid #666666;
 }
 .fast-moving .fast-lg-toc .active a {
   color: #222222;
   font-family: bodyBold;
 }
+.fast-moving .fast-lg-toc a:before {
+  display: block;
+  position: absolute;
+  content: ' ';
+  top: 0.4em;
+  left: -0.4em;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #999999;
+}
+.fast-moving .fast-lg-toc .active a:before {
+  background-color: #222222;
+}
+.fast-moving .fast-lg-toc .fast-toc-date {
+  display: block;
+  font-family: knockFourtyNine;
+  color: #999999;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.fast-moving .fast-lg-toc .active .fast-toc-date {
+  color: #666666;
+}
+.fast-moving .fast-lg-toc .fast-toc-title:hover {
+  text-decoration: underline;
+}
 .fast-moving .fast-lg-toc.affix {
   top: 40px;
+}
+.fast-moving .fast-time {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e2e2;
+}
+@media screen and (min-width: 992px) {
+  .fast-moving .fast-article h2 {
+    padding-top: 20px;
+    border-top: 1px solid #e2e2e2;
+  }
+  .fast-moving .fast-time {
+    margin-top: 40px;
+    padding-top: 0px;
+    border-top: none;
+  }
+}
+.fast-moving .fast-day {
+  font-family: knockFourtyNine;
+  color: #999999;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.fast-moving .fast-social {
+  clear: both;
+  margin-top: 10px;
+  position: relative;
+}
+.fast-moving .fast-back {
+  margin-top: 17px;
+}
+.fast-moving .fast-back a {
+  color: #666666;
+}
+.fast-moving .left figure, .fast-moving .right figure {
+  padding: 4px 0;
 }
 
 .interactive-wrapper {

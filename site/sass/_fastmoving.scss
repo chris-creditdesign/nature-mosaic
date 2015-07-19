@@ -1,15 +1,20 @@
-.fast-moving {
-	margin-bottom: 500px;
-		
+.fast-moving {		
 	.fast-lg-toc {
 		width: 155px;
 
-		a {
-			color: $font-colour-2;
+		.nav {
+			padding: left;
 		}
 
-		a:hover {
-			text-decoration: underline;
+		.nav>li>a:focus, .nav>li>a:hover {
+			background: none;
+		}
+
+		a {
+			color: $font-colour-2;
+			position: relative;
+			padding: 0 10px 12px 20px;
+			border-left: 1px solid $font-colour-2;
 		}
 
 		.active a {
@@ -17,9 +22,95 @@
 			font-family: bodyBold;
 		}
 
+		a:before {
+			display: block;
+			position: absolute;
+			content: ' ';
+			top: 0.4em;
+			left: -0.4em;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: $volume-arrow;
+		}
+
+		.active a:before {
+			background-color: $font-colour-1
+		}
+
+		.fast-toc-date {
+			display: block;
+			font-family: knockFourtyNine;
+			color: $volume-arrow;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+		}
+
+		.active .fast-toc-date {
+			color: $font-colour-2;
+		}
+
+		.fast-toc-title:hover {
+			text-decoration: underline;
+		}
+
+
+
 		&.affix {
 			top: 40px;
 		}
 
+	} // toc 
+
+	.fast-time {
+		margin-top: 40px;
+		padding-top: 20px;
+		border-top: 1px solid $rules;
+	}
+
+	
+	@media screen and (min-width: 992px) {
+		.fast-article h2 {
+			padding-top: 20px;
+			border-top: 1px solid $rules;
+		}
+
+		.fast-time {
+			margin-top: 40px;
+			padding-top: 0px;
+			border-top: none;
+		}
+
+	}
+	
+
+	.fast-day {
+		font-family: knockFourtyNine;
+		color: $volume-arrow;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+	}
+	
+	.fast-social {
+		clear: both;
+		margin-top: 10px;
+		position: relative;
+	}
+
+	.fast-back {
+		margin-top: 17px;
+		a {
+			color: $font-colour-2;
+		}
+	}
+
+	.left figure, .right figure {
+		padding: 4px 0;
 	}
 }
+
+
+	// h2.fast-head {
+	// 	border-top: 1px solid $rules;
+	// 	padding-top: 15px;
+	// }
