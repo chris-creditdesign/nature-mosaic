@@ -1,8 +1,14 @@
 // Masonry layout
 
+.playlist-header {
+	margin-top: 60px;
+	padding-top: 20px;
+	border-top: 1px solid $rules;
+}
+
 /* ---- grid ---- */
 .grid {
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 
@@ -21,7 +27,7 @@
   border-radius: 5px;
 }
 
-
+.video-element,
 .grid-item,
 .grid-sizer {
 	width:100%;
@@ -34,13 +40,13 @@
 	width: 0px;
 }
 
-.grid-item img {
+.video-element > img, .audio-element img {
 	display: block;
 	max-width: 100%;
 	margin: 0 auto;
 }
 
-.grid-item {
+.video-element {
 	.media-tools {
 		position: absolute;
 		right: 10px;
@@ -119,6 +125,23 @@
 	line-height: 1.4em;
 
 }
+
+.video-featured {
+	img {
+		margin-top: 20px;
+	}
+
+	ul {
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+
+	.media-title {
+		font-size: 2em;
+	}
+}
+
+
 
 
 @media screen and (min-width : 480px) {

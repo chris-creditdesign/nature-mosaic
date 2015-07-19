@@ -1021,9 +1021,15 @@ figure:hover .img-facebook {
   padding: 2px 0 0 6px;
 }
 
+.playlist-header {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e2e2;
+}
+
 /* ---- grid ---- */
 .grid {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 /* clearfix */
@@ -1041,6 +1047,7 @@ figure:hover .img-facebook {
   border-radius: 5px;
 }
 
+.video-element,
 .grid-item,
 .grid-sizer {
   width: 100%;
@@ -1059,25 +1066,25 @@ figure:hover .img-facebook {
   width: 0px;
 }
 
-.grid-item img {
+.video-element > img, .audio-element img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.grid-item .media-tools {
+.video-element .media-tools {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.grid-item .media-dismiss-btn {
+.video-element .media-dismiss-btn {
   width: 30px;
   height: 30px;
   border: none;
   background: none;
   outline: none;
 }
-.grid-item .media-dismiss, .grid-item .media-playlist, .grid-item .media-twitter, .grid-item .media-facebook {
+.video-element .media-dismiss, .video-element .media-playlist, .video-element .media-twitter, .video-element .media-facebook {
   position: absolute;
   transition: -webkit-transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, right 0.3s ease, opacity 0.3s ease;
@@ -1089,36 +1096,36 @@ figure:hover .img-facebook {
   opacity: 0;
   cursor: pointer;
 }
-.grid-item .media-dismiss circle, .grid-item .media-playlist circle, .grid-item .media-twitter circle, .grid-item .media-facebook circle {
+.video-element .media-dismiss circle, .video-element .media-playlist circle, .video-element .media-twitter circle, .video-element .media-facebook circle {
   transition: fill 0.2s ease;
 }
-.grid-item .media-dismiss:hover circle {
+.video-element .media-dismiss:hover circle {
   fill: #bf0222;
 }
-.grid-item .media-playlist:hover circle {
+.video-element .media-playlist:hover circle {
   fill: #656565;
 }
-.grid-item .media-twitter:hover circle {
+.video-element .media-twitter:hover circle {
   fill: #39A9E0;
 }
-.grid-item .media-facebook:hover circle {
+.video-element .media-facebook:hover circle {
   fill: #37589A;
 }
-.grid-item:hover .media-dismiss {
+.video-element:hover .media-dismiss {
   opacity: 1;
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.grid-item:hover .media-playlist {
+.video-element:hover .media-playlist {
   right: 38px;
   opacity: 1;
 }
-.grid-item:hover .media-twitter {
+.video-element:hover .media-twitter {
   right: 76px;
   opacity: 1;
 }
-.grid-item:hover .media-facebook {
+.video-element:hover .media-facebook {
   right: 114px;
   opacity: 1;
 }
@@ -1132,6 +1139,17 @@ figure:hover .img-facebook {
   color: #222222;
   font-size: 1.2em;
   line-height: 1.4em;
+}
+
+.video-featured img {
+  margin-top: 20px;
+}
+.video-featured ul {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.video-featured .media-title {
+  font-size: 2em;
 }
 
 @media screen and (min-width: 480px) {
